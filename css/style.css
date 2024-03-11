@@ -1,4 +1,4 @@
-@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 body {
   background-color: #212121;
   box-sizing: border-box;
@@ -29,6 +29,10 @@ body {
   border-radius: 50%;
   padding: 5px;
   cursor: pointer;
+}
+
+#form-search {
+  background-color: transparent;
 }
 
 /*# sourceMappingURL=style.css.map */
