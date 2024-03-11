@@ -3,6 +3,7 @@
 $background: #212121;
 $medium-background:#131313;
 $light-background: #292929;
+$yellow-background: #C7AB46;
 
 body{
     background-color: $background;
@@ -35,4 +36,15 @@ body{
     border-radius: 50%;
     padding: 5px;
     cursor: pointer;
+}
+
+.img-back{
+    background-color: $yellow-background;
+    width: 100%;
+    height: 100%;
+}
+
+.avatar{
+    width: 20px;
+    border-radius: 50% 50% 50% 50%;
 }
