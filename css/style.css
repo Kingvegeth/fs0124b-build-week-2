@@ -1,7 +1,34 @@
 @import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 body {
   background-color: #212121;
-  box-sizing: border-box;
+}
+
+#nav-top {
+  height: 60px;
+}
+
+#adv-card {
+  border-radius: 5px;
+}
+#adv-card img {
+  width: 180px;
+  height: 180px;
+}
+#adv-card h2 {
+  font-size: 3.5em;
+}
+#adv-card p {
+  font-size: 0.75em;
+}
+#adv-card button {
+  border-radius: 30px;
+  padding-inline: 25px;
+}
+
+.hide-adv {
+  height: fit-content;
+  border-radius: 50px;
+  font-size: 0.6em;
 }
 
 #center-page {
@@ -29,6 +56,12 @@ body {
   border-radius: 50%;
   padding: 5px;
   cursor: pointer;
+}
+
+.card-mix {
+  width: 100px;
+  height: 100px;
+  background-color: aqua;
 }
 
 /*# sourceMappingURL=style.css.map */

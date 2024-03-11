@@ -6,8 +6,43 @@ $light-background: #292929;
 
 body{
     background-color: $background;
-    box-sizing: border-box;
 }
+
+
+#nav-top{
+    height: 60px;
+    ;
+}
+
+#adv-card{
+    border-radius: 5px;
+
+    img{
+        width: 180px;
+        height: 180px;
+    }
+
+    h2{
+        font-size: 3.5em;
+    }
+
+    p{
+        font-size: 0.75em;
+    }
+
+    button{
+        border-radius: 30px;
+        padding-inline: 25px;
+    }
+}
+
+.hide-adv{
+    height: fit-content;
+    border-radius: 50px;
+    font-size: 0.6em;
+}
+
+
 
 #center-page{
     height: 100vh;
@@ -35,4 +70,10 @@ body{
     border-radius: 50%;
     padding: 5px;
     cursor: pointer;
+}
+
+.card-mix{
+    width: 100px;
+    height: 100px;
+    background-color: aqua;
 }

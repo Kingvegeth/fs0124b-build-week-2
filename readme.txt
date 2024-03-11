@@ -3,12 +3,12 @@ Main page
     Simone Nardo
     Daniele
 
-Artist page
+album page
 
     Enea
     Alessandro
 
-Album page
+artist page
 
     Sara
     Salvatore
