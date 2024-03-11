@@ -1,8 +1,13 @@
 @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
+$dark-background:#121212;
 $yellow-background: #c7ab46;
 $gray-color: #c1c2c5;
 $green-button: #1ed760;
+
+body{
+    background-color: $dark-background;
+}
 
 .img-back {
     background-color: $yellow-background;
@@ -62,7 +67,7 @@ $green-button: #1ed760;
     }
 }
 
-.riproductions {
+.reproductions {
     width: 130px;
     color: $gray-color;
 }
@@ -81,3 +86,4 @@ $green-button: #1ed760;
                 rgba(0, 0, 0, 0.5075280112044818) 49%);
     }
 }
+

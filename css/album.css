@@ -1,4 +1,8 @@
 @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+body {
+  background-color: #121212;
+}
+
 .img-back {
   background-color: #c7ab46;
   width: 100%;
@@ -57,7 +61,7 @@
   }
 }
 
-.riproductions {
+.reproductions {
   width: 130px;
   color: #c1c2c5;
 }
