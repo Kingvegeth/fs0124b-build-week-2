@@ -1,15 +1,17 @@
 $success: #1ED760;
+$secondary: #b3b3b3;
 
-@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
 
 
 
-$background: #212121;
+$background: #121212;
 $medium-background:#131313;
+$mid-background:#272727;
 $light-background: #292929;
 
 body{
-    background-color: $background;
+    background: linear-gradient(180deg, rgba(33,33,33,1) 0%, rgba(18,18,18,1) 100%);
 }
 
 *{
@@ -22,7 +24,6 @@ body{
 }
 
 #section-left{
-    color: #b3b3b3;
 
     a{
         color: inherit;
@@ -31,7 +32,9 @@ body{
     border-right: 2px solid black;
 }
 
-
+.hide-adv{
+    background-color: $mid-background;
+}
 
 
 #left , #right {
@@ -51,15 +54,15 @@ body{
 #nav-left{
     i{
         margin-right: 10px;
-        font-size: 1.7em;
+        
     }
 }
 
 #left-links {
     
     .left-link{
-        height: 30px;
-        width: 30px;
+        height: 20px;
+        aspect-ratio: 1;
         
         margin: 10px 15px 10px 0;
         
@@ -69,6 +72,11 @@ body{
     p{
         margin: 0;
     }
+
+    i{
+        font-size: 0.6em;
+    }
+
 }
 
 
@@ -77,7 +85,8 @@ body{
 
 .link-add{
     background-color: #b3b3b3;
-
+    font-weight: bold;
+    font-size: 1.5em;
 }
 
 .link-heart{
@@ -91,7 +100,7 @@ body{
 
 #my-playlists{
     overflow-y: auto;
-    max-height: 500px;
+    max-height: 530px;
 
     p{
         font-size: 0.7em;
@@ -121,7 +130,6 @@ body{
   background: #555; 
 }
 
-  ///
 
 
 
@@ -153,12 +161,22 @@ body{
     height: fit-content;
     border-radius: 50px;
     font-size: 0.6em;
+    color: rgb(87, 87, 87);
 }
 
 
 
 #center-page{
-    height: 100vh;
+    height: 100%;
+}
+
+
+.raccolta{
+     div{
+        background-color: $light-background;
+        border-radius: 3px;
+        overflow: hidden;
+    }
 }
 
 #player-block{
@@ -177,12 +195,11 @@ body{
 
 .navigation-button{
     background-color: $medium-background;
+    
     border-radius: 50%;
     cursor: pointer;
 }
 
 .card-mix{
-    width: 100px;
-    height: 100px;
-    background-color: aqua;
+    border: 1px solid red;
 }
