@@ -1,4 +1,4 @@
-@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 body {
   /** background-color: $background; **/
   box-sizing: border-box;
@@ -32,7 +32,7 @@ body {
 }
 
 .img-back {
-  background-color: #C7AB46;
+  background-color: #c7ab46;
   width: 100%;
   height: 100%;
 }
@@ -40,6 +40,29 @@ body {
 .avatar {
   width: 20px;
   border-radius: 50% 50% 50% 50%;
+}
+
+.img-info {
+  width: 200px;
+}
+
+.svg-pointer:hover {
+  cursor: pointer;
+  transform: scale(1.02);
+}
+
+.gradient {
+  background: rgb(18, 18, 18);
+  background: linear-gradient(0deg, rgb(18, 18, 18) 35%, rgb(18, 18, 18) 58%, rgba(0, 0, 0, 0.5075280112) 99%);
+}
+
+.riproductions {
+  width: 130px;
+  color: #93928C;
+}
+
+.gray-color {
+  color: #93928C;
 }
 
 /*# sourceMappingURL=style.css.map */
