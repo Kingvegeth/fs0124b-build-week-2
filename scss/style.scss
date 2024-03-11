@@ -1,4 +1,8 @@
+$success: #1ED760;
+
 @import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+
 
 $background: #212121;
 $medium-background:#131313;
@@ -8,11 +12,118 @@ body{
     background-color: $background;
 }
 
+*{
+    box-sizing: border-box;
+}
 
 #nav-top{
     height: 60px;
-    ;
+
 }
+
+#section-left{
+    color: #b3b3b3;
+
+    a{
+        color: inherit;
+    }
+
+    border-right: 2px solid black;
+}
+
+
+
+
+#left , #right {
+    height: 30px;
+    width: 30px;
+}
+
+#left i, #right i{
+    display: block;
+    
+    aspect-ratio: 1;
+    line-height: 30px;
+    text-align: center;
+}
+
+
+#nav-left{
+    i{
+        margin-right: 10px;
+        font-size: 1.7em;
+    }
+}
+
+#left-links {
+    
+    .left-link{
+        height: 30px;
+        width: 30px;
+        
+        margin: 10px 15px 10px 0;
+        
+        border-radius: 3px;
+    }
+
+    p{
+        margin: 0;
+    }
+}
+
+
+
+
+
+.link-add{
+    background-color: #b3b3b3;
+
+}
+
+.link-heart{
+    background: linear-gradient(144deg, rgba(56,22,169,1) 21%, rgba(126,148,154,1) 73%);
+}
+
+.link-bookmark{
+    background-color: #004537;
+    color: #149643;
+}
+
+#my-playlists{
+    overflow-y: auto;
+    max-height: 500px;
+
+    p{
+        font-size: 0.7em;
+    }
+}
+
+
+//SCROLLBAR
+ 
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: black; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+  ///
+
+
 
 #adv-card{
     border-radius: 5px;
@@ -34,6 +145,7 @@ body{
     button{
         border-radius: 30px;
         padding-inline: 25px;
+        height: 50;
     }
 }
 
@@ -62,14 +174,10 @@ body{
     }
 }
 
-.raccolta{
-    background-color: $light-background;
-}
 
 .navigation-button{
     background-color: $medium-background;
     border-radius: 50%;
-    padding: 5px;
     cursor: pointer;
 }
 

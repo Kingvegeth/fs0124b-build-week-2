@@ -3,8 +3,88 @@ body {
   background-color: #212121;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 #nav-top {
   height: 60px;
+}
+
+#section-left {
+  color: #b3b3b3;
+  border-right: 2px solid black;
+}
+#section-left a {
+  color: inherit;
+}
+
+#left, #right {
+  height: 30px;
+  width: 30px;
+}
+
+#left i, #right i {
+  display: block;
+  aspect-ratio: 1;
+  line-height: 30px;
+  text-align: center;
+}
+
+#nav-left i {
+  margin-right: 10px;
+  font-size: 1.7em;
+}
+
+#left-links .left-link {
+  height: 30px;
+  width: 30px;
+  margin: 10px 15px 10px 0;
+  border-radius: 3px;
+}
+#left-links p {
+  margin: 0;
+}
+
+.link-add {
+  background-color: #b3b3b3;
+}
+
+.link-heart {
+  background: linear-gradient(144deg, rgb(56, 22, 169) 21%, rgb(126, 148, 154) 73%);
+}
+
+.link-bookmark {
+  background-color: #004537;
+  color: #149643;
+}
+
+#my-playlists {
+  overflow-y: auto;
+  max-height: 500px;
+}
+#my-playlists p {
+  font-size: 0.7em;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: black;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 #adv-card {
@@ -24,6 +104,7 @@ body {
 #adv-card button {
   border-radius: 30px;
   padding-inline: 25px;
+  height: 50;
 }
 
 .hide-adv {
@@ -48,14 +129,9 @@ body {
   height: 5px;
 }
 
-.raccolta {
-  background-color: #292929;
-}
-
 .navigation-button {
   background-color: #131313;
   border-radius: 50%;
-  padding: 5px;
   cursor: pointer;
 }
 
