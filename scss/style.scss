@@ -48,6 +48,7 @@ body {
 }
 
 .icon-play {
+  background-color: #1ed760;
   border-radius: 50%;
   height: 60px;
   width: 60px;
@@ -95,5 +96,18 @@ body {
     rgba(18, 18, 18, 1) 35%,
     rgba(18, 18, 18, 1) 58%,
     rgba(0, 0, 0, 0.5075280112044818) 99%
+  );
+  background-color: #686867;
+}
+
+.follow-mobile {
+  @extend .following;
+  background: rgb(17, 17, 17);
+  background: linear-gradient(
+    0deg,
+    rgba(17, 17, 17, 0.2) 10%,
+    rgba(17, 17, 17, 0.2) 30%,
+    rgba(33, 33, 33, 0.2) 77%,
+    rgba(33, 33, 33, 0.2) 93%
   );
 }

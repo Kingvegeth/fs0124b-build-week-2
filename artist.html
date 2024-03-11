@@ -42,13 +42,37 @@
           </div>
 
           <h2 class="artist-name">NOME Artista</h2>
-          <div class="listeners mt-5">ascoltatori mensili</div>
+          <div class="listeners mt-5 d-none d-md-block">
+            ascoltatori mensili
+          </div>
         </div>
       </header>
+
       <main class="py-4 px-4 d-flex flex-column gap-4 gradient">
-        <div class="d-flex flex-row gap-3 align-items-center">
-          <div class="icon-play bg-success">
-            <i class="bi bi-play-fill"></i>
+        <div class="listeners mt-1 d-md-none">ascoltatori mensili</div>
+
+        <div
+          class="play-icone container d-flex justify-content-between align-items-center d-md-none p-0 pt-2">
+          <div class="d-flex align-items-center">
+            <div class="bg-button">
+              <a class="border border-black follow-mobile me-4">FOLLOWING</a>
+            </div>
+            <div>
+              <i class="bi bi-three-dots-vertical fs-1"></i>
+            </div>
+          </div>
+          <div class="d-flex align-items-center">
+            <div class="shuffle">
+              <i class="bi bi-shuffle fs-1 me-4"></i>
+            </div>
+            <div class="icon-play">
+              <i class="bi bi-play-fill text-white"></i>
+            </div>
+          </div>
+        </div>
+        <div class="d-none d-md-flex flex-row gap-3 align-items-center">
+          <div class="icon-play">
+            <i class="bi bi-play-fill text-white"></i>
           </div>
           <a class="border border-light following">FOLLOWING</a>
           <i class="bi bi-three-dots"></i>
