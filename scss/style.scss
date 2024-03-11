@@ -1,10 +1,12 @@
 @import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 $background: #212121;
+$medium-background:#131313;
 $light-background: #292929;
 
 body{
     background-color: $background;
+    box-sizing: border-box;
 }
 
 #center-page{
@@ -14,8 +16,23 @@ body{
 #player-block{
     background-color: $background;
     border-top: 1px solid $light-background;
+
+    .bi-volume-down{
+        font-size: 1.6em;
+    }
+    input{
+        width: 60%;
+        height: 5px;
+    }
 }
 
 .raccolta{
     background-color: $light-background;
+}
+
+.navigation-button{
+    background-color: $medium-background;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
 }
