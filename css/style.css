@@ -1,4 +1,4 @@
-@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 body {
   background-color: #212121;
   box-sizing: border-box;
@@ -80,6 +80,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.gradient {
+  height: 100vh;
+  background: rgb(18, 18, 18);
+  background: linear-gradient(0deg, rgb(18, 18, 18) 35%, rgb(18, 18, 18) 58%, rgba(0, 0, 0, 0.5075280112) 99%);
 }
 
 /*# sourceMappingURL=style.css.map */

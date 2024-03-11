@@ -1,87 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="./node_modules/bootstrap-icons/font/bootstrap-icons.min.css" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./css/style.css" />
-  <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.min.css" />
+    <link
+      rel="icon"
+      sizes="32x32"
+      type="image/png"
+      href="https://open.spotifycdn.com/cdn/images/favicon32.b64ecc03.png" />
 
-  <link rel="icon" sizes="32x32" type="image/png"
-    href="https://open.spotifycdn.com/cdn/images/favicon32.b64ecc03.png" />
+    <title>Spotify | Artist</title>
+  </head>
 
-  <title>Spotify | Artist</title>
-</head>
-
-<body>
-  <div class="artist bg-dark text-white">
-    <header class="artist-header d-flex flex-column justify-content-between py-4 px-4">
-      <nav class="d-flex flex-column">
-        <div id="bottoni" class="d-flex flex-row gap-3">
-          <div id="left">
-            <i class="navigation-button bi bi-chevron-left"></i>
-          </div>
-          <div id="right">
-            <i class="navigation-button bi bi-chevron-right"></i>
-          </div>
-        </div>
-        <div id="drop"></div>
-      </nav>
-
-      <div class="artist-block ">
-        <div class="d-flex gap-2">
-          <i class="bi bi-patch-check-fill text-primary"></i>
-          <div class="verificato">Artista verificato
-          </div>
-        </div>
-
-        <h2 class="artist-name">NOME Artista</h2>
-        <div class="listeners mt-5">ascoltatori mensili</div>
-      </div>
-    </header>
-    <main class="py-4 px-4 d-flex flex-column gap-4">
-      <div class="d-flex flex-row gap-3 align-items-center">
-        <div class="icon-play bg-success">
-          <i class="bi bi-play-fill"></i>
-        </div>
-        <a class="border border-light following">FOLLOWING</a>
-        <i class="bi bi-three-dots"></i>
-      </div>
-
-      <div class="row">
-        <div class="col-8">
-          <h4 class="fw-bold">Popolari</h4>
-          <!-- template -->
-          <div class="row mx-5">
-            <div class="col-7 fw-bold">1 IMG TITOLO</div>
-            <div class="d-flex justify-content-between col-5">
-              <div>3435443535442</div>
-              <div>2.30</div>
+  <body>
+    <div class="artist text-white">
+      <header
+        class="artist-header d-flex flex-column justify-content-between py-4 px-4">
+        <nav class="d-flex flex-column">
+          <div id="bottoni" class="d-flex flex-row gap-3">
+            <div id="left">
+              <i class="navigation-button bi bi-chevron-left"></i>
+            </div>
+            <div id="right">
+              <i class="navigation-button bi bi-chevron-right"></i>
             </div>
           </div>
-          <div>VISUALIZZA ALTRO</div>
+          <div id="drop"></div>
+        </nav>
+
+        <div class="artist-block">
+          <div class="d-flex gap-2">
+            <i class="bi bi-patch-check-fill text-primary"></i>
+            <div class="verificato">Artista verificato</div>
+          </div>
+
+          <h2 class="artist-name">NOME Artista</h2>
+          <div class="listeners mt-5">ascoltatori mensili</div>
         </div>
-        <div class="col-4">
-          <h5 class="fw-bold">Brani che ti piacciono</h5>
-          <div class="d-flex flex-row align-items-center gap-3">
-            <div class="img">
-              <button type="button" class="btn btn-primary position-relative">
-                Profile
-                <span
-                  class="position-absolute top-100 start-100 translate-middle bg-success border border-light rounded-circle container-cuore">
-                  <i class="bi bi-heart-fill cuore p-2"></i>
-                </span>
-              </button>
+      </header>
+      <main class="py-4 px-4 d-flex flex-column gap-4 gradient">
+        <div class="d-flex flex-row gap-3 align-items-center">
+          <div class="icon-play bg-success">
+            <i class="bi bi-play-fill"></i>
+          </div>
+          <a class="border border-light following">FOLLOWING</a>
+          <i class="bi bi-three-dots"></i>
+        </div>
+
+        <div class="row">
+          <div class="col-8">
+            <h4 class="fw-bold">Popolari</h4>
+            <!-- template -->
+            <div class="row mx-5">
+              <div class="col-7 fw-bold">1 IMG TITOLO</div>
+              <div class="d-flex justify-content-between col-5">
+                <div>3435443535442</div>
+                <div>2.30</div>
+              </div>
             </div>
-            <div class="info ">
-              <h6 class="fw-bold lh-1 m-0">Hai messo mi piace</h6>
-              <p>all'artista</p>
+            <div>VISUALIZZA ALTRO</div>
+          </div>
+          <div class="col-4">
+            <h5 class="fw-bold">Brani che ti piacciono</h5>
+            <div class="d-flex flex-row align-items-center gap-3">
+              <div class="img">
+                <button type="button" class="btn btn-primary position-relative">
+                  Profile
+                  <span
+                    class="position-absolute top-100 start-100 translate-middle bg-success border border-light rounded-circle container-cuore">
+                    <i class="bi bi-heart-fill cuore p-2"></i>
+                  </span>
+                </button>
+              </div>
+              <div class="info">
+                <h6 class="fw-bold lh-1 m-0">Hai messo mi piace</h6>
+                <p>all'artista</p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </main>
-  </div>
-</body>
-
+      </main>
+    </div>
+  </body>
 </html>

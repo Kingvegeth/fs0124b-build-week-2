@@ -1,90 +1,99 @@
-@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 $background: #212121;
 $medium-background: #131313;
 $light-background: #292929;
 
 body {
-    background-color: $background;
-    box-sizing: border-box;
+  background-color: $background;
+  box-sizing: border-box;
 }
 
 #center-page {
-    height: 100vh;
+  height: 100vh;
 }
 
 #player-block {
-    background-color: $background;
-    border-top: 1px solid $light-background;
+  background-color: $background;
+  border-top: 1px solid $light-background;
 
-    .bi-volume-down {
-        font-size: 1.6em;
-    }
+  .bi-volume-down {
+    font-size: 1.6em;
+  }
 
-    input {
-        width: 60%;
-        height: 5px;
-    }
+  input {
+    width: 60%;
+    height: 5px;
+  }
 }
 
 .raccolta {
-    background-color: $light-background;
+  background-color: $light-background;
 }
 
 .navigation-button {
-    background-color: $medium-background;
-    border-radius: 50%;
-    padding: 5px;
-    cursor: pointer;
+  background-color: $medium-background;
+  border-radius: 50%;
+  padding: 5px;
+  cursor: pointer;
 }
 
 .artist-header {
-    height: 400px;
-
+  height: 400px;
 }
 
 .artist-name {
-    font-size: 70px;
-    font-weight: 700;
+  font-size: 70px;
+  font-weight: 700;
 }
 
 .icon-play {
-    border-radius: 50%;
-    height: 60px;
-    width: 60px;
-    text-align: center;
-    vertical-align: middle;
-    display:flex;
-    align-items: center;
-    justify-content: center;
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  text-align: center;
+  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .bi-play-fill {
-    font-size: 30px;
-    vertical-align: middle;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: $medium-background;
+  font-size: 30px;
+  vertical-align: middle;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $medium-background;
 }
 
 .following {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    padding: 5px 10px;
-    height: fit-content;
-    cursor: pointer;
-    border-radius: 3px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+  height: fit-content;
+  cursor: pointer;
+  border-radius: 3px;
 }
 
 .cuore {
-    font-size: 10px;
+  font-size: 10px;
 }
 .container-cuore {
-    height: 20px;
-    width: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  height: 20px;
+  width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gradient {
+  height: 100vh;
+  background: rgb(18, 18, 18);
+  background: linear-gradient(
+    0deg,
+    rgba(18, 18, 18, 1) 35%,
+    rgba(18, 18, 18, 1) 58%,
+    rgba(0, 0, 0, 0.5075280112044818) 99%
+  );
 }
