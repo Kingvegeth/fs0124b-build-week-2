@@ -31,8 +31,42 @@ body {
   cursor: pointer;
 }
 
+/* INIZIO CSS SEARCH */
+
 #form-search {
   background-color: transparent;
 }
+
+.black-spoty-bg {
+  background-color: black;
+}
+.withe-trasparent {
+  color: white;
+  border: none;
+  outline: none;
+  width: 100%;
+}
+
+.search-container {
+  text-align: center;
+}
+
+.search-box {
+  width: 300px;
+  margin: 0 auto;
+}
+
+.icons-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.icons-footer i {
+  margin: 0 10px;
+}
+
+/* FINE CSS SEARCH */
 
 /*# sourceMappingURL=style.css.map */
