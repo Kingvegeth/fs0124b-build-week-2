@@ -1,0 +1,19 @@
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+body {
+  background-color: #212121;
+}
+
+#center-page {
+  height: 100vh;
+}
+
+#player-block {
+  background-color: #212121;
+  border-top: 1px solid #292929;
+}
+
+.raccolta {
+  background-color: #292929;
+}
+
+/*# sourceMappingURL=style.css.map */

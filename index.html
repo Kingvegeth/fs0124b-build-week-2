@@ -3,9 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" sizes="32x32" type="image/png" href="https://open.spotifycdn.com/cdn/images/favicon32.b64ecc03.png">
+    <title>Spotify</title>
 </head>
 <body>
     
-</body>
-</html>
+
+    <main class="container row">
+        
+        <div id="section-left" class="col-3 bg-black text-white">
+            <nav id="nav-left"></nav>
+            <div id="left-links"></div>
+            <div id="my-playlists"></div>
+        </div>
+
+        <div id="center-page" class="text-white col-7">
+
+            
+            <header>
+                <nav>
+                    <div id="bottoni">
+                        <button id="left">sinistra</button>
+                        <button id="right">destra</button>
+                    </div>
+                    <div id="drop"></div>
+                </nav>
+            </header>
+            
+            <div id="upper-card"></div>
+            
+            <div id="salve">
+                <h2>Hello!</h2>
+                <div class="cards-salve row row-cols-2 row-cols-md-3">
+                    <div class="raccolta col">
+                        <img src="" alt="" class="img-raccolta">
+                        <h4 class="titolo-raccolta">Titolo</h4>
+                    </div>
+                    <div class="raccolta col">
+                        <img src="" alt="" class="img-raccolta">
+                        <h4 class="titolo-raccolta">Titolo</h4>
+                    </div>
+                    <div class="raccolta col">
+                        <img src="" alt="" class="img-raccolta">
+                        <h4 class="titolo-raccolta">Titolo</h4>
+                    </div>
+                    <div class="raccolta col">
+                        <img src="" alt="" class="img-raccolta">
+                        <h4 class="titolo-raccolta">Titolo</h4>
+                    </div>
+                    <div class="raccolta col">
+                        <img src="" alt="" class="img-raccolta">
+                        <h4 class="titolo-raccolta">Titolo</h4>
+                    </div>
+                    <div class="raccolta col">
+                        <img src="" alt="" class="img-raccolta">
+                        <h4 class="titolo-raccolta">Titolo</h4>
+                    </div>
+                </div>
+            </div>
+            
+            <template id="categoria">
+                <div>
+                    <h2>Titolo categoria</h2>
+                    <a href="#">Mostra tutto</a>
+                </div>
+                <div class="card-wrapper">
+                    <div class="card-mix"></div>
+                    <div class="card-mix"></div>
+                    <div class="card-mix"></div>
+                    <div class="card-mix"></div>
+                </div>
+            </template>
+        </div>
+
+        </main>
+        
+        <div id="player-block" class="fixed-bottom d-flex flex-row align-items-center justify-content-between text-white">
+            <div class="current-song d-flex flex-row gap-2">
+                <img src="" alt="" class="album-img">
+                <div class="song-artist d-flex flex-row flex-column">
+                    <h4>Song</h4>
+                    <p>Artist</p>
+                </div>
+                <span>cuore</span>
+            </div>
+            <div class="player d-flex flex-column">
+                <div class="controls">controlli</div>
+                <div class="progress0">progresso</div>
+            </div>
+            <div class="player-settings d-flex flex-row gap-2">
+                <p>ico</p>
+                <p>ico</p>
+                <p>ico</p>
+                <div class="volume">volume</div>
+                <div class="resize"></div>
+            </div>
+        </div>
+    </body>
+    </html>

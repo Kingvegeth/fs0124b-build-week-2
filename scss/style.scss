@@ -1,0 +1,21 @@
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+$background: #212121;
+$light-background: #292929;
+
+body{
+    background-color: $background;
+}
+
+#center-page{
+    height: 100vh;
+}
+
+#player-block{
+    background-color: $background;
+    border-top: 1px solid $light-background;
+}
+
+.raccolta{
+    background-color: $light-background;
+}
