@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,34 +11,28 @@
 <body>
     
 
-    <main class="row">
+    <main class="container row">
         
-        <div id="section-left" class="col-3 bg-black text-white ">
-            <nav id="nav-left">Pippo</nav>
+        <div id="section-left" class="col-3 bg-black text-white">
+            <nav id="nav-left"></nav>
             <div id="left-links"></div>
             <div id="my-playlists"></div>
         </div>
 
-        <div id="center-page" class="text-white col-7 container-fluid ">
+        <div id="center-page" class="text-white col-7">
 
             
             <header>
                 <nav>
-                    <div id="bottoni" class="d-flex flex-row gap-3">
-                        <div id="left"><i class="navigation-button bi bi-chevron-left"></i></div>
-                        <div id="right"><i class="navigation-button bi bi-chevron-right"></i></div>
+                    <div id="bottoni">
+                        <button id="left">sinistra</button>
+                        <button id="right">destra</button>
                     </div>
                     <div id="drop"></div>
                 </nav>
             </header>
             
-            <div id="adv-card" class="d-flex flex-row justify-content-between">
-                <div class="adv-left">
-                    <img src="" alt="" class="big-img">
-                    <div class="adv-text">Lorem ipsum, dolor sit amet</div>
-                </div>
-                <span class="badge rounded-pill text-bg-secondary">Nascondi annunci</span>
-            </div>
+            <div id="upper-card"></div>
             
             <div id="salve">
                 <h2>Hello!</h2>
@@ -84,44 +78,27 @@
             </template>
         </div>
 
-        <div id="section-right" class="col-2 bg-black text-white fixed-r ">
-            <div id="friends-title" class="d-flex flex-row">
-                <h6>Attività amici</h6>
-                <div id="friends-buttons" class="d-flex flex-row">
-                    <i class="bi bi-person-add"></i>
-                    <i class="bi bi-x-lg"></i>
-
-                </div>
-            </div>
-            <div id="friends-list">
-
-            </div>
-        </div>
-
         </main>
         
-        <div id="player-block" class="container-fluid fixed-bottom d-flex flex-row align-items-center justify-content-between text-white">
-            <div class="current-song d-flex align-items-center flex-row gap-2">
+        <div id="player-block" class="fixed-bottom d-flex flex-row align-items-center justify-content-between text-white">
+            <div class="current-song d-flex flex-row gap-2">
                 <img src="" alt="" class="album-img">
                 <div class="song-artist d-flex flex-row flex-column">
                     <h4>Song</h4>
                     <p>Artist</p>
                 </div>
-                <i class="bi bi-heart"></i>
+                <span>cuore</span>
             </div>
             <div class="player d-flex flex-column">
                 <div class="controls">controlli</div>
                 <div class="progress0">progresso</div>
             </div>
-            <div class="player-settings d-flex flex-row align-items-center gap-2">
-                <i class="bi bi-mic"></i>
-                <i class="bi bi-list"></i>
-                <i class="bi bi-music-player"></i>
-                <div class="volume d-flex flex-row align-items-center">
-                    <i class="bi bi-volume-down"></i>
-                    <input type="range" id="vol" name="vol" min="0" max="50">
-                </div>
-                <i class="bi bi-arrows-angle-expand"></i>
+            <div class="player-settings d-flex flex-row gap-2">
+                <p>ico</p>
+                <p>ico</p>
+                <p>ico</p>
+                <div class="volume">volume</div>
+                <div class="resize"></div>
             </div>
         </div>
     </body>
