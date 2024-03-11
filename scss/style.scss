@@ -78,3 +78,11 @@ body{
     height: 100px;
     background-color: aqua;
 }
+
+
+
+
+.raccolta {
+    flex: 0 0 calc(33.33% - 10px); 
+    margin-right: 10px; 
+}
