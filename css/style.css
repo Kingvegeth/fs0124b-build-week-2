@@ -11987,6 +11987,12 @@ body {
   width: 60%;
   height: 5px;
 }
+#player-block .controls i {
+  font-size: 1.5em;
+}
+#player-block .controls .bi-play-circle-fill {
+  font-size: 2em;
+}
 
 .navigation-button {
   background-color: #131313;
