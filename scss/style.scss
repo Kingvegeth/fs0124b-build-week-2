@@ -1,0 +1,332 @@
+$success: #1ED760;
+$secondary: #b3b3b3;
+$dark: #000;
+
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+
+
+
+$background: #121212;
+$medium-background:#131313;
+$mid-background:#272727;
+$light-background: #292929;
+
+body{
+    background: linear-gradient(180deg, rgba(33,33,33,1) 0%, rgba(18,18,18,1) 100%);
+    overflow: hidden;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+#nav-top{
+    height: 60px;
+
+}
+
+.dropdown-toggle{
+    border-radius: 50px;
+    padding: 0;
+    
+    overflow: hidden;
+}
+
+.profile-image{
+    border-radius: 50%;
+    margin-right: 5px;
+    overflow: hidden;
+}
+
+
+#section-left{
+
+    a{
+        color: inherit;
+        i{
+            font-size: 1.5em;
+        }
+    }
+    font-size: 0.8em;
+    font-weight: bold;
+
+    border-right: 2px solid black;
+}
+
+.hide-adv{
+    background-color: $mid-background;
+}
+
+
+#left , #right {
+    height: 30px;
+    width: 30px;
+}
+
+#left i, #right i{
+    display: block;
+    
+    aspect-ratio: 1;
+    line-height: 30px;
+    text-align: center;
+}
+
+
+#nav-left{
+    i{
+        margin-right: 10px;
+        font-size: 1.2em;
+        
+    }
+}
+
+#left-links {
+    
+    .left-link{
+        height: 20px;
+        aspect-ratio: 1;
+        
+        margin: 10px 15px 10px 0;
+        
+        border-radius: 3px;
+    }
+
+    p{
+        margin: 0;
+    }
+
+    i{
+        font-size: 0.6em;
+    }
+
+}
+
+
+
+
+
+.link-add{
+    background-color: #b3b3b3;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.link-heart{
+    background: linear-gradient(144deg, rgba(56,22,169,1) 21%, rgba(126,148,154,1) 73%);
+}
+
+.link-bookmark{
+    background-color: #004537;
+    color: #149643;
+}
+
+#my-playlists{
+    position: sticky;
+    top: 300px;
+    overflow-y: auto;
+    max-height: 530px;
+
+    p{
+        font-size: 0.7em;
+    }
+}
+
+
+//SCROLLBAR
+ 
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+
+  right: 0;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: none; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    
+  background: #555; 
+}
+
+
+
+#adv-card{
+    border-radius: 5px;
+    background: linear-gradient(195deg, rgba(32,32,32,1) 10%, rgba(0,0,0,1) 94%);
+
+    img{
+        width: 180px;
+        height: 180px;
+    }
+
+    h2{
+        font-size: 3.5em;
+    }
+
+    p{
+        font-size: 0.75em;
+    }
+
+    button{
+        border-radius: 30px;
+        padding-inline: 25px;
+        height: 50;
+    }
+}
+
+.hide-adv{
+    height: fit-content;
+    border-radius: 50px;
+    font-size: 0.6em;
+    color: rgb(87, 87, 87);
+}
+ 
+
+
+#center-page{
+    height: 100%;
+    overflow-y: scroll;
+    max-height: 850px;
+
+}
+
+.icon-salve{
+    font-size: 1.4em;
+}
+
+.raccolta{
+     div{
+        background-color: $light-background;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+}
+
+.img-raccolta{
+    
+    border-radius: 5px;
+   
+}
+
+
+.friend-img-container{
+    overflow: hidden;
+    height: fit-content;
+    border-radius: 50%;
+}
+
+
+.friend-text{
+    p{
+        font-size: 0.7em;
+        margin-block: 0;
+    }
+}
+
+.close-friends{
+    cursor: pointer;
+}
+
+#nav-mobile {
+
+    background: rgb(33,33,33);
+background: linear-gradient(180deg, rgba(33,33,33,0.5126436781609196) 0%, rgba(9,9,9,0.7609195402298851) 32%, rgba(0,0,0,1) 68%);
+    nav{
+        a{
+
+            font-size: 0.8em;
+            color: $secondary;
+        }
+    }
+}
+.icon-mobile{
+    font-size: 1.7em;
+}
+
+.link-mobile{
+    cursor: pointer;
+    div{
+
+        &:hover{
+            color: #fff;
+        }
+    }
+}
+
+#mini-player{
+    position: fixed;
+    bottom: 83px;
+    width:  100%;
+    .mini-player-body{
+        width: 95%;
+        margin: 0 auto;
+        padding: 15px 5px;
+
+        border-radius: 7px;
+
+        color: #fff;
+        background-color: rgba(40,40,40,255);
+
+        img{
+            border-radius: 50%;
+        }
+        .bi-play-fill{
+            font-size: 1.5em;
+        }
+    }
+}
+
+#player-block{
+
+    background-color: $background;
+    border-top: 1px solid $light-background;
+
+    .bi-volume-down{
+        font-size: 1.6em;
+    }
+
+    .controls{
+
+        i{
+            font-size: 1.5em;
+        }
+        .bi-play-circle-fill{
+            font-size: 2em;
+        }
+    }
+}
+
+.player{
+    width: 40%;
+}
+
+.progresso{
+    input{
+        width: 100%;
+        height: 5px;
+    }
+}
+
+.volume{
+    input{
+        width: 60%;
+        height: 5px;
+    }
+}
+
+
+.navigation-button{
+    background-color: $medium-background;
+    
+    border-radius: 50%;
+    cursor: pointer;
+}
