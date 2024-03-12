@@ -12104,4 +12104,9 @@ input[type=range]::-moz-range-thumb {
   box-shadow: -407px 0 0 400px #fff;
 }
 
+.raccolta {
+  flex: 0 0 calc(33.33% - 10px);
+  margin-right: 10px;
+}
+
 /*# sourceMappingURL=style.css.map */
