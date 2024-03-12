@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/album.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
+    <link rel="icon" sizes="32x32" type="image/png" href="https://open.spotifycdn.com/cdn/images/favicon32.b64ecc03.png">
+    
+    <title>Spotify | Album</title>
+</head>
+<body >
+    <div class="album img-back">
+        <!-- Blocco hero -->
+        <div class="test">
+            <div class="album-info container text-white   ">
+                <div class="row ">
+                    <div class="col-12 text-center col-md-3">
+                        <img src="./assets/imgs/main/image-1.jpg" class="pb-2 pt-2 img-info" alt="">
+                    </div>
+                    <div class="col-12 col-md-9 d-flex flex-column justify-content-end pb-md-2 pt-md-2">
+                        <div >
+                            <div class="d-none d-md-block">
+                                Album
+                            </div>
+                        <div class="display-6 display-md-2  pb-2 pb-md-4 fw-bold">Gioventù bruciata</div>
+                        <div class="d-flex flex-row mb-2">
+                            <div class="me-2" >
+                                <img src="./assets/imgs/main/image-1.jpg" class="rounded-circle" width="25" height="25" alt="">
+                            </div>
+                            <div class="d-flex">
+                                <div class="artist-name">
+                                    Nome artista
+                                </div>
+                                <div class="d-none d-md-block ">
+                                    <i class="bi bi-dot"></i>
+                                </div>
+                                <div class="album-date d-none d-md-block">
+                                    2017
+                                </div>
+                                <div class="d-none d-md-block ">
+                                    <i class="bi bi-dot"></i>
+                                </div>
+                                <div class="track-number d-none d-md-block">
+                                    12 brani,
+                                </div>
+                                <div class="total-time d-none d-md-block gray-color">
+                                    12 ore
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="d-flex mb-2 d-md-none">
+                            <div>
+                                <span class="gray-color">Album</span>
+                            </div>
+                            <div class="dot">
+                                <i class="bi bi-dot"></i>
+                            </div>
+                            <div class="gray-color">
+                                2017
+                            </div>
+                        </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="title text-white gradient">
+
+            <div class="container">
+                <!-- Blocco a scomparsa su d-sm -->
+                <div class="play-icone container d-flex py-3  d-none d-md-block align-items-center">
+                
+                    <i class="bi bi-play-circle-fill svg-pointer player-fill me-4"></i>
+                    <i class="bi bi-heart heart-icon svg-pointer me-3"></i>
+                    <i class="bi bi-arrow-down-circle download svg-pointer me-3"></i>
+                    <i class="bi bi-three-dots vertical-dot svg-pointer"></i>
+                    
+                </div>
+                <!-- Blocco a scomparsa su d-md -->
+                <div class="play-icone container d-flex justify-content-between d-md-none p-0 pt-2">
+                    <div class="d-flex gap-4">
+                            <i class="bi bi-heart heart-icon svg-pointer mt-3"></i>
+                            <i class="bi bi-arrow-down-circle download svg-pointer mt-3"></i>
+                            <i class="bi bi-three-dots-vertical vertical-dot svg-pointer mt-3"></i>
+                    </div>
+                    <div class="d-flex gap-2 ">
+                            <div class="mt-3">
+                                <i class="bi bi-shuffle shuffle svg-pointer "></i>
+                            </div>
+                            <div class="mt-1">
+                                <i class="bi bi-play-circle-fill svg-pointer player-fill "></i>
+                            </div>
+                    </div>
+                    
+                </div>
+                <!-- Blocco a scomparsa su d-sm con titoli e ascolti -->
+                <div class="songs d-none d-md-block">
+                    <div class="songs-title container d-flex  justify-content-between border-bottom border-light pb-1">
+                        <div class="d-flex gap-3">
+                            <div class="gray-color">
+                                #
+                            </div>
+                            <div class="gray-color">
+                                TITOLO
+                            </div>
+                        </div>
+                        <div class="gray-color">
+                            RIPRODUZIONI
+                        </div>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#93928C" class="bi bi-clock" viewBox="0 0 16 16">
+                                <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
+                                <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                    <div id="album-songs pt-3">
+                        <div class="container">
+                            <div class="songs-title d-flex justify-content-between pt-2 ">
+                                <div class="d-flex gap-3">
+                                    <div class="number d-none d-md-block pt-3">1</div>
+                                    <div class="description">
+                                        <div class="songs-title">
+                                            Prova
+                                        </div>
+                                        <div class="artist gray-color">
+                                            Prova
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="reproductions text-end d-none d-md-block gray-color">
+                                    824075
+                                </div>
+                                <div class="song-time d-none d-md-block gray-color">
+                                    1:29
+                                </div>
+                                <div class="info-song mt-1 d-md-none">
+                                    <i class="bi bi-three-dots-vertical"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="songs-title d-flex justify-content-between pt-2 ">
+                                <div class="d-flex gap-3">
+                                    <div class="number d-none d-md-block pt-3">1</div>
+                                    <div class="description">
+                                        <div class="songs-title">
+                                            Prova
+                                        </div>
+                                        <div class="artist gray-color">
+                                            Prova
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="reproductions text-end d-none d-md-block gray-color">
+                                    824075
+                                </div>
+                                <div class="song-time d-none d-md-block gray-color">
+                                    1:29
+                                </div>
+                                <div class="info-song mt-1 d-md-none">
+                                    <i class="bi bi-three-dots-vertical"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="songs-title d-flex justify-content-between pt-2 ">
+                                <div class="d-flex gap-3">
+                                    <div class="number d-none d-md-block pt-3">1</div>
+                                    <div class="description">
+                                        <div class="songs-title">
+                                            Prova
+                                        </div>
+                                        <div class="artist gray-color">
+                                            Prova
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="reproductions text-end d-none d-md-block gray-color">
+                                    824075
+                                </div>
+                                <div class="song-time d-none d-md-block gray-color">
+                                    1:29
+                                </div>
+                                <div class="info-song mt-1 d-md-none">
+                                    <i class="bi bi-three-dots-vertical"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="songs-title d-flex justify-content-between pt-2 ">
+                                <div class="d-flex gap-3">
+                                    <div class="number d-none d-md-block pt-3">1</div>
+                                    <div class="description">
+                                        <div class="songs-title">
+                                            Prova
+                                        </div>
+                                        <div class="artist gray-color">
+                                            Prova
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="reproductions text-end d-none d-md-block gray-color">
+                                    824075
+                                </div>
+                                <div class="song-time d-none d-md-block gray-color">
+                                    1:29
+                                </div>
+                                <div class="info-song mt-1 d-md-none">
+                                    <i class="bi bi-three-dots-vertical"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="songs-title d-flex justify-content-between pt-2 ">
+                                <div class="d-flex gap-3">
+                                    <div class="number d-none d-md-block pt-3">1</div>
+                                    <div class="description">
+                                        <div class="songs-title">
+                                            Prova
+                                        </div>
+                                        <div class="artist gray-color">
+                                            Prova
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="reproductions text-end d-none d-md-block gray-color">
+                                    824075
+                                </div>
+                                <div class="song-time d-none d-md-block gray-color">
+                                    1:29
+                                </div>
+                                <div class="info-song mt-1 d-md-none">
+                                    <i class="bi bi-three-dots-vertical"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="songs-title d-flex justify-content-between pt-2 ">
+                                <div class="d-flex gap-3">
+                                    <div class="number d-none d-md-block pt-3">1</div>
+                                    <div class="description">
+                                        <div class="songs-title">
+                                            Prova
+                                        </div>
+                                        <div class="artist gray-color">
+                                            Prova
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="reproductions text-end d-none d-md-block gray-color">
+                                    824075
+                                </div>
+                                <div class="song-time d-none d-md-block gray-color">
+                                    1:29
+                                </div>
+                                <div class="info-song mt-1 d-md-none">
+                                    <i class="bi bi-three-dots-vertical"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="songs-title d-flex justify-content-between pt-2 ">
+                                <div class="d-flex gap-3">
+                                    <div class="number d-none d-md-block pt-3">1</div>
+                                    <div class="description">
+                                        <div class="songs-title">
+                                            Prova
+                                        </div>
+                                        <div class="artist gray-color">
+                                            Prova
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="reproductions text-end d-none d-md-block gray-color">
+                                    824075
+                                </div>
+                                <div class="song-time d-none d-md-block gray-color">
+                                    1:29
+                                </div>
+                                <div class="info-song mt-1 d-md-none">
+                                    <i class="bi bi-three-dots-vertical"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="songs-title d-flex justify-content-between pt-2 ">
+                                <div class="d-flex gap-3">
+                                    <div class="number d-none d-md-block pt-3">1</div>
+                                    <div class="description">
+                                        <div class="songs-title">
+                                            Prova
+                                        </div>
+                                        <div class="artist gray-color">
+                                            Prova
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="reproductions text-end d-none d-md-block gray-color">
+                                    824075
+                                </div>
+                                <div class="song-time d-none d-md-block gray-color">
+                                    1:29
+                                </div>
+                                <div class="info-song mt-1 d-md-none">
+                                    <i class="bi bi-three-dots-vertical"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="songs-title d-flex justify-content-between pt-2 ">
+                                <div class="d-flex gap-3">
+                                    <div class="number d-none d-md-block pt-3">1</div>
+                                    <div class="description">
+                                        <div class="songs-title">
+                                            Prova
+                                        </div>
+                                        <div class="artist gray-color">
+                                            Prova
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="reproductions text-end d-none d-md-block gray-color">
+                                    824075
+                                </div>
+                                <div class="song-time d-none d-md-block gray-color">
+                                    1:29
+                                </div>
+                                <div class="info-song mt-1 d-md-none">
+                                    <i class="bi bi-three-dots-vertical"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="songs-title d-flex justify-content-between pt-2 ">
+                                <div class="d-flex gap-3">
+                                    <div class="number d-none d-md-block pt-3">1</div>
+                                    <div class="description">
+                                        <div class="songs-title">
+                                            Prova
+                                        </div>
+                                        <div class="artist gray-color">
+                                            Prova
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="reproductions text-end d-none d-md-block gray-color">
+                                    824075
+                                </div>
+                                <div class="song-time d-none d-md-block gray-color">
+                                    1:29
+                                </div>
+                                <div class="info-song mt-1 d-md-none">
+                                    <i class="bi bi-three-dots-vertical"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="songs-title d-flex justify-content-between pt-2 ">
+                                <div class="d-flex gap-3">
+                                    <div class="number d-none d-md-block pt-3">1</div>
+                                    <div class="description">
+                                        <div class="songs-title">
+                                            Prova
+                                        </div>
+                                        <div class="artist gray-color">
+                                            Prova
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="reproductions text-end d-none d-md-block gray-color">
+                                    824075
+                                </div>
+                                <div class="song-time d-none d-md-block gray-color">
+                                    1:29
+                                </div>
+                                <div class="info-song mt-1 d-md-none">
+                                    <i class="bi bi-three-dots-vertical"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="songs-title d-flex justify-content-between pt-2 ">
+                                <div class="d-flex gap-3">
+                                    <div class="number d-none d-md-block pt-3">1</div>
+                                    <div class="description">
+                                        <div class="songs-title">
+                                            Prova
+                                        </div>
+                                        <div class="artist gray-color">
+                                            Prova
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="reproductions text-end d-none d-md-block gray-color">
+                                    824075
+                                </div>
+                                <div class="song-time d-none d-md-block gray-color">
+                                    1:29
+                                </div>
+                                <div class="info-song mt-1 d-md-none">
+                                    <i class="bi bi-three-dots-vertical"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="songs-title d-flex justify-content-between pt-2 ">
+                                <div class="d-flex gap-3">
+                                    <div class="number d-none d-md-block pt-3">1</div>
+                                    <div class="description">
+                                        <div class="songs-title">
+                                            Prova
+                                        </div>
+                                        <div class="artist gray-color">
+                                            Prova
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="reproductions text-end d-none d-md-block gray-color">
+                                    824075
+                                </div>
+                                <div class="song-time d-none d-md-block gray-color">
+                                    1:29
+                                </div>
+                                <div class="info-song mt-1 d-md-none">
+                                    <i class="bi bi-three-dots-vertical"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="songs-title d-flex justify-content-between pt-2 ">
+                                <div class="d-flex gap-3">
+                                    <div class="number d-none d-md-block pt-3">1</div>
+                                    <div class="description">
+                                        <div class="songs-title">
+                                            Prova
+                                        </div>
+                                        <div class="artist gray-color">
+                                            Prova
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="reproductions text-end d-none d-md-block gray-color">
+                                    824075
+                                </div>
+                                <div class="song-time d-none d-md-block gray-color">
+                                    1:29
+                                </div>
+                                <div class="info-song mt-1 d-md-none">
+                                    <i class="bi bi-three-dots-vertical"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="songs-title d-flex justify-content-between pt-2 ">
+                                <div class="d-flex gap-3">
+                                    <div class="number d-none d-md-block pt-3">1</div>
+                                    <div class="description">
+                                        <div class="songs-title">
+                                            Prova
+                                        </div>
+                                        <div class="artist gray-color">
+                                            Prova
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="reproductions text-end d-none d-md-block gray-color">
+                                    824075
+                                </div>
+                                <div class="song-time d-none d-md-block gray-color">
+                                    1:29
+                                </div>
+                                <div class="info-song mt-1 d-md-none">
+                                    <i class="bi bi-three-dots-vertical"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="songs-title d-flex justify-content-between pt-2 ">
+                                <div class="d-flex gap-3">
+                                    <div class="number d-none d-md-block pt-3">1</div>
+                                    <div class="description">
+                                        <div class="songs-title">
+                                            Prova
+                                        </div>
+                                        <div class="artist gray-color">
+                                            Prova
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="reproductions text-end d-none d-md-block gray-color">
+                                    824075
+                                </div>
+                                <div class="song-time d-none d-md-block gray-color">
+                                    1:29
+                                </div>
+                                <div class="info-song mt-1 d-md-none">
+                                    <i class="bi bi-three-dots-vertical"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="songs-title d-flex justify-content-between pt-2 ">
+                                <div class="d-flex gap-3">
+                                    <div class="number d-none d-md-block pt-3">1</div>
+                                    <div class="description">
+                                        <div class="songs-title">
+                                            Prova
+                                        </div>
+                                        <div class="artist gray-color">
+                                            Prova
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="reproductions text-end d-none d-md-block gray-color">
+                                    824075
+                                </div>
+                                <div class="song-time d-none d-md-block gray-color">
+                                    1:29
+                                </div>
+                                <div class="info-song mt-1 d-md-none">
+                                    <i class="bi bi-three-dots-vertical"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="songs-title d-flex justify-content-between pt-2 ">
+                                <div class="d-flex gap-3">
+                                    <div class="number d-none d-md-block pt-3">1</div>
+                                    <div class="description">
+                                        <div class="songs-title">
+                                            Prova
+                                        </div>
+                                        <div class="artist gray-color">
+                                            Prova
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="reproductions text-end d-none d-md-block gray-color">
+                                    824075
+                                </div>
+                                <div class="song-time d-none d-md-block gray-color">
+                                    1:29
+                                </div>
+                                <div class="info-song mt-1 d-md-none">
+                                    <i class="bi bi-three-dots-vertical"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="songs-title d-flex justify-content-between pt-2 ">
+                                <div class="d-flex gap-3">
+                                    <div class="number d-none d-md-block pt-3">1</div>
+                                    <div class="description">
+                                        <div class="songs-title">
+                                            Prova
+                                        </div>
+                                        <div class="artist gray-color">
+                                            Prova
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="reproductions text-end d-none d-md-block gray-color">
+                                    824075
+                                </div>
+                                <div class="song-time d-none d-md-block gray-color">
+                                    1:29
+                                </div>
+                                <div class="info-song mt-1 d-md-none">
+                                    <i class="bi bi-three-dots-vertical"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="songs-title d-flex justify-content-between pt-2 ">
+                                <div class="d-flex gap-3">
+                                    <div class="number d-none d-md-block pt-3">1</div>
+                                    <div class="description">
+                                        <div class="songs-title">
+                                            Prova
+                                        </div>
+                                        <div class="artist gray-color">
+                                            Prova
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="reproductions text-end d-none d-md-block gray-color">
+                                    824075
+                                </div>
+                                <div class="song-time d-none d-md-block gray-color">
+                                    1:29
+                                </div>
+                                <div class="info-song mt-1 d-md-none">
+                                    <i class="bi bi-three-dots-vertical"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="songs-title d-flex justify-content-between pt-2 ">
+                                <div class="d-flex gap-3">
+                                    <div class="number d-none d-md-block pt-3">1</div>
+                                    <div class="description">
+                                        <div class="songs-title">
+                                            Prova
+                                        </div>
+                                        <div class="artist gray-color">
+                                            Prova
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="reproductions text-end d-none d-md-block gray-color">
+                                    824075
+                                </div>
+                                <div class="song-time d-none d-md-block gray-color">
+                                    1:29
+                                </div>
+                                <div class="info-song mt-1 d-md-none">
+                                    <i class="bi bi-three-dots-vertical"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="songs-title d-flex justify-content-between pt-2 ">
+                                <div class="d-flex gap-3">
+                                    <div class="number d-none d-md-block pt-3">1</div>
+                                    <div class="description">
+                                        <div class="songs-title">
+                                            Prova
+                                        </div>
+                                        <div class="artist gray-color">
+                                            Prova
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="reproductions text-end d-none d-md-block gray-color">
+                                    824075
+                                </div>
+                                <div class="song-time d-none d-md-block gray-color">
+                                    1:29
+                                </div>
+                                <div class="info-song mt-1 d-md-none">
+                                    <i class="bi bi-three-dots-vertical"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <template>
+                        <div class="container">
+                            <div class="songs-title d-flex justify-content-between pt-2 ">
+                                <div class="d-flex gap-3">
+                                    <div class="number d-none d-md-block pt-3">1</div>
+                                    <div class="description">
+                                        <div class="songs-title">
+                                            Prova
+                                        </div>
+                                        <div class="artist gray-color">
+                                            Prova
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="reproductions text-end d-none d-md-block gray-color">
+                                    824075
+                                </div>
+                                <div class="song-time d-none d-md-block gray-color">
+                                    1:29
+                                </div>
+                                <div class="info-song mt-1 d-md-none">
+                                    <i class="bi bi-three-dots-vertical"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                
+            </div>
+
+        </div>
+
+    </div>
+</body>
+</html>
