@@ -37,4 +37,4 @@ COSE DA FIXARE
 
 COSE DA PERFEZIONARE
 
--background su album (Alessandro sa)
+-background su album (Alessandro so cosa hai fatto)
