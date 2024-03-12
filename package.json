@@ -7,7 +7,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "compile": "sass scss/style.scss css/style.css -w"
+    "compile": "sass scss/style.scss css/style.css -w",
+    "search": "sass scss/search.scss css/search.css -w"
   },
   "author": "",
   "license": "ISC",
