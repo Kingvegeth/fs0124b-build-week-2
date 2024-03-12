@@ -1,5 +1,6 @@
 $success: #1ED760;
 $secondary: #b3b3b3;
+$dark: #000;
 
 @import '../node_modules/bootstrap/scss/bootstrap.scss';
 
@@ -22,6 +23,20 @@ body{
     height: 60px;
 
 }
+
+.dropdown-toggle{
+    border-radius: 50px;
+    padding: 0;
+    
+    overflow: hidden;
+}
+
+.profile-image{
+    border-radius: 50%;
+    margin-right: 5px;
+    overflow: hidden;
+}
+
 
 #section-left{
 
@@ -99,6 +114,8 @@ body{
 }
 
 #my-playlists{
+    position: sticky;
+    top: 300px;
     overflow-y: auto;
     max-height: 530px;
 
@@ -113,23 +130,25 @@ body{
 /* width */
 ::-webkit-scrollbar {
   width: 10px;
+
+  right: 0;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: black; 
+    background: black; 
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888; 
+    background: #888; 
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
+    
   background: #555; 
 }
-
 
 
 
@@ -168,6 +187,9 @@ body{
 
 #center-page{
     height: 100%;
+    overflow-y: scroll;
+    max-height: 800px;
+    
 }
 
 
@@ -180,15 +202,12 @@ body{
 }
 
 #player-block{
+
     background-color: $background;
     border-top: 1px solid $light-background;
 
     .bi-volume-down{
         font-size: 1.6em;
-    }
-    input{
-        width: 60%;
-        height: 5px;
     }
 
     .controls{
@@ -199,6 +218,24 @@ body{
         .bi-play-circle-fill{
             font-size: 2em;
         }
+    }
+}
+
+.player{
+    width: 40%;
+}
+
+.progresso{
+    input{
+        width: 100%;
+        height: 5px;
+    }
+}
+
+.volume{
+    input{
+        width: 60%;
+        height: 5px;
     }
 }
 
@@ -213,3 +250,58 @@ body{
 .card-mix{
     border: 1px solid red;
 }
+
+
+
+input[type="range"] {
+    /* removing default appearance */
+    -webkit-appearance: none;
+    appearance: none; 
+    /* creating a custom design */
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+    /*  slider progress trick  */
+    overflow: hidden;
+    border-radius: 16px;
+  }
+  
+  /* Track: webkit browsers */
+  input[type="range"]::-webkit-slider-runnable-track {
+    height: 15px;
+    background: #353535;
+    border-radius: 16px;
+  }
+  
+  /* Track: Mozilla Firefox */
+  input[type="range"]::-moz-range-track {
+    height: 15px;
+    background: #fff;
+    border-radius: 16px;
+  }
+  
+  /* Thumb: webkit */
+  input[type="range"]::-webkit-slider-thumb {
+    /* removing default appearance */
+    -webkit-appearance: none;
+    appearance: none; 
+    /* creating a custom design */
+    height: 15px;
+    width: 8px;
+    background-color: #fff;
+    
+    /*  slider progress trick  */
+    box-shadow: -407px 0 0 400px #fff;
+  }
+  
+  
+  /* Thumb: Firefox */
+  input[type="range"]::-moz-range-thumb {
+    height: 15px;
+    width: 8px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    /*  slider progress trick  */
+    box-shadow: -407px 0 0 400px #fff
+  }
