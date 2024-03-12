@@ -109,8 +109,23 @@ body {
 .song-bar {
   &:hover {
     background-color: #353535;
+    .song-view {
+      opacity: 1;
+    }
+    .icons-disappering {
+      opacity: 0.5;
+      &:hover {
+        opacity: 1;
+        scale: 1.1;
+      }
+    }
   }
 }
+
+.icons-disappering {
+  opacity: 0;
+}
+
 .likes-background {
   &:hover {
     background-color: #353535;
@@ -126,7 +141,6 @@ body {
 .song-minutes {
   opacity: 0.7;
 }
-
 .see-more {
   font-weight: bold;
   opacity: 0.7;

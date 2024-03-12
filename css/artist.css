@@ -103,6 +103,20 @@ body {
 .song-bar:hover {
   background-color: #353535;
 }
+.song-bar:hover .song-view {
+  opacity: 1;
+}
+.song-bar:hover .icons-disappering {
+  opacity: 0.5;
+}
+.song-bar:hover .icons-disappering:hover {
+  opacity: 1;
+  scale: 1.1;
+}
+
+.icons-disappering {
+  opacity: 0;
+}
 
 .likes-background:hover {
   background-color: #353535;
