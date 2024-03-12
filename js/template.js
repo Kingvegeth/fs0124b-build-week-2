@@ -1,6 +1,7 @@
 
 export function generaClone(pageToLoad) {
-    let templateHome = document.querySelector(pageToLoad);
-    let clone = templateHome.content.cloneNode(true);
-    return clone;
-  }
+  let template = document.querySelector(pageToLoad);
+  let nuovoNodo = document.createElement('div');
+  nuovoNodo.innerHTML = template.innerHTML;
+  return nuovoNodo;
+}
