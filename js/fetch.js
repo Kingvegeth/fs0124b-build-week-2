@@ -6,7 +6,7 @@ import {generaClone} from "./template.js";
 
 
 let templateHome = generaClone("#home-page");
-let templateAlbum = generaClone('#album-page')
+let templateAlbum = generaClone('#album-page');
 
 let pageContainer = document.querySelector('#center-page');
 
