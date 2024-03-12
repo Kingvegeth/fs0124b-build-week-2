@@ -116,6 +116,14 @@
                 <button class="btn hide-adv  fw-bold px-3 end-50">NASCONDI ANNUNCI</button>
             </div>
             
+            <div id="div-finto">
+                <h1 class="id-finto"></h1>
+                <h2 class="nome-finto"></h2>
+                <p class="album-finto"></p>
+                <p class="traccia-finta"></p>
+                <img src="" alt="" class="cover-finta">
+            </div>
+
             <div id="buonasera" class="container-fluid my-3 px-0">
                     <div class="d-flex align-items-center justify-content-between mb-3">
                         <h2>Buonasera</h2>
@@ -181,7 +189,7 @@
                         <div class="d-flex flex-row flex-sm-column gap-3 p-2">
 
                             <img src="https://picsum.photos/140" alt="" class="img-raccolta">
-                            <div class="d-flex flex-column flex-sm-row">
+                            <div class="d-flex flex-column">
                                 <h6 class="titolo-raccolta">Titolo1</h6>
                                 <p>Descrizione</p>
                             </div>
@@ -191,7 +199,7 @@
                         <div class="d-flex flex-row flex-sm-column gap-3 p-2">
 
                             <img src="https://picsum.photos/140" alt="" class="img-raccolta">
-                            <div class="d-flex flex-column flex-sm-row">
+                            <div class="d-flex flex-column">
                                 <h6 class="titolo-raccolta">Titolo2</h6>
                                 <p>Descrizione</p>
                             </div>
@@ -201,7 +209,7 @@
                         <div class="d-flex flex-row flex-sm-column gap-3 p-2">
 
                             <img src="https://picsum.photos/140" alt="" class="img-raccolta">
-                            <div class="d-flex flex-column flex-sm-row">
+                            <div class="d-flex flex-column">
                                 <h6 class="titolo-raccolta">Titolo3</h6>
                                 <p>Descrizione</p>
                             </div>
@@ -211,7 +219,7 @@
                         <div class="d-flex flex-row flex-sm-column gap-3 p-2">
 
                             <img src="https://picsum.photos/140" alt="" class="img-raccolta">
-                            <div class="d-flex flex-column flex-sm-row">
+                            <div class="d-flex flex-column">
                                 <h6 class="titolo-raccolta">Titolo4</h6>
                                 <p>Descrizione</p>
                             </div>
@@ -221,7 +229,7 @@
                         <div class="d-flex flex-row flex-sm-column gap-3 p-2">
 
                             <img src="https://picsum.photos/140" alt="" class="img-raccolta">
-                            <div class="d-flex flex-column flex-sm-row">
+                            <div class="d-flex flex-column">
                                 <h6 class="titolo-raccolta">Titolo5</h6>
                                 <p>Descrizione</p>
                             </div>
@@ -231,7 +239,7 @@
                         <div class="d-flex flex-row flex-sm-column gap-3 p-2">
 
                             <img src="https://picsum.photos/140" alt="" class="img-raccolta">
-                            <div class="d-flex flex-column flex-sm-row">
+                            <div class="d-flex flex-column">
                                 <h6 class="titolo-raccolta">Titolo6</h6>
                                 <p>Descrizione</p>
                             </div>
@@ -299,7 +307,7 @@
 
         <dix id="mini-player" class="d-block d-md-none">
             <div class="mini-player-body d-flex align-items-center justify-content-around">
-
+                 
                 <img src="https://picsum.photos/30" alt="">
                 <span>Titolo canzone</span>
                 <i class="bi bi-music-player text-secondary"></i>
@@ -360,27 +368,8 @@
         </div>
 
         <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-        <script>
+        <script src="./js/fetch.js"></script>
+        <script src="./js/pulsanti.js"></script>
 
-            //pulsante che mostra e nasconde la lista amici
-            let friendsToggle = document.getElementById('friendlist-toggle');
-            let sectionRight = document.getElementById('section-right');
-            let sectionCenter = document.getElementById('center-page');
-
-            friendsToggle.addEventListener('click',function(){
-
-                    sectionRight.classList.remove('d-none')
-                    sectionCenter.classList.remove('col-lg-10')
-                    sectionCenter.classList.add('col-lg-8')
-            })
-
-            let closeFriends = document.querySelector('.close-friends')
-            closeFriends.addEventListener('click', function(){
-                sectionRight.classList.add('d-none')
-                    sectionCenter.classList.remove('col-lg-8')
-                    sectionCenter.classList.add('col-lg-10')
-            })
-
-        </script>
     </body>
     </html>
