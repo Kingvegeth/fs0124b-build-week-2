@@ -117,45 +117,52 @@
             </div>
             
             <div id="buonasera" class="container-fluid my-3 px-0">
-                <h2 class="mb-3">Buonasera</h2>
-                <div class="cards-salve g-3 row row-cols-3">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <h2>Buonasera</h2>
+                        <div class="icon-salve d-flex gap-3">
+                            <i class="bi bi-bell"></i>
+                            <i class="bi bi-clock-history"></i>
+                            <i class="bi bi-gear"></i>
+                        </div>
+                    </div>
+                <div class="cards-salve g-3 row row-cols-2 row-cols-lg-3">
                     <div class="raccolta col ">
-                        <div class="d-flex gap-3 align-items-center">
+                        <div class="d-flex gap-1 gap-sm-3 align-items-center">
 
                             <img src="https://picsum.photos/70" alt="" class="img-raccolta">
                             <h6 class="titolo-raccolta">Titolo1</h6>
                         </div>
                     </div>
                     <div class="raccolta col ">
-                        <div class="d-flex gap-3 align-items-center">
+                        <div class="d-flex gap-1 gap-sm-3 align-items-center">
 
                             <img src="https://picsum.photos/70" alt="" class="img-raccolta">
                             <h6 class="titolo-raccolta">Titolo2</h6>
                         </div>
                     </div>
                     <div class="raccolta col ">
-                        <div class="d-flex gap-3 align-items-center">
+                        <div class="d-flex gap-1 gap-sm-3 align-items-center">
 
                             <img src="https://picsum.photos/70" alt="" class="img-raccolta">
                             <h6 class="titolo-raccolta">Titolo3</h6>
                         </div>
                     </div>
                     <div class="raccolta col ">
-                        <div class="d-flex gap-3 align-items-center">
+                        <div class="d-flex gap-1 gap-sm-3 align-items-center">
 
                             <img src="https://picsum.photos/70" alt="" class="img-raccolta">
                             <h6 class="titolo-raccolta">Titolo4</h6>
                         </div>
                     </div>
                     <div class="raccolta col ">
-                        <div class="d-flex gap-3 align-items-center">
+                        <div class="d-flex gap-1 gap-sm-3 align-items-center">
 
                             <img src="https://picsum.photos/70" alt="" class="img-raccolta">
                             <h6 class="titolo-raccolta">Titolo5</h6>
                         </div>
                     </div>
                     <div class="raccolta col ">
-                        <div class="d-flex gap-3 align-items-center">
+                        <div class="d-flex gap-1 gap-sm-3 align-items-center">
 
                             <img src="https://picsum.photos/70" alt="" class="img-raccolta">
                             <h6 class="titolo-raccolta">Titolo6</h6>
@@ -164,61 +171,76 @@
                 </div>
             </div>
               
-            <div id="main-section" class="container-fluid px-0">
-                <h2>Titolo categoria</h2>
-                <div class="cards-salve g-3 row row-cols-6">
+            <div class="container-fluid px-0 my-5">
+                <div class="d-flex justify-content-between align-items-center mb-">
+                    <h2>Titolo categoria</h2>
+                    <a class="text-decoration-none text-secondary fw-bold d-none d-sm-block" href="#">VISUALIZZA TUTTO</a>
+                </div>
+                <div class="cards-salve g-3 row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6">
                     <div class="raccolta col ">
-                        <div class="d-flex flex-column gap-3 p-2">
+                        <div class="d-flex flex-row flex-sm-column gap-3 p-2">
 
                             <img src="https://picsum.photos/140" alt="" class="img-raccolta">
-                            <h6 class="titolo-raccolta">Titolo1</h6>
-                            <p>Descrizione</p>
+                            <div class="d-flex flex-column flex-sm-row">
+                                <h6 class="titolo-raccolta">Titolo1</h6>
+                                <p>Descrizione</p>
+                            </div>
                         </div>
                     </div>
                     <div class="raccolta col ">
-                        <div class="d-flex flex-column gap-3 p-2">
+                        <div class="d-flex flex-row flex-sm-column gap-3 p-2">
 
                             <img src="https://picsum.photos/140" alt="" class="img-raccolta">
-                            <h6 class="titolo-raccolta">Titolo2</h6>
-                            <p>Descrizione</p>
+                            <div class="d-flex flex-column flex-sm-row">
+                                <h6 class="titolo-raccolta">Titolo2</h6>
+                                <p>Descrizione</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="raccolta col ">
-                        <div class="d-flex flex-column gap-3 p-2">
+                    <div class="raccolta col d-none d-md-block">
+                        <div class="d-flex flex-row flex-sm-column gap-3 p-2">
 
                             <img src="https://picsum.photos/140" alt="" class="img-raccolta">
-                            <h6 class="titolo-raccolta">Titolo3</h6>
-                            <p>Descrizione</p>
+                            <div class="d-flex flex-column flex-sm-row">
+                                <h6 class="titolo-raccolta">Titolo3</h6>
+                                <p>Descrizione</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="raccolta col ">
-                        <div class="d-flex flex-column gap-3 p-2">
+                    <div class="raccolta col d-none d-lg-block">
+                        <div class="d-flex flex-row flex-sm-column gap-3 p-2">
 
                             <img src="https://picsum.photos/140" alt="" class="img-raccolta">
-                            <h6 class="titolo-raccolta">Titolo4</h6>
-                            <p>Descrizione</p>
+                            <div class="d-flex flex-column flex-sm-row">
+                                <h6 class="titolo-raccolta">Titolo4</h6>
+                                <p>Descrizione</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="raccolta col ">
-                        <div class="d-flex flex-column gap-3 p-2">
+                    <div class="raccolta col d-none d-xl-block">
+                        <div class="d-flex flex-row flex-sm-column gap-3 p-2">
 
                             <img src="https://picsum.photos/140" alt="" class="img-raccolta">
-                            <h6 class="titolo-raccolta">Titolo5</h6>
-                            <p>Descrizione</p>
+                            <div class="d-flex flex-column flex-sm-row">
+                                <h6 class="titolo-raccolta">Titolo5</h6>
+                                <p>Descrizione</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="raccolta col ">
-                        <div class="d-flex flex-column gap-3 p-2">
+                    <div class="raccolta col d-none d-xl-block">
+                        <div class="d-flex flex-row flex-sm-column gap-3 p-2">
 
                             <img src="https://picsum.photos/140" alt="" class="img-raccolta">
-                            <h6 class="titolo-raccolta">Titolo6</h6>
-                            <p>Descrizione</p>
+                            <div class="d-flex flex-column flex-sm-row">
+                                <h6 class="titolo-raccolta">Titolo6</h6>
+                                <p>Descrizione</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-        
+
 
         </div>
 
@@ -274,8 +296,26 @@
         </div>
 
         </main>
-        
-        <div id="player-block" class="container-fluid fixed-bottom d-flex flex-row align-items-center justify-content-between text-white py-3">
+
+        <dix id="mini-player" class="d-block d-md-none">
+            <div class="mini-player-body d-flex align-items-center justify-content-around">
+
+                <img src="https://picsum.photos/30" alt="">
+                <span>Titolo canzone</span>
+                <i class="bi bi-music-player text-secondary"></i>
+                <i class="bi bi-heart ms-2"></i>
+                <i class="bi bi-play-fill"></i>
+            </div>
+        </dix>
+
+        <div id="nav-mobile" class="fixed-bottom">
+            <nav class="d-flex d-md-none mb-4 align-items-center row row-cols-3 mx-2 pt-2">
+                <a href="#" class="link-mobile text-decoration-none"><div class="d-flex flex-column align-items-center"><i class="icon-mobile bi bi-house-door-fill"></i> Home</div></a>
+                <a href="#" class="link-mobile text-decoration-none"><div class="d-flex flex-column align-items-center"><i class="icon-mobile bi bi-search"></i> Cerca</div></a>
+                <a href="#" class="link-mobile text-decoration-none"><div class="d-flex flex-column align-items-center"><i class="icon-mobile bi bi-square-half"></i> La tua libreria</div></a>
+            </nav>
+        </div>
+        <div id="player-block" class="container-fluid fixed-bottom d-none d-md-flex flex-row align-items-center justify-content-between text-white py-3">
             <div class="current-song d-flex align-items-center flex-row gap-2 col-2">
                 <img src="https://picsum.photos/70" alt="" class="album-img me-2">
                 <div class="song-artist d-flex flex-row flex-column">

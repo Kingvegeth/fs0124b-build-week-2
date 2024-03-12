@@ -11991,13 +11991,21 @@ body {
 #center-page {
   height: 100%;
   overflow-y: scroll;
-  max-height: 800px;
+  max-height: 850px;
+}
+
+.icon-salve {
+  font-size: 1.4em;
 }
 
 .raccolta div {
   background-color: #292929;
-  border-radius: 3px;
+  border-radius: 5px;
   overflow: hidden;
+}
+
+.img-raccolta {
+  border-radius: 5px;
 }
 
 .friend-img-container {
@@ -12013,6 +12021,46 @@ body {
 
 .close-friends {
   cursor: pointer;
+}
+
+#nav-mobile {
+  background: rgb(33, 33, 33);
+  background: linear-gradient(180deg, rgba(33, 33, 33, 0.5126436782) 0%, rgba(9, 9, 9, 0.7609195402) 32%, rgb(0, 0, 0) 68%);
+}
+#nav-mobile nav a {
+  font-size: 0.8em;
+  color: #b3b3b3;
+}
+
+.icon-mobile {
+  font-size: 1.7em;
+}
+
+.link-mobile {
+  cursor: pointer;
+}
+.link-mobile div:hover {
+  color: #fff;
+}
+
+#mini-player {
+  position: fixed;
+  bottom: 83px;
+  width: 100%;
+}
+#mini-player .mini-player-body {
+  width: 95%;
+  margin: 0 auto;
+  padding: 15px 5px;
+  border-radius: 7px;
+  color: #fff;
+  background-color: rgb(40, 40, 40);
+}
+#mini-player .mini-player-body img {
+  border-radius: 50%;
+}
+#mini-player .mini-player-body .bi-play-fill {
+  font-size: 1.5em;
 }
 
 #player-block {
@@ -12102,11 +12150,6 @@ input[type=range]::-moz-range-thumb {
   border: 1px solid #fff;
   /*  slider progress trick  */
   box-shadow: -407px 0 0 400px #fff;
-}
-
-.raccolta {
-  flex: 0 0 calc(33.33% - 10px);
-  margin-right: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */

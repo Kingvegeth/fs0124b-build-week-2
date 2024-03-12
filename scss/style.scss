@@ -195,17 +195,26 @@ body{
 #center-page{
     height: 100%;
     overflow-y: scroll;
-    max-height: 800px;
-    
+    max-height: 850px;
+
 }
 
+.icon-salve{
+    font-size: 1.4em;
+}
 
 .raccolta{
      div{
         background-color: $light-background;
-        border-radius: 3px;
+        border-radius: 5px;
         overflow: hidden;
     }
+}
+
+.img-raccolta{
+    
+    border-radius: 5px;
+   
 }
 
 
@@ -227,6 +236,54 @@ body{
     cursor: pointer;
 }
 
+#nav-mobile {
+
+    background: rgb(33,33,33);
+background: linear-gradient(180deg, rgba(33,33,33,0.5126436781609196) 0%, rgba(9,9,9,0.7609195402298851) 32%, rgba(0,0,0,1) 68%);
+    nav{
+        a{
+
+            font-size: 0.8em;
+            color: $secondary;
+        }
+    }
+}
+.icon-mobile{
+    font-size: 1.7em;
+}
+
+.link-mobile{
+    cursor: pointer;
+    div{
+
+        &:hover{
+            color: #fff;
+        }
+    }
+}
+
+#mini-player{
+    position: fixed;
+    bottom: 83px;
+    width:  100%;
+    .mini-player-body{
+        width: 95%;
+        margin: 0 auto;
+        padding: 15px 5px;
+
+        border-radius: 7px;
+
+        color: #fff;
+        background-color: rgba(40,40,40,255);
+
+        img{
+            border-radius: 50%;
+        }
+        .bi-play-fill{
+            font-size: 1.5em;
+        }
+    }
+}
 
 #player-block{
 
