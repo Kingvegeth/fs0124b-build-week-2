@@ -1,6 +1,6 @@
 @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 body {
-  /** background-color: $background; **/
+  background-color: #212121;
   box-sizing: border-box;
 }
 
@@ -29,59 +29,6 @@ body {
   border-radius: 50%;
   padding: 5px;
   cursor: pointer;
-}
-
-.img-back {
-  background-color: #c7ab46;
-  width: 100%;
-  height: 100%;
-}
-
-.avatar {
-  width: 20px;
-  border-radius: 50% 50% 50% 50%;
-}
-
-@media screen and (max-width: 767px) {
-  .img-info {
-    width: 50%;
-  }
-}
-@media screen and (min-width: 768px) {
-  .img-info {
-    width: 100%;
-  }
-}
-
-.svg-pointer:hover {
-  cursor: pointer;
-  transform: scale(1.02);
-}
-
-.gradient {
-  background-color: #0A0905;
-}
-@media screen and (min-width: 768px) {
-  .gradient {
-    background: rgb(18, 18, 18);
-    background: linear-gradient(0deg, rgb(18, 18, 18) 35%, rgb(18, 18, 18) 58%, rgba(0, 0, 0, 0.5075280112) 99%);
-  }
-}
-
-.riproductions {
-  width: 130px;
-  color: #93928C;
-}
-
-.gray-color {
-  color: #93928C;
-}
-
-@media screen and (max-width: 767px) {
-  .test {
-    background: rgb(18, 18, 18);
-    background: linear-gradient(0deg, rgb(18, 18, 18) 3%, rgb(18, 18, 18) 8%, rgb(2, 2, 2) 11%, rgba(0, 0, 0, 0.5075280112) 49%);
-  }
 }
 
 /*# sourceMappingURL=style.css.map */
