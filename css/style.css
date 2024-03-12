@@ -11846,6 +11846,7 @@ textarea.form-control-lg {
 }
 body {
   background: linear-gradient(180deg, rgb(33, 33, 33) 0%, rgb(18, 18, 18) 100%);
+  overflow: hidden;
 }
 
 * {
@@ -11869,10 +11870,15 @@ body {
 }
 
 #section-left {
+  font-size: 0.8em;
+  font-weight: bold;
   border-right: 2px solid black;
 }
 #section-left a {
   color: inherit;
+}
+#section-left a i {
+  font-size: 1.5em;
 }
 
 .hide-adv {
@@ -11893,6 +11899,7 @@ body {
 
 #nav-left i {
   margin-right: 10px;
+  font-size: 1.2em;
 }
 
 #left-links .left-link {
@@ -11941,7 +11948,7 @@ body {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: black;
+  background: none;
 }
 
 /* Handle */
@@ -11991,6 +11998,21 @@ body {
   background-color: #292929;
   border-radius: 3px;
   overflow: hidden;
+}
+
+.friend-img-container {
+  overflow: hidden;
+  height: fit-content;
+  border-radius: 50%;
+}
+
+.friend-text p {
+  font-size: 0.7em;
+  margin-block: 0;
+}
+
+.close-friends {
+  cursor: pointer;
 }
 
 #player-block {
