@@ -95,4 +95,22 @@ body {
   background: linear-gradient(0deg, rgba(17, 17, 17, 0.2) 10%, rgba(17, 17, 17, 0.2) 30%, rgba(33, 33, 33, 0.2) 77%, rgba(33, 33, 33, 0.2) 93%);
 }
 
+.order1 {
+  order: 1;
+}
+@media screen and (mix-width: 992px) {
+  .order1 {
+    order: 2;
+  }
+}
+
+.order2 {
+  order: 2;
+}
+@media screen and (min-width: 992px) {
+  .order2 {
+    order: 1;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
