@@ -9,7 +9,8 @@
   "scripts": {
     "compile": "sass scss/style.scss css/style.css -w",
     "album": "sass scss/album.scss css/album.css -w",
-    "artist": "sass scss/artist.scss css/artist.css -w"
+    "artist": "sass scss/artist.scss css/artist.css -w",
+    "search": "sass scss/search.scss css/search.css -w"
   },
   "author": "",
   "license": "ISC",
