@@ -8,7 +8,8 @@
   "main": "index.js",
   "scripts": {
     "compile": "sass scss/style.scss css/style.css -w",
-    "album": "sass scss/album.scss css/album.css -w"
+    "album": "sass scss/album.scss css/album.css -w",
+    "artist": "sass scss/artist.scss css/artist.css -w"
   },
   "author": "",
   "license": "ISC",
