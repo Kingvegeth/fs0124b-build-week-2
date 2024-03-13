@@ -11963,10 +11963,6 @@ textarea.form-control-lg {
   background-color: #353535;
 }
 
-.song-title:hover {
-  text-decoration: underline;
-}
-
 .song-view,
 .song-minutes {
   opacity: 0.7;
@@ -12093,7 +12089,7 @@ textarea.form-control-lg {
 }
 
 .gray-color {
-  color: #c1c2c5;
+  opacity: 0.7;
 }
 
 @media screen and (max-width: 767px) {
@@ -12101,6 +12097,10 @@ textarea.form-control-lg {
     background: rgb(18, 18, 18);
     background: linear-gradient(0deg, rgb(18, 18, 18) 3%, rgb(18, 18, 18) 8%, rgb(2, 2, 2) 11%, rgba(0, 0, 0, 0.5075280112) 49%);
   }
+}
+
+.number-track {
+  width: 10px;
 }
 
 body {

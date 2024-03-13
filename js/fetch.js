@@ -107,17 +107,21 @@ export function singleAlbum(album) {
       
       //popolazione header
 
-      //let albumTitle = document.querySelector('.album-album');
-      //console.log(albumTitle);
-      //albumTitle.innerText = albumSong.title;
+
+      let bigImage = document.querySelector('.img-info');
+      bigImage.src = albumSong.cover_xl;
+      let avatarImage = document.querySelector('.avatar');
+      avatarImage.src = albumSong.artist.picture_small;
+      let albumTitle = document.querySelector('.album-album');
+      albumTitle.innerText = albumSong.title;
       let artistName = document.querySelector('.artist-name-album');
       artistName.innerText = albumSong.artist.name;
       let albumYear = document.querySelector('.album-date');
       albumYear.innerText = albumSong.release_date.substring(0,4);
       let trackNumber = document.querySelector('.track-number');
-      trackNumber.innerText = albumSong.nb_tracks;
+      trackNumber.innerText = albumSong.nb_tracks + " brani";
       let totalTime = document.querySelector('.total-time');
-      totalTime.innerText = goodTime(albumSong.duration);
+      totalTime.innerText = longTime(albumSong.duration);
 
       
       //popolazione tracklist
@@ -156,8 +160,18 @@ export function singleAlbum(album) {
     return (m < 10 ? "0" + m : m) + ":" + (s < 10 ? "0" + s : s);
 }
 
-
-
+function longTime(e) {
+  let m = 0;
+  let s = 0;
+  for (let i = 0; i < e; i++) {
+      s++;
+      if (s >= 60) {
+          m++;
+          s = 0;
+      }
+  }
+  return (m < 10 ? "0" + m : m) + " minuti " + (s < 10 ? "0" + s : s) + " secondi";
+}
 
 
 

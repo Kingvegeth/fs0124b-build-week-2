@@ -54,3 +54,4 @@ pageContainer.appendChild(templateHome)
                   pageContainer.innerHTML = '';
                   pageContainer.appendChild(templateHome)
                 })
+

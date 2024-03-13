@@ -81,7 +81,7 @@
 }
 
 .gray-color {
-    color: $gray-color;
+    opacity: 0.7;
 }
 
 .test {
@@ -93,4 +93,8 @@
                 rgba(2, 2, 2, 1) 11%,
                 rgba(0, 0, 0, 0.5075280112044818) 49%);
     }
+}
+
+.number-track{
+    width: 10px;
 }
