@@ -1,3 +1,5 @@
+import { generaTraccia } from "./template.js";
+
 const apiUrl = "https://striveschool-api.herokuapp.com/api/deezer/album/";
 
 let albumTest = 'album/51001312'
@@ -21,11 +23,8 @@ let homepageAlbums = [
   14880659,
   51001312]
 
-
-
-
-
-
+  
+  
 
 
   
@@ -87,8 +86,77 @@ function singleSong (album, index){
 
 
 }
-
 singleSong(214959662,0)
+
+
+export function singleAlbum(album) {
+  
+  fetch((apiUrl + album),
+  {
+    method: "GET",
+    headers: {
+      "Content-type": "application/json",
+    },
+  })
+  .then((res) => res.json())
+    .then((albumSong) => {
+
+      displayTracks(albumSong)
+
+    });
+
+
+}
+
+function displayTracks(tracce){
+  
+  tracce.tracks.data.forEach(el => {
+    let templateTracks = generaTraccia()
+    let tracksContainer = document.querySelector('#album-songs');
+    
+    //console.log(el);
+    
+    
+    let numero = templateTracks.querySelector('.number-track')
+    //numero.innerText = i
+    
+
+    
+    let titolo = templateTracks.querySelector('.songs-album')
+    titolo.innerText = el.title
+
+    let durata = templateTracks.querySelector('.song-time')
+    durata.innerText = el.duration
+
+    console.log(artista);
+  
+
+    tracksContainer.appendChild(templateTracks)
+    console.log(templateTracks);
+
+    i++
+  })
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -5,3 +5,9 @@ export function generaClone(pageToLoad) {
   nuovoNodo.innerHTML = template.innerHTML;
   return nuovoNodo;
 }
+
+export function generaTraccia(){
+  let template = document.querySelector('#album-track')
+  let clone = template.content.cloneNode(true)
+  return clone
+}

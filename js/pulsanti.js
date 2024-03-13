@@ -1,5 +1,5 @@
 import {generaClone} from "./template.js";
-
+import { singleAlbum } from "./fetch.js";
 
 let templateHome = generaClone("#home-page");
 let templateAlbum = generaClone('#album-page');
@@ -41,6 +41,7 @@ pageContainer.appendChild(templateHome)
                 albumPageBtn.addEventListener('click', function(){
                   pageContainer.innerHTML = '';
                   pageContainer.appendChild(templateAlbum)
+                  singleAlbum(214959662)
                 })
 
                 let homePageBtn1 = document.querySelector('#homepage-bnt-top')
