@@ -24,6 +24,9 @@ body {
   align-items: center;
   justify-content: center;
 }
+.icon-play:hover {
+  scale: 1.1;
+}
 
 .bi-play-fill {
   font-size: 30px;
@@ -42,6 +45,17 @@ body {
   height: fit-content;
   cursor: pointer;
   border-radius: 3px;
+}
+.following:hover, .follow-mobile:hover {
+  scale: 1.1;
+}
+
+.dots {
+  opacity: 0.7;
+}
+.dots:hover {
+  opacity: 1;
+  scale: 1.1;
 }
 
 .cuore {
@@ -84,6 +98,45 @@ body {
   .order2 {
     order: 1;
   }
+}
+
+.song-bar:hover {
+  background-color: #353535;
+}
+.song-bar:hover .song-view {
+  opacity: 1;
+}
+.song-bar:hover .icons-disappering {
+  opacity: 0.5;
+}
+.song-bar:hover .icons-disappering:hover {
+  opacity: 1;
+  scale: 1.1;
+}
+
+.icons-disappering {
+  opacity: 0;
+}
+
+.likes-background:hover {
+  background-color: #353535;
+}
+
+.song-title:hover {
+  text-decoration: underline;
+}
+
+.song-view,
+.song-minutes {
+  opacity: 0.7;
+}
+
+.see-more {
+  font-weight: bold;
+  opacity: 0.7;
+}
+.see-more:hover {
+  opacity: 1;
 }
 
 /*# sourceMappingURL=artist.css.map */
