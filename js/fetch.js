@@ -107,17 +107,25 @@ export function singleAlbum(album) {
       
       //popolazione header
 
-      //let albumTitle = document.querySelector('.album-album');
-      //console.log(albumTitle);
-      //albumTitle.innerText = albumSong.title;
+      let albumTitle = document.querySelector('.album-album');
+      albumTitle.innerText = albumSong.title;
       let artistName = document.querySelector('.artist-name-album');
       artistName.innerText = albumSong.artist.name;
       let albumYear = document.querySelector('.album-date');
       albumYear.innerText = albumSong.release_date.substring(0,4);
+      let trackNumber = document.querySelector('.track-number');
+      trackNumber.innerText = albumSong.nb_tracks + " brani";
+      let totalTime = document.querySelector('.total-time');
+      totalTime.innerText = goodTime(albumSong.duration);
+      let albumCover = document.querySelector('.img-info');
+      albumCover.src = albumSong.cover_xl;
+      let artistAvatar = document.querySelector('.avatar');
+      artistAvatar.src = albumSong.artist.picture_small;
 
       
       //popolazione tracklist
-      albumSong.tracks.data.forEach(el => {
+      
+      albumSong.tracks.data.forEach((el,i) => {
         let templateTracks = generaTraccia();
 
         let titolo = templateTracks.querySelector('.title-track');
@@ -128,6 +136,7 @@ export function singleAlbum(album) {
         durata.innerText = goodTime(el.duration) ;
         let reproductions = templateTracks.querySelector('.reproductions');
         reproductions.innerText = el.rank;
+        let trackNumber = templateTracks
 
 
         document.querySelector('#album-songs').appendChild(templateTracks);
