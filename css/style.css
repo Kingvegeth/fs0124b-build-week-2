@@ -4,6 +4,7 @@
  * Copyright 2011-2024 The Bootstrap Authors
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 :root,
 [data-bs-theme=light] {
   --bs-blue: #0d6efd;
@@ -11844,6 +11845,264 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.img-back {
+  background-color: #c7ab46;
+  width: 100%;
+  height: 100%;
+}
+
+.avatar {
+  width: 25px;
+  aspect-ratio: 1;
+}
+
+.img-info {
+  box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.5);
+}
+@media screen and (max-width: 767px) {
+  .img-info {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .img-info {
+    width: 100%;
+  }
+}
+
+.player-fill {
+  color: #1ed760;
+  font-size: 40px;
+}
+
+.heart-icon {
+  font-size: 25px;
+}
+
+.download {
+  font-size: 25px;
+}
+
+.vertical-dot {
+  font-size: 25px;
+}
+
+.shuffle {
+  font-size: 25px;
+}
+
+.svg-pointer {
+  border-radius: 50%;
+  text-align: center;
+  vertical-align: middle;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.svg-pointer:hover {
+  scale: 1.1;
+}
+
+.gradient {
+  background-color: #0a0905;
+}
+@media screen and (min-width: 768px) {
+  .gradient {
+    background: rgb(18, 18, 18);
+    background: linear-gradient(0deg, rgb(18, 18, 18) 35%, rgb(18, 18, 18) 58%, rgba(0, 0, 0, 0.5075280112) 99%);
+  }
+}
+
+.reproductions {
+  width: 130px;
+  color: #c1c2c5;
+}
+
+.gray-color {
+  color: #c1c2c5;
+}
+
+@media screen and (max-width: 767px) {
+  .test {
+    background: rgb(18, 18, 18);
+    background: linear-gradient(0deg, rgb(18, 18, 18) 3%, rgb(18, 18, 18) 8%, rgb(2, 2, 2) 11%, rgba(0, 0, 0, 0.5075280112) 49%);
+  }
+}
+
+.artist-header {
+  height: 400px;
+}
+
+.artist-name {
+  font-size: 70px;
+  font-weight: 700;
+}
+
+.icon-play {
+  background-color: #1ed760;
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  text-align: center;
+  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon-play:hover {
+  scale: 1.1;
+}
+
+.bi-play-fill {
+  font-size: 30px;
+  vertical-align: middle;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #131313;
+}
+
+.following, .follow-mobile {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+  height: fit-content;
+  cursor: pointer;
+  border-radius: 3px;
+}
+.following:hover, .follow-mobile:hover {
+  scale: 1.1;
+}
+
+.dots {
+  opacity: 0.7;
+}
+.dots:hover {
+  opacity: 1;
+  scale: 1.1;
+}
+
+.cuore {
+  font-size: 10px;
+}
+
+.container-cuore {
+  height: 20px;
+  width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gradient {
+  height: 100vh;
+  background: rgb(18, 18, 18);
+  background: linear-gradient(0deg, rgb(18, 18, 18) 35%, rgb(18, 18, 18) 58%, rgba(0, 0, 0, 0.5075280112) 99%);
+  background-color: #686867;
+}
+
+.follow-mobile {
+  background: rgb(17, 17, 17);
+  background: linear-gradient(0deg, rgba(17, 17, 17, 0.2) 10%, rgba(17, 17, 17, 0.2) 30%, rgba(33, 33, 33, 0.2) 77%, rgba(33, 33, 33, 0.2) 93%);
+}
+
+.order1 {
+  order: 1;
+}
+@media screen and (mix-width: 992px) {
+  .order1 {
+    order: 2;
+  }
+}
+
+.order2 {
+  order: 2;
+}
+@media screen and (min-width: 992px) {
+  .order2 {
+    order: 1;
+  }
+}
+
+.song-bar:hover {
+  background-color: #353535;
+}
+.song-bar:hover .song-view {
+  opacity: 1;
+}
+.song-bar:hover .icons-disappering {
+  opacity: 0.5;
+}
+.song-bar:hover .icons-disappering:hover {
+  opacity: 1;
+  scale: 1.1;
+}
+
+.icons-disappering {
+  opacity: 0;
+}
+
+.likes-background:hover {
+  background-color: #353535;
+}
+
+.song-title:hover {
+  text-decoration: underline;
+}
+
+.song-view,
+.song-minutes {
+  opacity: 0.7;
+}
+
+.see-more {
+  font-weight: bold;
+  opacity: 0.7;
+}
+.see-more:hover {
+  opacity: 1;
+}
+
+.search-card {
+  background-color: red;
+  overflow: hidden;
+  height: 100px;
+  cursor: pointer;
+}
+@media screen and (max-width: 575px) {
+  .search-card {
+    margin: 5px;
+    flex: 0 0 calc(50% - 10px);
+  }
+}
+@media screen and (min-width: 576px) {
+  .search-card {
+    margin: 5px;
+    flex: 0 0 calc(25% - 10px);
+  }
+}
+@media screen and (min-width: 768px) {
+  .search-card {
+    margin: 5px;
+    flex: 0 0 calc(16.6666666667% - 10px);
+  }
+}
+
+#cerca-icon {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.search-container, #input-search {
+  background-color: #292929;
+}
+
+.img-search {
+  transform: translate(30px, 40%) rotate(35deg);
+}
+
 body {
   background: linear-gradient(180deg, rgb(33, 33, 33) 0%, rgb(18, 18, 18) 100%);
   overflow: hidden;

@@ -1,15 +1,12 @@
-$success: #1ED760;
-$secondary: #b3b3b3;
-$dark: #000;
-
+@import './partials/colors';
 @import '../node_modules/bootstrap/scss/bootstrap.scss';
+@import './partials/album';
+@import './partials/artist';
+@import './partials/search';
 
 
 
-$background: #121212;
-$medium-background:#131313;
-$mid-background:#272727;
-$light-background: #292929;
+
 
 body{
     background: linear-gradient(180deg, rgba(33,33,33,1) 0%, rgba(18,18,18,1) 100%);

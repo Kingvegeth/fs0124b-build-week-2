@@ -1,13 +1,7 @@
 @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
-$dark-background: #121212;
-$yellow-background: #c7ab46;
-$gray-color: #c1c2c5;
-$green-button: #1ed760;
 
-body {
-    background-color: $dark-background;
-}
+
 
 .img-back {
     background-color: $yellow-background;
@@ -17,8 +11,8 @@ body {
 }
 
 .avatar {
-    width: 25px;
-    
+    width: 25px ;
+    aspect-ratio: 1 ;
 }
 
 .img-info {
