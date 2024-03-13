@@ -12085,6 +12085,10 @@ body {
   width: 40%;
 }
 
+.song-artist {
+  min-width: 150px;
+}
+
 .progresso input {
   width: 100%;
   height: 5px;
@@ -12093,6 +12097,10 @@ body {
 .volume input {
   width: 60%;
   height: 5px;
+}
+
+.volume-right {
+  min-width: 150px;
 }
 
 .navigation-button {
