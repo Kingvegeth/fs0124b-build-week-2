@@ -89,8 +89,9 @@ function singleSong (album, index){
 singleSong(214959662,0)
 
 
+
 export function singleAlbum(album) {
-  
+
   fetch((apiUrl + album),
   {
     method: "GET",
@@ -98,49 +99,60 @@ export function singleAlbum(album) {
       "Content-type": "application/json",
     },
   })
-  .then((res) => res.json())
-    .then((albumSong) => {
+  .then((res) => {
 
-      displayTracks(albumSong)
+    console.log(res);
 
-    });
-
-
-}
-
-function displayTracks(tracce){
-  
-  tracce.tracks.data.forEach(el => {
-    let templateTracks = generaTraccia()
-    let tracksContainer = document.querySelector('#album-songs');
-    
-    //console.log(el);
-    
-    
-    let numero = templateTracks.querySelector('.number-track')
-    //numero.innerText = i
-    
-
-    
-    let titolo = templateTracks.querySelector('.songs-album')
-    titolo.innerText = el.title
-
-    let durata = templateTracks.querySelector('.song-time')
-    durata.innerText = el.duration
-
-    console.log(artista);
-  
-
-    tracksContainer.appendChild(templateTracks)
-    console.log(templateTracks);
-
-    i++
+            if (!res.ok) throw new Error("Errore");
+    return res.json();
   })
+    .then((albumSong) => {
+      
+      //popolazione header
 
+      //let albumTitle = document.querySelector('.album-album');
+      //console.log(albumTitle);
+      //albumTitle.innerText = albumSong.title;
+      let artistName = document.querySelector('.artist-name-album');
+      artistName.innerText = albumSong.artist.name;
+      let albumYear = document.querySelector('.album-date');
+      albumYear.innerText = albumSong.release_date.substring(0,4);
+
+      
+      //popolazione tracklist
+      albumSong.tracks.data.forEach(el => {
+        let templateTracks = generaTraccia();
+
+        let titolo = templateTracks.querySelector('.title-track');
+        titolo.innerText = el.title;
+        let artista = templateTracks.querySelector('.artist-track');
+        artista.innerText = el.artist.name;
+        let durata = templateTracks.querySelector('.song-time');
+        durata.innerText = goodTime(el.duration) ;
+        let reproductions = templateTracks.querySelector('.reproductions');
+        reproductions.innerText = el.rank;
+
+
+        document.querySelector('#album-songs').appendChild(templateTracks);
+
+
+      });
+    }).catch((error) => new Error(error));
+  }
+
+
+  function goodTime(e) {
+    let m = 0;
+    let s = 0;
+    for (let i = 0; i < e; i++) {
+        s++;
+        if (s >= 60) {
+            m++;
+            s = 0;
+        }
+    }
+    return (m < 10 ? "0" + m : m) + ":" + (s < 10 ? "0" + s : s);
 }
-
-
-
 
 
 
