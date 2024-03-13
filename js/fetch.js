@@ -114,10 +114,14 @@ export function singleAlbum(album) {
       artistName.innerText = albumSong.artist.name;
       let albumYear = document.querySelector('.album-date');
       albumYear.innerText = albumSong.release_date.substring(0,4);
+      let trackNumber = document.querySelector('.track-number');
+      trackNumber.innerText = albumSong.nb_tracks;
+      let totalTime = document.querySelector('.total-time');
+      totalTime.innerText = goodTime(albumSong.duration);
 
       
       //popolazione tracklist
-      albumSong.tracks.data.forEach(el => {
+      albumSong.tracks.data.forEach((el,i) => {
         let templateTracks = generaTraccia();
 
         let titolo = templateTracks.querySelector('.title-track');
@@ -128,7 +132,8 @@ export function singleAlbum(album) {
         durata.innerText = goodTime(el.duration) ;
         let reproductions = templateTracks.querySelector('.reproductions');
         reproductions.innerText = el.rank;
-
+        let trackNumber = templateTracks.querySelector('.number-track');
+        trackNumber.innerText = i+1;
 
         document.querySelector('#album-songs').appendChild(templateTracks);
 
