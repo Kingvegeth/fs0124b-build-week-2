@@ -2,6 +2,8 @@ const apiUrl = "https://striveschool-api.herokuapp.com/api/deezer/";
 
 let albumTest = 'album/75622562'
 
+let randomAlbum = "https://striveschool-api.herokuapp.com/api/deezer/album/75622562"
+
 import {generaClone} from "./template.js";
 
 
@@ -14,38 +16,14 @@ let pageContainer = document.querySelector('#center-page');
 pageContainer.appendChild(templateHome)
 
 
-let searchPage1 = document.querySelector('#search-btn-top')
-searchPage1.addEventListener('click', function(){
-  pageContainer.innerHTML = ''
-  pageContainer.appendChild(templateSearch)
-})
-
-let albumPageBtn = document.querySelector('#album-toggle')
-albumPageBtn.addEventListener('click', function(){
-  pageContainer.innerHTML = '';
-  pageContainer.appendChild(templateAlbum)
-})
-
-let homePageBtn1 = document.querySelector('#homepage-bnt-top')
-homePageBtn1.addEventListener('click', function(){
-  pageContainer.innerHTML = '';
-  pageContainer.appendChild(templateHome) 
-})
-let homePageBtn2 = document.querySelector('#homepage-bnt-bottom')
-homePageBtn2.addEventListener('click', function(){
-  pageContainer.innerHTML = '';
-  pageContainer.appendChild(templateHome)
-})
-
 
 //test della fetch
 function fetcher(folder) {
 
-    divFinto = document.querySelector('#div-finto')
-    titoloFinto = document.querySelector('.nome-finto')
-    albumFinto = document.querySelector('.album-finto')
-    tracciaFinta = document.querySelector('.traccia-finta')
-    imgFinta = document.querySelector('.cover-finta')
+    
+   let artist = document.querySelector('.song-artist')
+   let album = document.querySelector('.song-album')
+   let cover = document.querySelector('.song-image')
 
   fetch((apiUrl + folder),
     {
@@ -57,11 +35,16 @@ function fetcher(folder) {
       .then((res) => res.json())
       .then((album) => {
         console.log(album);
-        titoloFinto.innerText = album.title
-        tracciaFinta.innerText = album.tracks.data[0].title
-        imgFinta.src = album.cover_medium
+        artist.innerText = artist.name
+        album.innerText = album.title
+        cover.src = album.cover_medium
       });
 }
+
+fetcher(albumTest)
+
+
+
 
 
 

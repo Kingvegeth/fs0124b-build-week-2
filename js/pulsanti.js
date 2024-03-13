@@ -17,3 +17,27 @@
                     sectionCenter.classList.remove('col-lg-8')
                     sectionCenter.classList.add('col-lg-10')
             })
+
+
+                let searchPage1 = document.querySelector('#search-btn-top')
+                searchPage1.addEventListener('click', function(){
+                  pageContainer.innerHTML = ''
+                  pageContainer.appendChild(templateSearch)
+                })
+                
+                let albumPageBtn = document.querySelector('#album-toggle')
+                albumPageBtn.addEventListener('click', function(){
+                  pageContainer.innerHTML = '';
+                  pageContainer.appendChild(templateAlbum)
+                })
+                
+                let homePageBtn1 = document.querySelector('#homepage-bnt-top')
+                homePageBtn1.addEventListener('click', function(){
+                  pageContainer.innerHTML = '';
+                  pageContainer.appendChild(templateHome) 
+                })
+                let homePageBtn2 = document.querySelector('#homepage-bnt-bottom')
+                homePageBtn2.addEventListener('click', function(){
+                  pageContainer.innerHTML = '';
+                  pageContainer.appendChild(templateHome)
+                })
