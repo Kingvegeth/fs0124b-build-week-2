@@ -23,15 +23,12 @@ let homepageAlbums = [
   14880659,
   51001312]
 
-  
-  
 
 
   
-
-
-let albumContainer = document.querySelectorAll('.home-album')
-albumContainer.forEach((el,i) =>{
+  
+  let albumContainer = document.querySelectorAll('.home-album')
+  albumContainer.forEach((el,i) =>{
   
   let artist = el.querySelector('.song-artist')
   let disco = el.querySelector('.song-album')
