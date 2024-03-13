@@ -1,18 +1,15 @@
 import {generaClone} from "./template.js";
 import { singleAlbum } from "./fetch.js";
 
-let templateHome = generaClone("#home-page");
-let templateAlbum = generaClone('#album-page');
-let templateSearch = generaClone('#search-page')
 
-let pageContainer = document.querySelector('#center-page');
-
-pageContainer.appendChild(templateHome)
-
-
-            
-            //pulsante che mostra e nasconde la lista amici
-            let friendsToggle = document.getElementById('friendlist-toggle');
+function homePage(){
+  return new Promise ((resolve) => {
+    let templateHome = generaClone("#home-page");
+    let templateAlbum = generaClone('#album-page');
+    let templateSearch = generaClone('#search-page')
+    let pageContainer = document.querySelector('#center-page');
+    pageContainer.appendChild(templateHome)
+    let friendsToggle = document.getElementById('friendlist-toggle');
             let sectionRight = document.getElementById('section-right');
             let sectionCenter = document.getElementById('central-container');
 
@@ -54,4 +51,15 @@ pageContainer.appendChild(templateHome)
                   pageContainer.innerHTML = '';
                   pageContainer.appendChild(templateHome)
                 })
+    resolve('resolved!');
+  });
+}
 
+export async function centerHome(){
+  try {
+  const result = await homePage();
+  console.log(result);
+  } catch (error){
+    console.error("Errore durante l'aggiunta della homePage:", error);
+  }
+}
