@@ -10,10 +10,12 @@ body {
 }
 
 .avatar {
-  width: 20px;
-  border-radius: 50% 50% 50% 50%;
+  width: 25px;
 }
 
+.img-info {
+  box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.5);
+}
 @media screen and (max-width: 767px) {
   .img-info {
     width: 50%;
@@ -46,9 +48,17 @@ body {
   font-size: 25px;
 }
 
+.svg-pointer {
+  border-radius: 50%;
+  text-align: center;
+  vertical-align: middle;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
 .svg-pointer:hover {
-  cursor: pointer;
-  transform: scale(1.02);
+  scale: 1.1;
 }
 
 .gradient {
