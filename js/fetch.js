@@ -1,4 +1,5 @@
 import { generaTraccia } from "./template.js";
+import { centerHome } from "./pulsanti.js";
 
 const apiUrl = "https://striveschool-api.herokuapp.com/api/deezer/album/";
 
@@ -23,7 +24,7 @@ let homepageAlbums = [
   14880659,
   51001312]
 
-
+centerHome()
 
   
   
