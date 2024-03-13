@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="icon" sizes="32x32" type="image/png" href="https://open.spotifycdn.com/cdn/images/favicon32.b64ecc03.png">
-    -album>Spotify<-album>
+    <title>Spotify</title>
 </head>
 <body>
     
@@ -170,7 +170,7 @@
                 <a href="#" class="link-mobile text-decoration-none"><div class="d-flex flex-column align-items-center"><i class="icon-mobile bi bi-square-half"></i> La tua libreria</div></a>
             </nav>
         </div>
-        <div id="player-block" class="container-fluid fixed-bottom d-none d-md-flex flex-row align-items-center justify-content-between text-white py-3">
+        <div id="player-block" class="container-fluid fixed-bottom d-none d-md-flex flex-row align-items-center justify-content-between text-white py-2">
             <div class="current-song d-flex align-items-center flex-row col-2">
                 <img src="https://picsum.photos/70" alt="" class="album-img me-2">
                 <div class="song-artist d-flex flex-row flex-column">
@@ -220,15 +220,15 @@
             
             
             
-            <div id="adv-card" class=" flex-row justify-content-between p-3 d-none d-sm-flex overflow-x-hidden">
+            <div id="adv-card" class=" flex-row justify-content-between p-3 d-none d-sm-flex">
                 <div class="adv-left d-flex flex-row gap-3 align-items-center">
                     <img src="https://picsum.photos/100" alt="" class="big-img">
                     <div class="adv-text">
-                        <p class="adv-album">ALBUM</p>
-                        <h2>Titolo canzone</h2>
+                        <p>ALBUM</p>
+                        <h2 class="song-title">Titolo canzone</h2>
                         <div>
-                            <p>Autore</p>
-                            <p>Ascolta il nuovo singolo di</p>
+                            <p class="song-artist">Autore</p>
+                            <p class="song-artist-adv">Ascolta il nuovo singolo di </p>
                         </div>
                         <div id="adv-buttons" class="d-flex gap-3 align-items-center">
                             <button class="btn btn-success text-black fw-bold">Play</button>
@@ -240,13 +240,7 @@
                 <button class="btn hide-adv  fw-bold px-3 end-50">NASCONDI ANNUNCI</button>
             </div>
             
-            <div id="div-finto">
-                <h1 class="id-finto"></h1>
-                <h2 class="nome-finto"></h2>
-                <p class="album-finto"></p>
-                <p class="traccia-finta"></p>
-                <img src="" alt="" class="cover-finta">
-            </div>
+
 
             <div id="buonasera" class="container-fluid my-3 px-0">
                     <div class="d-flex align-items-center justify-content-between mb-3">
@@ -261,56 +255,56 @@
                     <div class="raccolta col ">
                         <div class="d-flex gap-1 gap-sm-3 align-items-center">
 
-                            <img src="https://picsum.photos/70" alt="" class="img-raccolta">
-                            <h6 class="titolo-raccolta">Titolo1</h6>
+                            <img src="./assets/imgs/main/image-10.jpg" alt="" class="img-raccolta img-hello">
+                            <h6 class="titolo-raccolta">Operazione Buonumore!</h6>
                         </div>
                     </div>
                     <div class="raccolta col ">
                         <div class="d-flex gap-1 gap-sm-3 align-items-center">
 
-                            <img src="https://picsum.photos/70" alt="" class="img-raccolta">
-                            <h6 class="titolo-raccolta">Titolo2</h6>
+                            <img src="./assets/imgs/main/image-15.jpg" alt="" class="img-raccolta img-hello">
+                            <h6 class="titolo-raccolta">Casa dolce casa</h6>
                         </div>
                     </div>
                     <div class="raccolta col ">
                         <div class="d-flex gap-1 gap-sm-3 align-items-center">
 
-                            <img src="https://picsum.photos/70" alt="" class="img-raccolta">
-                            <h6 class="titolo-raccolta">Titolo3</h6>
+                            <img src="./assets/imgs/main/image-6.jpg" alt="" class="img-raccolta img-hello">
+                            <h6 class="titolo-raccolta">Jazz Vibes</h6>
                         </div>
                     </div>
                     <div class="raccolta col ">
                         <div class="d-flex gap-1 gap-sm-3 align-items-center">
 
-                            <img src="https://picsum.photos/70" alt="" class="img-raccolta">
-                            <h6 class="titolo-raccolta">Titolo4</h6>
+                            <img src="./assets/imgs/main/image-16.jpg" alt="" class="img-raccolta img-hello">
+                            <h6 class="titolo-raccolta">Lavorare da Casa</h6>
                         </div>
                     </div>
                     <div class="raccolta col ">
                         <div class="d-flex gap-1 gap-sm-3 align-items-center">
 
-                            <img src="https://picsum.photos/70" alt="" class="img-raccolta">
-                            <h6 class="titolo-raccolta">Titolo5</h6>
+                            <img src="./assets/imgs/main/image-19.jpg" alt="" class="img-raccolta img-hello">
+                            <h6 class="titolo-raccolta">Street Culto</h6>
                         </div>
                     </div>
                     <div class="raccolta col ">
                         <div class="d-flex gap-1 gap-sm-3 align-items-center">
 
-                            <img src="https://picsum.photos/70" alt="" class="img-raccolta">
-                            <h6 class="titolo-raccolta">Titolo6</h6>
+                            <img src="./assets/imgs/main/image-4.jpg" alt="" class="img-raccolta img-hello">
+                            <h6 class="titolo-raccolta">Peaceful Piano</h6>
                         </div>
                     </div>
                 </div>
             </div>
               
             <div class="container-fluid px-0 my-5">
-                <div class="d-flex justify-content-between align-items-center mb-">
+                <div class="d-flex justify-content-between align-items-center mb-3">
                     <h2>Consigliati per Te</h2>
                     <a class="text-decoration-none text-secondary fw-bold d-none d-sm-block" href="#">VISUALIZZA TUTTO</a>
                 </div>
                 <div class="cards-salve g-3 row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6">
-                    <div class="raccolta home-album col ">
-                        <div class="d-flex flex-row flex-sm-column gap-3 p-2">
+                    <div class="raccolta col ">
+                        <div class="d-flex home-album flex-row flex-sm-column gap-3 p-2">
 
                             <img src="https://picsum.photos/140" alt="" class="img-raccolta song-image">
                             <div class="d-flex flex-column">
@@ -319,8 +313,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="raccolta home-album col ">
-                        <div class="d-flex flex-row flex-sm-column gap-3 p-2">
+                    <div class="raccolta col ">
+                        <div class="d-flex home-album flex-row flex-sm-column gap-3 p-2">
 
                             <img src="https://picsum.photos/140" alt="" class="img-raccolta song-image">
                             <div class="d-flex flex-column">
@@ -329,8 +323,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="raccolta home-album col d-none d-md-block">
-                        <div class="d-flex flex-row flex-sm-column gap-3 p-2">
+                    <div class="raccolta col d-none d-md-block">
+                        <div class="d-flex home-album flex-row flex-sm-column gap-3 p-2">
 
                             <img src="https://picsum.photos/140" alt="" class="img-raccolta song-image">
                             <div class="d-flex flex-column">
@@ -339,8 +333,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="raccolta home-album col d-none d-lg-block">
-                        <div class="d-flex flex-row flex-sm-column gap-3 p-2">
+                    <div class="raccolta col d-none d-lg-block">
+                        <div class="d-flex home-album flex-row flex-sm-column gap-3 p-2">
 
                             <img src="https://picsum.photos/140" alt="" class="img-raccolta song-image">
                             <div class="d-flex flex-column">
@@ -349,8 +343,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="raccolta home-album col d-none d-xl-block">
-                        <div class="d-flex flex-row flex-sm-column gap-3 p-2">
+                    <div class="raccolta col d-none d-xl-block">
+                        <div class="d-flex home-album flex-row flex-sm-column gap-3 p-2">
 
                             <img src="https://picsum.photos/140" alt="" class="img-raccolta song-image">
                             <div class="d-flex flex-column">
@@ -359,8 +353,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="raccolta home-album col d-none d-xl-block">
-                        <div class="d-flex flex-row flex-sm-column gap-3 p-2">
+                    <div class="raccolta col d-none d-xl-block">
+                        <div class="d-flex home-album flex-row flex-sm-column gap-3 p-2">
 
                             <img src="https://picsum.photos/140" alt="" class="img-raccolta song-image">
                             <div class="d-flex flex-column">
@@ -369,8 +363,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="raccolta home-album col ">
-                        <div class="d-flex flex-row flex-sm-column gap-3 p-2">
+                    <div class="raccolta col ">
+                        <div class="d-flex home-album flex-row flex-sm-column gap-3 p-2">
 
                             <img src="https://picsum.photos/140" alt="" class="img-raccolta song-image">
                             <div class="d-flex flex-column">
@@ -379,8 +373,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="raccolta home-album col ">
-                        <div class="d-flex flex-row flex-sm-column gap-3 p-2">
+                    <div class="raccolta col ">
+                        <div class="d-flex home-album flex-row flex-sm-column gap-3 p-2">
 
                             <img src="https://picsum.photos/140" alt="" class="img-raccolta song-image">
                             <div class="d-flex flex-column">
@@ -389,8 +383,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="raccolta home-album col d-none d-md-block">
-                        <div class="d-flex flex-row flex-sm-column gap-3 p-2">
+                    <div class="raccolta col d-none d-md-block">
+                        <div class="d-flex home-album flex-row flex-sm-column gap-3 p-2">
 
                             <img src="https://picsum.photos/140" alt="" class="img-raccolta song-image">
                             <div class="d-flex flex-column">
@@ -399,8 +393,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="raccolta home-album col d-none d-lg-block">
-                        <div class="d-flex flex-row flex-sm-column gap-3 p-2">
+                    <div class="raccolta col d-none d-lg-block">
+                        <div class="d-flex home-album flex-row flex-sm-column gap-3 p-2">
 
                             <img src="https://picsum.photos/140" alt="" class="img-raccolta song-image">
                             <div class="d-flex flex-column">
@@ -409,8 +403,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="raccolta home-album col d-none d-xl-block">
-                        <div class="d-flex flex-row flex-sm-column gap-3 p-2">
+                    <div class="raccolta col d-none d-xl-block">
+                        <div class="d-flex home-album flex-row flex-sm-column gap-3 p-2">
 
                             <img src="https://picsum.photos/140" alt="" class="img-raccolta song-image">
                             <div class="d-flex flex-column">
@@ -419,8 +413,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="raccolta home-album col d-none d-xl-block">
-                        <div class="d-flex flex-row flex-sm-column gap-3 p-2">
+                    <div class="raccolta col d-none d-xl-block">
+                        <div class="d-flex home-album flex-row flex-sm-column gap-3 p-2">
 
                             <img src="https://picsum.photos/140" alt="" class="img-raccolta song-image">
                             <div class="d-flex flex-column">
@@ -496,7 +490,7 @@
                 </div>
                 
         
-                <div class=-album text-white gradient">
+                <div class="album text-white gradient">
         
                     <div class="container">
                         <!-- Blocco a scomparsa su d-sm -->
@@ -1321,8 +1315,8 @@
 
         <script type="module" src="./js/template.js"></script>
         <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-        <script type="module" src="./js/fetch.js"></script>
         <script type="module" src="./js/pulsanti.js"></script>
+        <script type="module" src="./js/fetch.js"></script>
 
     </body>
     </html>

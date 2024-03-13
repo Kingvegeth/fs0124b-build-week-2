@@ -1,4 +1,4 @@
-const apiUrl = "https://striveschool-api.herokuapp.com/api/deezer/";
+const apiUrl = "https://striveschool-api.herokuapp.com/api/deezer/album/";
 
 let albumTest = 'album/51001312'
 
@@ -21,30 +21,32 @@ let homepageAlbums = [
   14880659,
   51001312]
 
-import {generaClone} from "./template.js";
 
 
-let templateHome = generaClone("#home-page");
-let templateAlbum = generaClone('#album-page');
-let templateSearch = generaClone('#search-page')
-
-let pageContainer = document.querySelector('#center-page');
-
-pageContainer.appendChild(templateHome)
-
-let albumContainer = document.querySelectorAll('.song-artist')
-console.log(albumContainer[1].value);
 
 
+
+
+
+  
+
+
+let albumContainer = document.querySelectorAll('.home-album')
+albumContainer.forEach((el,i) =>{
+  
+  let artist = el.querySelector('.song-artist')
+  let disco = el.querySelector('.song-album')
+  let cover = el.querySelector('.song-image')
+
+
+  fetcher(homepageAlbums[i], artist, disco, cover)
+
+})
 
 
 
 //test della fetch
-function fetcher(folder) {
-
-   let artist = document.querySelector('.song-artist')
-   let disco = document.querySelector('.song-album')
-   let cover = document.querySelector('.song-image')
+function fetcher(folder, _artist, _disco, _cover) {
 
   fetch((apiUrl + folder),
     {
@@ -55,19 +57,43 @@ function fetcher(folder) {
     })
       .then((res) => res.json())
       .then((album) => {
-        console.log(album);
-        artist.innerText = album.artist.name
-        disco.innerText = album.title
-        cover.src = album.cover_medium
+        _artist.innerText = album.artist.name
+        _disco.innerText = album.title
+        _cover.src = album.cover_medium
+
       });
 }
 
-fetcher(albumTest)
+function singleSong (album, index){
+
+  fetch((apiUrl + album),
+    {
+      method: "GET",
+      headers: {
+        "Content-type": "application/json",
+      },
+    })
+    .then((res) => res.json())
+      .then((albumSong) => {
+        
+        let advCard = document.querySelector('#adv-card')
+
+        advCard.querySelector('.big-img').src = albumSong.cover_xl
+        advCard.querySelector('.song-title').innerText = albumSong.tracks.data[index].title
+        advCard.querySelector('.song-artist').innerText = albumSong.tracks.data[index].artist.name
+        advCard.querySelector('.song-artist-adv').innerText += " " + albumSong.tracks.data[index].artist.name
+
+      });
+
+
+}
+
+singleSong(214959662,0)
 
 
 
 
-
+//albumSong.tracks.data[index].album.cover_big
 
 // tennessee boy: 75623562
 // reindeers: 75223442
@@ -88,7 +114,7 @@ fetcher(albumTest)
 // jimi hendrix: 455130
 // radiohead: 14880659
 // master of puppets: 51001312
-
+// rick astley: 214959662
 
 
 // id, 

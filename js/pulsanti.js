@@ -1,4 +1,16 @@
+import {generaClone} from "./template.js";
 
+
+let templateHome = generaClone("#home-page");
+let templateAlbum = generaClone('#album-page');
+let templateSearch = generaClone('#search-page')
+
+let pageContainer = document.querySelector('#center-page');
+
+pageContainer.appendChild(templateHome)
+
+
+            
             //pulsante che mostra e nasconde la lista amici
             let friendsToggle = document.getElementById('friendlist-toggle');
             let sectionRight = document.getElementById('section-right');
@@ -24,13 +36,13 @@
                   pageContainer.innerHTML = ''
                   pageContainer.appendChild(templateSearch)
                 })
-                
+
                 let albumPageBtn = document.querySelector('#album-toggle')
                 albumPageBtn.addEventListener('click', function(){
                   pageContainer.innerHTML = '';
                   pageContainer.appendChild(templateAlbum)
                 })
-                
+
                 let homePageBtn1 = document.querySelector('#homepage-bnt-top')
                 homePageBtn1.addEventListener('click', function(){
                   pageContainer.innerHTML = '';
