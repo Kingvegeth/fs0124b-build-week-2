@@ -11961,6 +11961,10 @@ body {
   background: #555;
 }
 
+#header {
+  height: 70px;
+}
+
 #adv-card {
   border-radius: 5px;
   background: linear-gradient(195deg, rgb(32, 32, 32) 10%, rgb(0, 0, 0) 94%);
@@ -11988,7 +11992,7 @@ body {
   color: rgb(87, 87, 87);
 }
 
-#center-page {
+#central-container {
   height: 100%;
   overflow-y: scroll;
   max-height: 100vh;

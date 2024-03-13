@@ -5,11 +5,8 @@ $medium-background:#131313;
 $light-background: #292929;
 
 
-body{
-    background-color: $background;
-}
 
-.raccolta{
+.search-card{
     background-color: red;
     overflow: hidden;
     height: 100px;
@@ -28,12 +25,6 @@ body{
     }
 }
 
-.navigation-button{
-    background-color: $medium-background;
-    border-radius: 50%;
-    padding: 5px;
-    cursor: pointer;
-}
 
 #cerca-icon {
     font-size: 20px;
@@ -44,7 +35,7 @@ body{
     background-color: #292929;
 }
 
-.img-raccolta{
+.img-search{
     transform: translate(30px, 40%) rotate(35deg);
     
 }

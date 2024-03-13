@@ -2,7 +2,7 @@
             //pulsante che mostra e nasconde la lista amici
             let friendsToggle = document.getElementById('friendlist-toggle');
             let sectionRight = document.getElementById('section-right');
-            let sectionCenter = document.getElementById('center-page');
+            let sectionCenter = document.getElementById('central-container');
 
             friendsToggle.addEventListener('click',function(){
 

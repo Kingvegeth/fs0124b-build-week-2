@@ -157,7 +157,9 @@ body{
   background: #555; 
 }
 
-
+#header{
+    height: 70px;
+}
 
 #adv-card{
     border-radius: 5px;
@@ -192,7 +194,7 @@ body{
  
 
 
-#center-page{
+#central-container{
     height: 100%;
     overflow-y: scroll;
     max-height: 100vh;
@@ -330,3 +332,11 @@ background: linear-gradient(180deg, rgba(33,33,33,0.5126436781609196) 0%, rgba(9
     border-radius: 50%;
     cursor: pointer;
 }
+
+
+
+
+
+
+  
+  

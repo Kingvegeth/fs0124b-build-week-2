@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/search.css">
     <link rel="icon" sizes="32x32" type="image/png" href="https://open.spotifycdn.com/cdn/images/favicon32.b64ecc03.png">
     <title>Spotify</title>
 </head>
@@ -20,7 +21,7 @@
                 <nav id="nav-left" class="d-flex flex-column gap-2 mb-4">
                     <i class="bi bi-three-dots"></i>
                     <a id="homepage-bnt-top" href="#" class="text-decoration-none"><i class="bi bi-house-door-fill"></i> Home</a>
-                    <a href="#" class="text-decoration-none"><i class="bi bi-search"></i> Cerca</a>
+                    <a id="search-btn-top" href="#" class="text-decoration-none"><i class="bi bi-search"></i> Cerca</a>
                     <a href="#" class="text-decoration-none"><i class="bi bi-square-half"></i> La tua libreria</a>
                 </nav>
                 
@@ -67,12 +68,38 @@
                 <p>early stage emily syndrome (sett-ott 2022)</p>
             </div>
         </div>
-
+        <div id="central-container" class="col-12 col-lg-10 container-fluid px-5">
+            
         
-        <div id="center-page" class="text-white col-12 col-lg-10 container-fluid ">
+            <header id="header" class="sticky-top">
+                <nav id="nav-top" class="d-flex justify-content-between align-items-center">
+                    <div id="bottoni" class="d-flex flex-row gap-3">
+                        <div id="left"><i class="navigation-button bi bi-chevron-left" type="button"></i></div>
+                    <div id="right"><i class="navigation-button bi bi-chevron-right" type="button"></i></div>
+                </div>
+                <div class="d-flex gap-4">   
+                    <div class="dropdown">
+                        <button class="btn btn-dark dropdown-toggle d-flex align-items-center pe-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <div class="profile-image">
+                                <img src="https://picsum.photos/25" alt="">
+                            </div>
+                            Porcaccio
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a id="album-toggle" class="dropdown-item" href="#">Album</a></li>
+                            <li><a id="friendlist-toggle" class="dropdown-item" href="#">Amici</a></li>
+                        </ul>
+                    </div>
+                    
+                </div>
+            </nav>
+        </header>
+        
+        <div id="center-page" class="text-white ">
             
         </div>
-
+        </div>
         <div id="section-right" class="col-2 bg-black text-white d-none px-3 py-4">
             <div id="friends-title" class="d-flex flex-row justify-content-between mb-5">
                 <h6>Attività amici</h6>
@@ -140,7 +167,7 @@
         <div id="nav-mobile" class="fixed-bottom">
             <nav class="d-flex d-md-none mb-4 align-items-center row row-cols-3 mx-2 pt-2">
                 <a id="homepage-bnt-bottom" href="#" class="link-mobile text-decoration-none"><div class="d-flex flex-column align-items-center"><i class="icon-mobile bi bi-house-door-fill"></i> Home</div></a>
-                <a href="#" class="link-mobile text-decoration-none"><div class="d-flex flex-column align-items-center"><i class="icon-mobile bi bi-search"></i> Cerca</div></a>
+                <a id="search-btn-bottom" href="#" class="link-mobile text-decoration-none"><div class="d-flex flex-column align-items-center"><i class="icon-mobile bi bi-search"></i> Cerca</div></a>
                 <a href="#" class="link-mobile text-decoration-none"><div class="d-flex flex-column align-items-center"><i class="icon-mobile bi bi-square-half"></i> La tua libreria</div></a>
             </nav>
         </div>
@@ -166,7 +193,7 @@
 
                     <div class="progresso d-flex align-items-center me-5 pe-4">
                         <p class="my-0 mx-1">2:34</p>
-                        <input class="col-10" type="range" id="vol" name="vol" min="0" max="50">
+                        <input id="range3" class="col-10" type="range" id="vol" name="vol" min="0" max="30" value="0">
                         <p class="my-0 mx-1">5:00</p>
                     </div>
 
@@ -192,30 +219,7 @@
 
         <template id="home-page">
             
-            <header class="sticky-top">
-                <nav id="nav-top" class="d-flex justify-content-between align-items-center">
-                    <div id="bottoni" class="d-flex flex-row gap-3">
-                        <div id="left"><i class="navigation-button bi bi-chevron-left" type="button"></i></div>
-                        <div id="right"><i class="navigation-button bi bi-chevron-right" type="button"></i></div>
-                    </div>
-                    <div class="d-flex gap-4">   
-                        <div class="dropdown">
-                            <button class="btn btn-dark dropdown-toggle d-flex align-items-center pe-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <div class="profile-image">
-                                    <img src="https://picsum.photos/25" alt="">
-                                </div>
-                                Porcaccio
-                            </button>
-                            <ul class="dropdown-menu dropdown-menu-dark">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a id="album-toggle" class="dropdown-item" href="#">Album</a></li>
-                                <li><a id="friendlist-toggle" class="dropdown-item" href="#">Amici</a></li>
-                            </ul>
-                        </div>
-                        
-                    </div>
-                </nav>
-            </header>
+            
             
             <div id="adv-card" class=" flex-row justify-content-between p-3 d-none d-sm-flex overflow-x-hidden">
                 <div class="adv-left d-flex flex-row gap-3 align-items-center">
@@ -1047,6 +1051,91 @@
                 </div>
         
             </div>
+        </template>
+
+        <template id="search-page">
+            <div class="row text-white container-fluid">
+                <div class="display-5 fw-bold ms-2 d-md-none">
+                  Cerca 
+                </div>
+                <div>
+                  <i class="fas fa-search withe-trasparent"></i>
+                  <form id="form-search">
+                    <label type="submit"></label>
+                    <div class="search-container black-spoty-bg d-flex p-2 gap-2 ">
+                      <i class="bi bi-search" id="cerca-icon"></i>
+                      <input type="text" placeholder="Cosa vuoi ascoltare?" class=" border border-0 withe-trasparent fw-bold w-100"
+                        id="input-search" />
+                    </div>
+                  </form>
+                </div>
+                <div class="fs-5 text-center fw-bold my-2 text-md-start" >
+                  Sfoglia tutto
+                </div>
+                <div class="categories">
+                  <div class="">
+                    <div class="row ">
+                      <div class="col-6 col-md-3 col-lg-1 search-card rounded">
+                        <div class="position-relative">
+                          <h4 class="titolo-raccolta ">Titolo</h4>
+                          <img src="https://picsum.photos/70" alt="" class="img-search position-absolute end-0 top-0 rounded" />
+                        </div> 
+                      </div>
+                      <div class="col-6 col-md-3 col-lg-1 search-card rounded">
+                        <div class="position-relative">
+                          <h4 class="titolo-raccolta ">Titolo</h4>
+                          <img src="https://picsum.photos/70" alt="" class="img-search position-absolute end-0 top-0 rounded" />
+                        </div> 
+                      </div>
+                      <div class="col-6 col-md-3 col-lg-1 search-card rounded">
+                        <div class="position-relative">
+                          <h4 class="titolo-raccolta ">Titolo</h4>
+                          <img src="https://picsum.photos/70" alt="" class="img-search position-absolute end-0 top-0 rounded" />
+                        </div> 
+                      </div>
+                      <div class="col-6 col-md-3 col-lg-1 search-card rounded">
+                        <div class="position-relative">
+                          <h4 class="titolo-raccolta ">Titolo</h4>
+                          <img src="https://picsum.photos/70" alt="" class="img-search position-absolute end-0 top-0 rounded" />
+                        </div> 
+                      </div>
+                      <div class="col-6 col-md-3 col-lg-1 search-card rounded">
+                        <div class="position-relative">
+                          <h4 class="titolo-raccolta ">Titolo</h4>
+                          <img src="https://picsum.photos/70" alt="" class="img-search position-absolute end-0 top-0 rounded" />
+                        </div> 
+                      </div>
+                      <div class="col-6 col-md-3 col-lg-1 search-card rounded">
+                        <div class="position-relative">
+                          <h4 class="titolo-raccolta ">Titolo</h4>
+                          <img src="https://picsum.photos/70" alt="" class="img-search position-absolute end-0 top-0 rounded" />
+                        </div> 
+                      </div>
+                      <div class="col-6 col-md-3 col-lg-1 search-card rounded">
+                        <div class="position-relative">
+                          <h4 class="titolo-raccolta ">Titolo</h4>
+                          <img src="https://picsum.photos/70" alt="" class="img-search position-absolute end-0 top-0 rounded" />
+                        </div> 
+                      </div>
+                      <div class="col-6 col-md-3 col-lg-1 search-card rounded">
+                        <div class="position-relative">
+                          <h4 class="titolo-raccolta ">Titolo</h4>
+                          <img src="https://picsum.photos/70" alt="" class="img-search position-absolute end-0 top-0 rounded" />
+                        </div> 
+                      </div>
+                    </div>            
+                  </div>
+                </div>
+                </div>
+                <template>
+                  <div class="col search-card rounded">
+                    <div class="position-relative">
+                      <h4 class="titolo-raccolta ">Titolo</h4>
+                      <img src="https://picsum.photos/70" alt="" class="img-search position-absolute end-0 top-0 rounded" />
+                    </div> 
+                  </div>
+                </template>
+              </div>
         </template>
 
         <script type="module" src="./js/template.js"></script>
