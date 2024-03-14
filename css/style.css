@@ -11977,7 +11977,6 @@ textarea.form-control-lg {
 }
 
 .search-card {
-  background-color: red;
   overflow: hidden;
   height: 100px;
   cursor: pointer;
@@ -12006,12 +12005,15 @@ textarea.form-control-lg {
   cursor: pointer;
 }
 
-.search-container, #input-search {
+.search-container {
   background-color: #292929;
 }
 
-.img-search {
-  transform: translate(30px, 40%) rotate(35deg);
+.navigation-search input[type=search],
+.navigation-search input[type=search]:active,
+.navigation-search input[type=search]:focus {
+  color: #3f3f3f;
+  background-color: #3f3f3f;
 }
 
 .img-back {

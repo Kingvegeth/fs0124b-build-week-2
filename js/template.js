@@ -17,3 +17,9 @@ export function generaTracciaArtista(){
   let clone = template.content.cloneNode(true)
   return clone
 }
+
+export function generaTracciaSearch(){
+  let template = document.querySelector('#search-track')
+  let clone = template.content.cloneNode(true)
+  return clone
+}

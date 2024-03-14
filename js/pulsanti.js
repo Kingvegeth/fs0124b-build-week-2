@@ -1,6 +1,7 @@
 import { generaClone } from "./template.js";
 import { singleAlbum } from "./fetch.js";
 import { singleArtist } from "./fetch.js";
+import { search } from "./fetch.js";
 
 //import { fetcher } from "./fetch.js";
 
@@ -25,12 +26,12 @@ function homePage() {
 
     
         
-          const fac = new FastAverageColor();
-          const container = templateAlbum.querySelector('.test');
-          const color = fac.getColor(container.querySelector('.img-info'));
-          container.style.backgroundColor = color.rgba;
-          container.style.color = color.isDark ? '#fff' : '#000';
-          console.log(color);
+         //const fac = new FastAverageColor();
+         //const container = templateAlbum.querySelector('.test');
+         //const color = fac.getColor(container.querySelector('.img-info'));
+         //container.style.backgroundColor = color.rgba;
+         //container.style.color = color.isDark ? '#fff' : '#000';
+         //console.log(color);
         
 
 
@@ -53,12 +54,14 @@ function homePage() {
       sectionCenter.classList.remove("col-lg-8");
       sectionCenter.classList.add("col-lg-10");
     });
+    let searchPage1 = document.querySelector('#search-btn-top')
+                searchPage1.addEventListener('click', function(){
+                  pageContainer.innerHTML = ''
+                  pageContainer.appendChild(templateSearch)
+                  searchPageBtn()
+                })
 
-    let searchPage1 = document.querySelector("#search-btn-top");
-    searchPage1.addEventListener("click", function () {
-      pageContainer.innerHTML = "";
-      pageContainer.appendChild(templateSearch);
-    });
+
 
     let goToAlbum = document.querySelectorAll('.song-album')
     goToAlbum.forEach(el => {
@@ -109,6 +112,23 @@ export async function centerHome() {
   }
 }
 
+function searchPageBtn() {
+  
+  let searchBtn = document.querySelector('#cerca-icon');
+let input = document.querySelector('#input-search');
+
+searchBtn.addEventListener('click', function(e) {
+  e.preventDefault();
+  search(input.value);
+});
+
+input.addEventListener('keypress', function(e) {
+  if (e.key === 'Enter') {
+    e.preventDefault();
+    search(input.value);
+  }
+});
+}
 
 
 
