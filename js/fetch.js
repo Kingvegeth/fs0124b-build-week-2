@@ -248,14 +248,15 @@ titleMini.innerText = album.tracks.data[song].title;
         tempoTrascorso = 0;
         myinput.value = 0;
         document.getElementById('nextsong').click();
-        audioPlayer.load();
-        audioPlayer.play();
+       // audioPlayer.load();
+       // audioPlayer.play();
       }
     }
 
     let play = document.getElementById('playPlayer')
 
     play.addEventListener('click', function () {
+      loadSong(song);
       audioPlayer.play();
       document.getElementById('playPlayer').classList.add('d-none');
       document.getElementById('pausePlayer').classList.remove('d-none');
@@ -303,6 +304,9 @@ titleMini.innerText = album.tracks.data[song].title;
       audioPlayer.src = album.tracks.data[songIndex].preview;
       songTitlePlayer.innerText = album.tracks.data[songIndex].title;
       artistPlayer.innerText = album.tracks.data[songIndex].artist.name;
+      let titleMini = document.querySelector('#title-mini')
+titleMini.innerText = album.tracks.data[song].title;
+
       audioPlayer.load();
       tempoTrascorso = 0;
       myinput.value = 0;
@@ -315,7 +319,7 @@ titleMini.innerText = album.tracks.data[song].title;
     let playPiccolo = document.querySelector('#play-piccolo')
     let pausePiccolo = document.getElementById('pause-piccolo')
     playPiccolo.addEventListener('click', function () {
-      audioPlayer.play();
+      
       playPiccolo.classList.add('d-none');
       pausePiccolo.classList.remove('d-none');
       timerInterval = setInterval(aggiornaTimer, 1000);
