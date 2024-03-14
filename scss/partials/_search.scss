@@ -1,21 +1,21 @@
-.search-card{
-    background-color: red;
-    overflow: hidden;
-    height: 100px;
-    cursor: pointer;
-    @media screen and (max-width: 575px){
-        margin:5px;
-        flex: 0 0 calc(100% / 2 - 10px);
-    }
-    @media screen and (min-width: 576px){
-        margin:5px;
-        flex: 0 0 calc(100% / 4 - 10px);
-    }
-    @media screen and (min-width: 768px){
-        margin:5px;
-        flex: 0 0 calc(100% / 6 - 10px);
-    }
-}
+//.search-card{
+//    background-color: red;
+//    overflow: hidden;
+//    height: 100px;
+//    cursor: pointer;
+//    @media screen and (max-width: 575px){
+//        margin:5px;
+//        flex: 0 0 calc(100% / 2 - 10px);
+//    }
+//    @media screen and (min-width: 576px){
+//        margin:5px;
+//        flex: 0 0 calc(100% / 4 - 10px);
+//    }
+//    @media screen and (min-width: 768px){
+//        margin:5px;
+//        flex: 0 0 calc(100% / 6 - 10px);
+//    }
+//}
 
 
 #cerca-icon {
@@ -27,7 +27,7 @@
     background-color: #292929;
 }
 
-.img-search{
-    transform: translate(30px, 40%) rotate(35deg);
-    
-}
+//.img-search{
+//    transform: translate(30px, 40%) rotate(35deg);
+//    
+//}

@@ -74,14 +74,18 @@ export async function centerHome(){
 
 function searchPageBtn() {
   
-  let searchBtn = document.querySelector('#cerca-icon')
-  
-  console.log(searchBtn);
-  searchBtn.addEventListener('click', function(e){
+  let searchBtn = document.querySelector('#cerca-icon');
+let input = document.querySelector('#input-search');
+
+searchBtn.addEventListener('click', function(e) {
+  e.preventDefault();
+  search(input.value);
+});
+
+input.addEventListener('keypress', function(e) {
+  if (e.key === 'Enter') {
     e.preventDefault();
-    alert('ciao')
-    let input = document.querySelector('#input-search')
-    search(input.value)
-    
-  })
+    search(input.value);
+  }
+});
 }
