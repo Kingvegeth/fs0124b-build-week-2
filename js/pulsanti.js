@@ -2,6 +2,7 @@ import { generaClone } from "./template.js";
 import { singleAlbum } from "./fetch.js";
 import { singleArtist } from "./fetch.js";
 import { search } from "./fetch.js";
+import { songPlay } from "./fetch.js";
 
 //import { fetcher } from "./fetch.js";
 
@@ -18,23 +19,10 @@ function homePage() {
     let artistLink = templateAlbum.querySelector(".artist-name-album");
     artistLink.addEventListener('click', () =>{
       pageContainer.innerHTML = "";
-        pageContainer.appendChild(templateArtist);
-        console.log(artistLink.id.value)
-        singleArtist(artistLink.id);
+      pageContainer.appendChild(templateArtist);
+      singleArtist(artistLink.id);
     })
-    
-
-    
-        
-         //const fac = new FastAverageColor();
-         //const container = templateAlbum.querySelector('.test');
-         //const color = fac.getColor(container.querySelector('.img-info'));
-         //container.style.backgroundColor = color.rgba;
-         //container.style.color = color.isDark ? '#fff' : '#000';
-         //console.log(color);
-        
-
-
+   
 
 
 
@@ -55,12 +43,13 @@ function homePage() {
       sectionCenter.classList.add("col-lg-10");
     });
     let searchPage1 = document.querySelector('#search-btn-top')
-                searchPage1.addEventListener('click', function(){
-                  pageContainer.innerHTML = ''
-                  pageContainer.appendChild(templateSearch)
-                  searchPageBtn()
-                })
-
+    searchPage1.addEventListener('click', function(){
+      pageContainer.innerHTML = ''
+      pageContainer.appendChild(templateSearch)
+      searchPageBtn()
+    })
+                
+                
 
 
     let goToAlbum = document.querySelectorAll('.song-album')
@@ -103,6 +92,7 @@ function homePage() {
   });
 }
 
+
 export async function centerHome() {
   try {
     const result = await homePage();
@@ -115,7 +105,19 @@ export async function centerHome() {
 function searchPageBtn() {
   
   let searchBtn = document.querySelector('#cerca-icon');
-let input = document.querySelector('#input-search');
+  let input = document.querySelector('#input-search');
+
+
+  let searchLink = templateSearch.querySelectorAll('.track-search')
+  console.log(searchLink);
+  searchLink.forEach(el =>{
+    el.addEventListener('click', function(){
+      el.preventDefault()
+      alert('ciao')
+      songPlay(searchLink.id)
+    })
+  })
+
 
 searchBtn.addEventListener('click', function(e) {
   e.preventDefault();
@@ -130,15 +132,3 @@ input.addEventListener('keypress', function(e) {
 });
 }
 
-
-
-/*function goToAlbum() {
-  let goTo = document.querySelector('.song-album')
-  
-  goTo.addEventListener("click", function () {
-    
-    
-    singleAlbum(goTo.id)
-  });
-
-}*/

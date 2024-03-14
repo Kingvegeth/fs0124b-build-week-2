@@ -218,6 +218,8 @@ export function singleArtist(artist) {
           
           let templateSearchTracks = generaTracciaSearch();
 
+          let canzone = templateSearchTracks.querySelector('.track-search')
+          canzone.id = albumSong.data[i].id
           let titolo = templateSearchTracks.querySelector('.titolo-raccolta')
           titolo.innerText = albumSong.data[i].title
           console.log(titolo);
@@ -228,6 +230,7 @@ export function singleArtist(artist) {
 
 
           document.querySelector('#search-container').appendChild(templateSearchTracks)
+          
         }
 
 
@@ -279,7 +282,11 @@ function setVolume(volume) {
   }
 }
 
-fetch(apiUrl + 177888572, {
+
+export function songPlay(song){
+
+
+fetch(apiUrl + song, {
   method: "GET",
   headers: {
     "Content-type": "application/json",
@@ -417,3 +424,5 @@ titleMini.innerText = album.tracks.data[song].title;
       clearInterval(timerInterval);
     })
   })
+
+}
