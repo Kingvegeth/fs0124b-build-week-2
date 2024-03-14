@@ -79,8 +79,7 @@ function singleSong(album, index) {
       advCard.querySelector('.big-img').src = albumSong.cover_xl
       advCard.querySelector('.song-title').innerText = albumSong.tracks.data[index].title
       advCard.querySelector('.song-artist').innerText = albumSong.tracks.data[index].artist.name
-      advCard.querySelector('.song-artist-adv').innerText += " " + albumSong.tracks.data[index].artist.name
-
+      advCard.querySelector('.song-artist-adv').innerText += " " + albumSong.tracks.data[index].artist.name      
     });
 
 
@@ -215,6 +214,10 @@ fetch(apiUrl + 177888572, {
     artistPlayer.innerText = album.tracks.data[song].artist.name;
     audioPlayer.src = album.tracks.data[song].preview;
 
+let titleMini = document.querySelector('#title-mini')
+titleMini.innerText = album.tracks.data[song].title;
+
+
     parcialTime.innerText = '0:00';
 
     let valoreMassimo = 30;
@@ -324,26 +327,7 @@ fetch(apiUrl + 177888572, {
       clearInterval(timerInterval);
     })
 
-    let titoloPiccolo = templateTracks.querySelector('.title-mini')
-    albumSong.tracks.data.forEach((el, i) => {
-        let templateTracks = generaTraccia();
-        titoloPiccolo.innerText = el.title
-        // let titolo = templateTracks.querySelector('.title-track');
-        // titolo.innerText = el.title;
-        // let artista = templateTracks.querySelector('.artist-track');
-        // artista.innerText = el.artist.name;
-        // let durata = templateTracks.querySelector('.song-time');
-        // durata.innerText = goodTime(el.duration);
-        // let reproductions = templateTracks.querySelector('.reproductions');
-        // reproductions.innerText = el.rank;
-        // let trackNumber = templateTracks.querySelector('.number-track');
-        // trackNumber.innerText = i + 1;
 
-        document.querySelector('#album-songs').appendChild(templateTracks);
-
-
-      });
-    }).catch((error) => new Error(error));
 
   })
 
