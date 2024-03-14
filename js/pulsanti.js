@@ -20,10 +20,27 @@ function homePage() {
         pageContainer.appendChild(templateArtist);
         console.log(artistLink.id.value)
         singleArtist(artistLink.id);
-        
-      
     })
     
+
+    const fac = new FastAverageColor();
+
+      let imageAverage = templateAlbum.querySelector('.img-info');
+      let bgContainer = templateAlbum.querySelector('.test')
+
+    
+        window.addEventListener('load', function() {
+          const fac = new FastAverageColor();
+          const container = templateAlbum.querySelector('.test');
+          const color = fac.getColor(container.querySelector('.img-info'));
+          container.style.backgroundColor = color.rgba;
+          container.style.color = color.isDark ? '#fff' : '#000';
+        });
+
+
+
+
+
     let friendsToggle = document.getElementById("friendlist-toggle");
     let sectionRight = document.getElementById("section-right");
     let sectionCenter = document.getElementById("central-container");

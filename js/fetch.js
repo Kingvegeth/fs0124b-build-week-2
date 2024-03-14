@@ -1,10 +1,9 @@
 import { generaTraccia } from "./template.js";
-import { generaConsigliati } from "./template.js";
 import { centerHome } from "./pulsanti.js";
 import { generaTracciaArtista } from "./template.js";
 const apiUrl = "https://striveschool-api.herokuapp.com/api/deezer/album/";
 const apiUrlArtist = "https://striveschool-api.herokuapp.com/api/deezer/artist/";
-let albumTest = "album/51001312";
+
 centerHome();
 
 let homepageAlbums = [
@@ -85,6 +84,7 @@ export function singleAlbum(album) {
 
       let bigImage = document.querySelector(".img-info");
       bigImage.src = albumSong.cover_xl;
+      
       let avatarImage = document.querySelector(".avatar");
       avatarImage.src = albumSong.artist.picture_small;
       let albumTitle = document.querySelector(".album-album");

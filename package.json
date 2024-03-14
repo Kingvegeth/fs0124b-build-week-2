@@ -1,7 +1,8 @@
 {
   "dependencies": {
     "bootstrap": "^5.3.3",
-    "bootstrap-icons": "^1.11.3"
+    "bootstrap-icons": "^1.11.3",
+    "fast-average-color": "^9.4.0"
   },
   "name": "fs0124b-build-week-2",
   "version": "1.0.0",

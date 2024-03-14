@@ -12,12 +12,6 @@ export function generaTraccia(){
   return clone
 }
 
-export function generaConsigliati(){
-  let template = document.querySelector('#artist-album')
-  let clone = template.content.cloneNode(true)
-  return clone
-}
-
 export function generaTracciaArtista(){
   let template = document.querySelector('#artist-track')
   let clone = template.content.cloneNode(true)
