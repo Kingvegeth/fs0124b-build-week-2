@@ -1,6 +1,6 @@
 import { generaClone } from "./template.js";
 import { singleAlbum } from "./fetch.js";
-import { fetcher } from "./fetch.js";
+//import { fetcher } from "./fetch.js";
 
 function homePage() {
   return new Promise((resolve) => {
@@ -10,10 +10,13 @@ function homePage() {
 
     let pageContainer = document.querySelector("#center-page");
     pageContainer.appendChild(templateHome);
+    
+    
+    
     let friendsToggle = document.getElementById("friendlist-toggle");
     let sectionRight = document.getElementById("section-right");
     let sectionCenter = document.getElementById("central-container");
-
+    
     friendsToggle.addEventListener("click", function () {
       sectionRight.classList.remove("d-none");
       sectionCenter.classList.remove("col-lg-10");
@@ -33,15 +36,20 @@ function homePage() {
       pageContainer.appendChild(templateSearch);
     });
 
-    let albumPageBtn = document.querySelector("#album-toggle");
-    albumPageBtn.addEventListener("click", function () {
-      pageContainer.innerHTML = "";
-      pageContainer.appendChild(templateAlbum);
-      singleAlbum(214959662);
-    });
+    let goTo = document.querySelectorAll('.song-album')
+    goTo.forEach(el => {
+      el.addEventListener("click", function () {
+        pageContainer.innerHTML = "";
+        pageContainer.appendChild(templateAlbum);
+        singleAlbum(el.id);
+        console.log(el)
+      });
+    })
+    
 
     let homePageBtn1 = document.querySelector("#homepage-bnt-top");
     homePageBtn1.addEventListener("click", function () {
+      
       pageContainer.innerHTML = "";
       pageContainer.appendChild(templateHome);
     });
@@ -50,6 +58,7 @@ function homePage() {
       pageContainer.innerHTML = "";
       pageContainer.appendChild(templateHome);
     });
+    
     resolve("resolved!");
   });
 }
@@ -62,3 +71,14 @@ export async function centerHome() {
     console.error("Errore durante l'aggiunta della homePage:", error);
   }
 }
+
+/*function goToAlbum() {
+  let goTo = document.querySelector('.song-album')
+  
+  goTo.addEventListener("click", function () {
+    
+    
+    singleAlbum(goTo.id)
+  });
+
+}*/

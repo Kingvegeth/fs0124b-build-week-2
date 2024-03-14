@@ -1,791 +1,781 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="./node_modules/bootstrap-icons/font/bootstrap-icons.min.css" />
-    <link rel="stylesheet" href="./css/style.css" />
-    <link
-      rel="icon"
-      sizes="32x32"
-      type="image/png"
-      href="https://open.spotifycdn.com/cdn/images/favicon32.b64ecc03.png" />
-    <title>Spotify</title>
-  </head>
-  <body>
-    <main class="row g-0 container-fluid">
-      <div
-        id="section-left"
-        class="col-2 bg-black d-none d-lg-block text-secondary pt-3 ps-4 pe-0">
-        <div id="menu-left" class="sticky-top bg-black">
-          <nav id="nav-left" class="d-flex flex-column gap-2 mb-4">
-            <i class="bi bi-three-dots"></i>
-            <a id="homepage-bnt-top" href="#" class="text-decoration-none"
-              ><i class="bi bi-house-door-fill"></i> Home</a
-            >
-            <a id="search-btn-top" href="#" class="text-decoration-none"
-              ><i class="bi bi-search"></i> Cerca</a
-            >
-            <a href="#" class="text-decoration-none"
-              ><i class="bi bi-square-half"></i> La tua libreria</a
-            >
-          </nav>
 
-          <div id="left-links">
-            <div class="d-flex align-items-center">
-              <div
-                class="left-link link-add d-flex align-items-center justify-content-center">
-                <i class="d-flex bi bi-plus-lg text-black"></i>
-              </div>
-              <p>Crea playlist</p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="icon" sizes="32x32" type="image/png"
+    href="https://open.spotifycdn.com/cdn/images/favicon32.b64ecc03.png" />
+  <title>Spotify</title>
+</head>
+
+<body>
+  <main class="row g-0 container-fluid">
+    <div id="section-left" class="col-2 bg-black d-none d-lg-block text-secondary pt-3 ps-4 pe-0">
+      <div id="menu-left" class="sticky-top bg-black">
+        <nav id="nav-left" class="d-flex flex-column gap-2 mb-4">
+          <i class="bi bi-three-dots"></i>
+          <a id="homepage-bnt-top" href="#" class="text-decoration-none"><i class="bi bi-house-door-fill"></i> Home</a>
+          <a id="search-btn-top" href="#" class="text-decoration-none"><i class="bi bi-search"></i> Cerca</a>
+          <a href="#" class="text-decoration-none"><i class="bi bi-square-half"></i> La tua libreria</a>
+        </nav>
+
+        <div id="left-links">
+          <div class="d-flex align-items-center">
+            <div class="left-link link-add d-flex align-items-center justify-content-center">
+              <i class="d-flex bi bi-plus-lg text-black"></i>
             </div>
-            <div class="d-flex align-items-center">
-              <div
-                class="left-link link-heart d-flex align-items-center justify-content-center">
-                <i class="bi bi-heart-fill"></i>
-              </div>
-              <p>Brani che ti piacciono</p>
-            </div>
-            <div class="d-flex align-items-center">
-              <div
-                class="left-link link-bookmark d-flex align-items-center justify-content-center">
-                <i class="bi bi-bookmark-fill"></i>
-              </div>
-              <p>I tuoi episodi</p>
-            </div>
+            <p>Crea playlist</p>
           </div>
-          <hr />
-        </div>
-        <div id="my-playlists">
-          <p>early stage emily syndrome (sett-ott 2022)</p>
-          <p>early stage emily syndrome (sett-ott 2022)</p>
-          <p>early stage emily syndrome (sett-ott 2022)</p>
-          <p>early stage emily syndrome (sett-ott 2022)</p>
-          <p>early stage emily syndrome (sett-ott 2022)</p>
-          <p>early stage emily syndrome (sett-ott 2022)</p>
-          <p>early stage emily syndrome (sett-ott 2022)</p>
-          <p>early stage emily syndrome (sett-ott 2022)</p>
-          <p>early stage emily syndrome (sett-ott 2022)</p>
-          <p>early stage emily syndrome (sett-ott 2022)</p>
-          <p>early stage emily syndrome (sett-ott 2022)</p>
-          <p>early stage emily syndrome (sett-ott 2022)</p>
-          <p>early stage emily syndrome (sett-ott 2022)</p>
-          <p>early stage emily syndrome (sett-ott 2022)</p>
-          <p>early stage emily syndrome (sett-ott 2022)</p>
-          <p>early stage emily syndrome (sett-ott 2022)</p>
-          <p>early stage emily syndrome (sett-ott 2022)</p>
-          <p>early stage emily syndrome (sett-ott 2022)</p>
-          <p>early stage emily syndrome (sett-ott 2022)</p>
-          <p>early stage emily syndrome (sett-ott 2022)</p>
-          <p>early stage emily syndrome (sett-ott 2022)</p>
-          <p>early stage emily syndrome (sett-ott 2022)</p>
-          <p>early stage emily syndrome (sett-ott 2022)</p>
-          <p>early stage emily syndrome (sett-ott 2022)</p>
-        </div>
-      </div>
-      <div id="central-container" class="col-12 col-lg-10 container-fluid px-5">
-        <header id="header" class="sticky-top">
-          <nav
-            id="nav-top"
-            class="d-flex justify-content-between align-items-center">
-            <div id="bottoni" class="d-flex flex-row gap-3">
-              <div id="left">
-                <i
-                  class="navigation-button bi bi-chevron-left"
-                  type="button"></i>
-              </div>
-              <div id="right">
-                <i
-                  class="navigation-button bi bi-chevron-right"
-                  type="button"></i>
-              </div>
+          <div class="d-flex align-items-center">
+            <div class="left-link link-heart d-flex align-items-center justify-content-center">
+              <i class="bi bi-heart-fill"></i>
             </div>
-            <div class="d-flex gap-4">
-              <div class="dropdown">
-                <button
-                  class="btn btn-dark dropdown-toggle d-flex align-items-center pe-2"
-                  type="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false">
-                  <div class="profile-image">
-                    <img src="https://picsum.photos/25" alt="" />
-                  </div>
-                  Porcaccio
-                </button>
-                <ul class="dropdown-menu dropdown-menu-dark">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li>
-                    <a id="album-toggle" class="dropdown-item" href="#"
-                      >Album</a
-                    >
-                  </li>
-                  <li>
-                    <a id="friendlist-toggle" class="dropdown-item" href="#"
-                      >Amici</a
-                    >
-                  </li>
-                </ul>
-              </div>
+            <p>Brani che ti piacciono</p>
+          </div>
+          <div class="d-flex align-items-center">
+            <div class="left-link link-bookmark d-flex align-items-center justify-content-center">
+              <i class="bi bi-bookmark-fill"></i>
             </div>
-          </nav>
-        </header>
-
-        <div id="center-page" class="text-white"></div>
-      </div>
-      <div
-        id="section-right"
-        class="col-2 bg-black text-white d-none px-3 py-4">
-        <div
-          id="friends-album"
-          class="d-flex flex-row justify-content-between mb-5">
-          <h6>Attività amici</h6>
-          <div id="friends-buttons" class="d-flex flex-row">
-            <i class="bi bi-person-add me-3"></i>
-            <i class="close-friends bi bi-x-lg"></i>
+            <p>I tuoi episodi</p>
           </div>
         </div>
-        <div id="friends-list">
-          <div
-            class="friend d-flex justify-content-between align-items-start mb-5">
-            <div class="d-flex">
-              <div class="me-3 friend-img-container d-none d-xl-block">
-                <img src="https://picsum.photos/40" alt="" />
-              </div>
-              <div class="friend-text">
-                <h6>Nome amico</h6>
-                <p>Canzone ascoltata - Artista</p>
-                <p>Album ascoltato</p>
-              </div>
-            </div>
-            <div>
-              <p class="d-none d-xl-block">8 ore</p>
-            </div>
-          </div>
-          <div
-            class="friend d-flex justify-content-between align-items-start mb-5">
-            <div class="d-flex">
-              <div class="me-3 friend-img-container d-none d-xl-block">
-                <img src="https://picsum.photos/40" alt="" />
-              </div>
-              <div class="friend-text">
-                <h6>Nome amico</h6>
-                <p>Canzone ascoltata - Artista</p>
-                <p>Album ascoltato</p>
-              </div>
-            </div>
-            <div>
-              <p class="d-none d-xl-block">8 ore</p>
-            </div>
-          </div>
-          <div
-            class="friend d-flex justify-content-between align-items-start mb-5">
-            <div class="d-flex">
-              <div class="me-3 friend-img-container d-none d-xl-block">
-                <img src="https://picsum.photos/40" alt="" />
-              </div>
-              <div class="friend-text">
-                <h6>Nome amico</h6>
-                <p>Canzone ascoltata - Artista</p>
-                <p>Album ascoltato</p>
-              </div>
-            </div>
-            <div>
-              <p class="d-none d-xl-block">8 ore</p>
-            </div>
-          </div>
-        </div>
+        <hr />
       </div>
-    </main>
-
-    <dix id="mini-player" class="d-block d-md-none">
-      <div
-        class="mini-player-body d-flex align-items-center justify-content-around">
-        <img src="https://picsum.photos/30" alt="" />
-        <span>Titolo canzone</span>
-        <i class="bi bi-music-player text-secondary"></i>
-        <i class="bi bi-heart ms-2"></i>
-        <i class="bi bi-play-fill"></i>
-      </div>
-    </dix>
-
-    <div id="nav-mobile" class="fixed-bottom">
-      <nav
-        class="d-flex d-md-none mb-4 align-items-center row row-cols-3 mx-2 pt-2">
-        <a
-          id="homepage-bnt-bottom"
-          href="#"
-          class="link-mobile text-decoration-none"
-          ><div class="d-flex flex-column align-items-center">
-            <i class="icon-mobile bi bi-house-door-fill"></i> Home
-          </div></a
-        >
-        <a
-          id="search-btn-bottom"
-          href="#"
-          class="link-mobile text-decoration-none"
-          ><div class="d-flex flex-column align-items-center">
-            <i class="icon-mobile bi bi-search"></i> Cerca
-          </div></a
-        >
-        <a href="#" class="link-mobile text-decoration-none"
-          ><div class="d-flex flex-column align-items-center">
-            <i class="icon-mobile bi bi-square-half"></i> La tua libreria
-          </div></a
-        >
-      </nav>
-    </div>
-    <div
-      id="player-block"
-      class="container-fluid fixed-bottom d-none d-md-flex flex-row align-items-center justify-content-between text-white py-2">
-      <div class="current-song d-flex align-items-center flex-row col-2">
-        <img src="https://picsum.photos/70" alt="" class="album-img me-2" />
-        <div class="song-artist d-flex flex-row flex-column">
-          <h4 class="m-0">Song-album</h4>
-          <p class="m-0">Artist name</p>
-        </div>
-        <i class="bi bi-heart"></i>
-      </div>
-      <div class="player d-flex flex-column">
-        <div
-          class="controls d-flex align-items-center justify-content-center gap-4">
-          <i class="bi bi-shuffle"></i>
-          <i class="bi bi-skip-start-fill"></i>
-          <i class="bi bi-play-circle-fill"></i>
-          <i class="bi bi-skip-end-fill"></i>
-          <i class="bi bi-repeat"></i>
-        </div>
-
-        <div class="progresso d-flex align-items-center me-5 pe-4">
-          <p class="my-0 mx-1">2:34</p>
-          <input
-            class="col-10"
-            type="range"
-            id="vol"
-            name="vol"
-            min="0"
-            max="30"
-            value="0" />
-          <p class="my-0 mx-1">5:00</p>
-        </div>
-      </div>
-
-      <div
-        class="player-settings d-flex flex-row align-items-center justify-content-end gap-2 col-2">
-        <i class="bi bi-mic d-none d-lg-block"></i>
-
-        <i class="bi bi-list d-none d-lg-block"></i>
-
-        <i class="bi bi-music-player d-none d-lg-block"></i>
-
-        <div class="volume d-flex flex-row align-items-center gap-2">
-          <i class="bi bi-volume-down"></i>
-          <input class="volume-right" type="range" id="vol" name="vol" />
-          <i class="bi bi-arrows-angle-expand"></i>
-        </div>
+      <div id="my-playlists">
+        <p>early stage emily syndrome (sett-ott 2022)</p>
+        <p>early stage emily syndrome (sett-ott 2022)</p>
+        <p>early stage emily syndrome (sett-ott 2022)</p>
+        <p>early stage emily syndrome (sett-ott 2022)</p>
+        <p>early stage emily syndrome (sett-ott 2022)</p>
+        <p>early stage emily syndrome (sett-ott 2022)</p>
+        <p>early stage emily syndrome (sett-ott 2022)</p>
+        <p>early stage emily syndrome (sett-ott 2022)</p>
+        <p>early stage emily syndrome (sett-ott 2022)</p>
+        <p>early stage emily syndrome (sett-ott 2022)</p>
+        <p>early stage emily syndrome (sett-ott 2022)</p>
+        <p>early stage emily syndrome (sett-ott 2022)</p>
+        <p>early stage emily syndrome (sett-ott 2022)</p>
+        <p>early stage emily syndrome (sett-ott 2022)</p>
+        <p>early stage emily syndrome (sett-ott 2022)</p>
+        <p>early stage emily syndrome (sett-ott 2022)</p>
+        <p>early stage emily syndrome (sett-ott 2022)</p>
+        <p>early stage emily syndrome (sett-ott 2022)</p>
+        <p>early stage emily syndrome (sett-ott 2022)</p>
+        <p>early stage emily syndrome (sett-ott 2022)</p>
+        <p>early stage emily syndrome (sett-ott 2022)</p>
+        <p>early stage emily syndrome (sett-ott 2022)</p>
+        <p>early stage emily syndrome (sett-ott 2022)</p>
+        <p>early stage emily syndrome (sett-ott 2022)</p>
       </div>
     </div>
-
-    <template id="home-page">
-      <div
-        id="adv-card"
-        class="flex-row justify-content-between p-3 d-none d-sm-flex">
-        <div class="adv-left d-flex flex-row gap-3 align-items-center">
-          <img src="https://picsum.photos/100" alt="" class="big-img" />
-          <div class="adv-text">
-            <p>ALBUM</p>
-            <h2 class="song-title">Titolo canzone</h2>
-            <div class="dioporco">
-              <p class="song-artist">Autore</p>
-              <p class="song-artist-adv">Ascolta il nuovo singolo di</p>
+    <div id="central-container" class="col-12 col-lg-10 container-fluid px-5">
+      <header id="header" class="sticky-top">
+        <nav id="nav-top" class="d-flex justify-content-between align-items-center">
+          <div id="bottoni" class="d-flex flex-row gap-3">
+            <div id="left">
+              <i class="navigation-button bi bi-chevron-left" type="button"></i>
             </div>
-            <div id="adv-buttons" class="d-flex gap-3 align-items-center">
-              <button class="btn btn-success text-black fw-bold">Play</button>
-              <button class="btn btn-outline-secondary text-white fw-bold">
-                Salva
+            <div id="right">
+              <i class="navigation-button bi bi-chevron-right" type="button"></i>
+            </div>
+          </div>
+          <div class="d-flex gap-4">
+            <div class="dropdown">
+              <button class="btn btn-dark dropdown-toggle d-flex align-items-center pe-2" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <div class="profile-image">
+                  <img src="https://picsum.photos/25" alt="" />
+                </div>
+                Porcaccio
               </button>
-              <i class="bi bi-three-dots"></i>
+              <ul class="dropdown-menu dropdown-menu-dark">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li>
+                  <a id="album-toggle" class="dropdown-item" href="#">Album</a>
+                </li>
+                <li>
+                  <a id="friendlist-toggle" class="dropdown-item" href="#">Amici</a>
+                </li>
+              </ul>
             </div>
           </div>
-        </div>
-        <button class="btn hide-adv fw-bold px-3 end-50">
-          NASCONDI ANNUNCI
-        </button>
-      </div>
+        </nav>
+      </header>
 
-      <div id="buonasera" class="container-fluid my-3 px-0">
-        <div class="d-flex align-items-center justify-content-between mb-3">
-          <h2>Buonasera</h2>
-          <div class="icon-salve d-flex gap-3">
-            <i class="bi bi-bell"></i>
-            <i class="bi bi-clock-history"></i>
-            <i class="bi bi-gear"></i>
+      <div id="center-page" class="text-white"></div>
+    </div>
+    <div id="section-right" class="col-2 bg-black text-white d-none px-3 py-4">
+      <div id="friends-album" class="d-flex flex-row justify-content-between mb-5">
+        <h6>Attività amici</h6>
+        <div id="friends-buttons" class="d-flex flex-row">
+          <i class="bi bi-person-add me-3"></i>
+          <i class="close-friends bi bi-x-lg"></i>
+        </div>
+      </div>
+      <div id="friends-list">
+        <div class="friend d-flex justify-content-between align-items-start mb-5">
+          <div class="d-flex">
+            <div class="me-3 friend-img-container d-none d-xl-block">
+              <img src="https://picsum.photos/40" alt="" />
+            </div>
+            <div class="friend-text">
+              <h6>Nome amico</h6>
+              <p>Canzone ascoltata - Artista</p>
+              <p>Album ascoltato</p>
+            </div>
+          </div>
+          <div>
+            <p class="d-none d-xl-block">8 ore</p>
           </div>
         </div>
-        <div class="cards-salve g-3 row row-cols-2 row-cols-lg-3">
-          <div class="raccolta col">
-            <div class="d-flex gap-1 gap-sm-3 align-items-center">
-              <img
-                src="./assets/imgs/main/image-10.jpg"
-                alt=""
-                class="img-raccolta img-hello" />
-              <h6 class="titolo-raccolta">Operazione Buonumore!</h6>
+        <div class="friend d-flex justify-content-between align-items-start mb-5">
+          <div class="d-flex">
+            <div class="me-3 friend-img-container d-none d-xl-block">
+              <img src="https://picsum.photos/40" alt="" />
+            </div>
+            <div class="friend-text">
+              <h6>Nome amico</h6>
+              <p>Canzone ascoltata - Artista</p>
+              <p>Album ascoltato</p>
             </div>
           </div>
-          <div class="raccolta col">
-            <div class="d-flex gap-1 gap-sm-3 align-items-center">
-              <img
-                src="./assets/imgs/main/image-15.jpg"
-                alt=""
-                class="img-raccolta img-hello" />
-              <h6 class="titolo-raccolta">Casa dolce casa</h6>
+          <div>
+            <p class="d-none d-xl-block">8 ore</p>
+          </div>
+        </div>
+        <div class="friend d-flex justify-content-between align-items-start mb-5">
+          <div class="d-flex">
+            <div class="me-3 friend-img-container d-none d-xl-block">
+              <img src="https://picsum.photos/40" alt="" />
+            </div>
+            <div class="friend-text">
+              <h6>Nome amico</h6>
+              <p>Canzone ascoltata - Artista</p>
+              <p>Album ascoltato</p>
             </div>
           </div>
-          <div class="raccolta col">
-            <div class="d-flex gap-1 gap-sm-3 align-items-center">
-              <img
-                src="./assets/imgs/main/image-6.jpg"
-                alt=""
-                class="img-raccolta img-hello" />
-              <h6 class="titolo-raccolta">Jazz Vibes</h6>
-            </div>
-          </div>
-          <div class="raccolta col">
-            <div class="d-flex gap-1 gap-sm-3 align-items-center">
-              <img
-                src="./assets/imgs/main/image-16.jpg"
-                alt=""
-                class="img-raccolta img-hello" />
-              <h6 class="titolo-raccolta">Lavorare da Casa</h6>
-            </div>
-          </div>
-          <div class="raccolta col">
-            <div class="d-flex gap-1 gap-sm-3 align-items-center">
-              <img
-                src="./assets/imgs/main/image-19.jpg"
-                alt=""
-                class="img-raccolta img-hello" />
-              <h6 class="titolo-raccolta">Street Culto</h6>
-            </div>
-          </div>
-          <div class="raccolta col">
-            <div class="d-flex gap-1 gap-sm-3 align-items-center">
-              <img
-                src="./assets/imgs/main/image-4.jpg"
-                alt=""
-                class="img-raccolta img-hello" />
-              <h6 class="titolo-raccolta">Peaceful Piano</h6>
-            </div>
+          <div>
+            <p class="d-none d-xl-block">8 ore</p>
           </div>
         </div>
       </div>
+    </div>
+  </main>
 
-      <div class="container-fluid px-0 my-5">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h2>Consigliati per Te</h2>
-          <a
-            class="text-decoration-none text-secondary fw-bold d-none d-sm-block"
-            href="#"
-            >VISUALIZZA TUTTO</a
-          >
+  <dix id="mini-player" class="d-block d-md-none">
+    <div class="mini-player-body d-flex align-items-center justify-content-around">
+      <img src="https://picsum.photos/30" alt="" />
+      <span>Titolo canzone</span>
+      <i class="bi bi-music-player text-secondary"></i>
+      <i class="bi bi-heart ms-2"></i>
+      <i class="bi bi-play-fill"></i>
+    </div>
+  </dix>
+
+  <div id="nav-mobile" class="fixed-bottom">
+    <nav class="d-flex d-md-none mb-4 align-items-center row row-cols-3 mx-2 pt-2">
+      <a id="homepage-bnt-bottom" href="#" class="link-mobile text-decoration-none">
+        <div class="d-flex flex-column align-items-center">
+          <i class="icon-mobile bi bi-house-door-fill"></i> Home
         </div>
-        <div
-          class="cards-salve g-3 row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6"></div>
+      </a>
+      <a id="search-btn-bottom" href="#" class="link-mobile text-decoration-none">
+        <div class="d-flex flex-column align-items-center">
+          <i class="icon-mobile bi bi-search"></i> Cerca
+        </div>
+      </a>
+      <a href="#" class="link-mobile text-decoration-none">
+        <div class="d-flex flex-column align-items-center">
+          <i class="icon-mobile bi bi-square-half"></i> La tua libreria
+        </div>
+      </a>
+    </nav>
+  </div>
+  <div id="player-block"
+    class="container-fluid fixed-bottom d-none d-md-flex flex-row align-items-center justify-content-between text-white py-2">
+    <div class="current-song d-flex align-items-center flex-row col-2">
+      <img src="https://picsum.photos/70" alt="" class="album-img me-2" />
+      <div class="song-artist d-flex flex-row flex-column">
+        <h4 class="m-0">Song-album</h4>
+        <p class="m-0">Artist name</p>
       </div>
-    </template>
+      <i class="bi bi-heart"></i>
+    </div>
+    <div class="player d-flex flex-column">
+      <div class="controls d-flex align-items-center justify-content-center gap-4">
+        <i class="bi bi-shuffle"></i>
+        <i class="bi bi-skip-start-fill"></i>
+        <i class="bi bi-play-circle-fill"></i>
+        <i class="bi bi-skip-end-fill"></i>
+        <i class="bi bi-repeat"></i>
+      </div>
 
-    <template id="album-page">
-      <div class="album img-back">
-        <!-- Blocco hero -->
-        <div class="test">
-          <div class="album-info container text-white">
-            <div class="row">
-              <div class="col-12 text-center col-md-3">
-                <img
-                  src="./assets/imgs/main/image-1.jpg"
-                  class="my-4 img-info"
-                  alt="" />
-              </div>
-              <div
-                class="col-12 col-md-9 d-flex flex-column justify-content-end pb-md-2 pt-md-2">
-                <div>
-                  <div class="d-none d-md-block">Album</div>
-                  <div
-                    class="album-album display-6 display-md-2 pb-2 pb-md-4 fw-bold">
-                    Gioventù bruciata
+      <div class="progresso d-flex align-items-center me-5 pe-4">
+        <p class="my-0 mx-1">2:34</p>
+        <input class="col-10" type="range" id="vol" name="vol" min="0" max="30" value="0" />
+        <p class="my-0 mx-1">5:00</p>
+      </div>
+    </div>
+
+    <div class="player-settings d-flex flex-row align-items-center justify-content-end gap-2 col-2">
+      <i class="bi bi-mic d-none d-lg-block"></i>
+
+      <i class="bi bi-list d-none d-lg-block"></i>
+
+      <i class="bi bi-music-player d-none d-lg-block"></i>
+
+      <div class="volume d-flex flex-row align-items-center gap-2">
+        <i class="bi bi-volume-down"></i>
+        <input class="volume-right" type="range" id="vol" name="vol" />
+        <i class="bi bi-arrows-angle-expand"></i>
+      </div>
+    </div>
+  </div>
+
+  <template id="home-page">
+    <div id="adv-card" class="flex-row justify-content-between p-3 d-none d-sm-flex">
+      <div class="adv-left d-flex flex-row gap-3 align-items-center">
+        <img src="https://picsum.photos/100" alt="" class="big-img" />
+        <div class="adv-text">
+          <p>ALBUM</p>
+          <h2 class="song-title">Titolo canzone</h2>
+          <div class="dioporco">
+            <p class="song-artist">Autore</p>
+            <p class="song-artist-adv">Ascolta il nuovo singolo di</p>
+          </div>
+          <div id="adv-buttons" class="d-flex gap-3 align-items-center">
+            <button class="btn btn-success text-black fw-bold">Play</button>
+            <button class="btn btn-outline-secondary text-white fw-bold">
+              Salva
+            </button>
+            <i class="bi bi-three-dots"></i>
+          </div>
+        </div>
+      </div>
+      <button class="btn hide-adv fw-bold px-3 end-50">
+        NASCONDI ANNUNCI
+      </button>
+    </div>
+
+    <div id="buonasera" class="container-fluid my-3 px-0">
+      <div class="d-flex align-items-center justify-content-between mb-3">
+        <h2>Buonasera</h2>
+        <div class="icon-salve d-flex gap-3">
+          <i class="bi bi-bell"></i>
+          <i class="bi bi-clock-history"></i>
+          <i class="bi bi-gear"></i>
+        </div>
+      </div>
+      <div class="cards-salve g-3 row row-cols-2 row-cols-lg-3">
+        <div class="raccolta col">
+          <div class="d-flex gap-1 gap-sm-3 align-items-center">
+            <img src="./assets/imgs/main/image-10.jpg" alt="" class="img-raccolta img-hello" />
+            <h6 class="titolo-raccolta">Operazione Buonumore!</h6>
+          </div>
+        </div>
+        <div class="raccolta col">
+          <div class="d-flex gap-1 gap-sm-3 align-items-center">
+            <img src="./assets/imgs/main/image-15.jpg" alt="" class="img-raccolta img-hello" />
+            <h6 class="titolo-raccolta">Casa dolce casa</h6>
+          </div>
+        </div>
+        <div class="raccolta col">
+          <div class="d-flex gap-1 gap-sm-3 align-items-center">
+            <img src="./assets/imgs/main/image-6.jpg" alt="" class="img-raccolta img-hello" />
+            <h6 class="titolo-raccolta">Jazz Vibes</h6>
+          </div>
+        </div>
+        <div class="raccolta col">
+          <div class="d-flex gap-1 gap-sm-3 align-items-center">
+            <img src="./assets/imgs/main/image-16.jpg" alt="" class="img-raccolta img-hello" />
+            <h6 class="titolo-raccolta">Lavorare da Casa</h6>
+          </div>
+        </div>
+        <div class="raccolta col">
+          <div class="d-flex gap-1 gap-sm-3 align-items-center">
+            <img src="./assets/imgs/main/image-19.jpg" alt="" class="img-raccolta img-hello" />
+            <h6 class="titolo-raccolta">Street Culto</h6>
+          </div>
+        </div>
+        <div class="raccolta col">
+          <div class="d-flex gap-1 gap-sm-3 align-items-center">
+            <img src="./assets/imgs/main/image-4.jpg" alt="" class="img-raccolta img-hello" />
+            <h6 class="titolo-raccolta">Peaceful Piano</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid px-0 my-5">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>Consigliati per Te</h2>
+        <a class="text-decoration-none text-secondary fw-bold d-none d-sm-block" href="#">VISUALIZZA TUTTO</a>
+      </div>
+      <div class="cards-salve g-3 row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6">
+        <div class="raccolta col">
+          <div class="d-flex home-album flex-row flex-sm-column gap-3 p-2">
+            <img src="https://picsum.photos/140" alt="" class="img-raccolta song-image" />
+            <div class="d-flex flex-column">
+              <p type="button" id="" class="song-album"></p>
+              <p id="" class="song-artist"></p>
+            </div>
+          </div>
+        </div>
+        <div class="raccolta col">
+          <div class="d-flex home-album flex-row flex-sm-column gap-3 p-2">
+            <img src="https://picsum.photos/140" alt="" class="img-raccolta song-image" />
+            <div class="d-flex flex-column">
+              <p type="button" id="" class="song-album"></p>
+              <p id="" class="song-artist"></p>
+            </div>
+          </div>
+        </div>
+        <div class="raccolta col">
+          <div class="d-flex home-album flex-row flex-sm-column gap-3 p-2">
+            <img src="https://picsum.photos/140" alt="" class="img-raccolta song-image" />
+            <div class="d-flex flex-column">
+              <p type="button" id="" class="song-album"></p>
+              <p id="" class="song-artist"></p>
+            </div>
+          </div>
+        </div>
+        <div class="raccolta col">
+          <div class="d-flex home-album flex-row flex-sm-column gap-3 p-2">
+            <img src="https://picsum.photos/140" alt="" class="img-raccolta song-image" />
+            <div class="d-flex flex-column">
+              <p type="button" id="" class="song-album"></p>
+              <p id="" class="song-artist"></p>
+            </div>
+          </div>
+        </div>
+        <div class="raccolta col">
+          <div class="d-flex home-album flex-row flex-sm-column gap-3 p-2">
+            <img src="https://picsum.photos/140" alt="" class="img-raccolta song-image" />
+            <div class="d-flex flex-column">
+              <p type="button" id="" class="song-album"></p>
+              <p id="" class="song-artist"></p>
+            </div>
+          </div>
+        </div>
+        <div class="raccolta col">
+          <div class="d-flex home-album flex-row flex-sm-column gap-3 p-2">
+            <img src="https://picsum.photos/140" alt="" class="img-raccolta song-image" />
+            <div class="d-flex flex-column">
+              <p type="button" id="" class="song-album"></p>
+              <p id="" class="song-artist"></p>
+            </div>
+          </div>
+        </div>
+        <div class="raccolta col">
+          <div class="d-flex home-album flex-row flex-sm-column gap-3 p-2">
+            <img src="https://picsum.photos/140" alt="" class="img-raccolta song-image" />
+            <div class="d-flex flex-column">
+              <p type="button" id="" class="song-album"></p>
+              <p id="" class="song-artist"></p>
+            </div>
+          </div>
+        </div>
+        <div class="raccolta col">
+          <div class="d-flex home-album flex-row flex-sm-column gap-3 p-2">
+            <img src="https://picsum.photos/140" alt="" class="img-raccolta song-image" />
+            <div class="d-flex flex-column">
+              <p type="button" id="" class="song-album"></p>
+              <p id="" class="song-artist"></p>
+            </div>
+          </div>
+        </div>
+        <div class="raccolta col">
+          <div class="d-flex home-album flex-row flex-sm-column gap-3 p-2">
+            <img src="https://picsum.photos/140" alt="" class="img-raccolta song-image" />
+            <div class="d-flex flex-column">
+              <p type="button" id="" class="song-album"></p>
+              <p id="" class="song-artist"></p>
+            </div>
+          </div>
+        </div>
+        <div class="raccolta col">
+          <div class="d-flex home-album flex-row flex-sm-column gap-3 p-2">
+            <img src="https://picsum.photos/140" alt="" class="img-raccolta song-image" />
+            <div class="d-flex flex-column">
+              <p type="button" id="" class="song-album"></p>
+              <p id="" class="song-artist"></p>
+            </div>
+          </div>
+        </div>
+        <div class="raccolta col">
+          <div class="d-flex home-album flex-row flex-sm-column gap-3 p-2">
+            <img src="https://picsum.photos/140" alt="" class="img-raccolta song-image" />
+            <div class="d-flex flex-column">
+              <p type="button" id="" class="song-album"></p>
+              <p id="" class="song-artist"></p>
+            </div>
+          </div>
+        </div>
+        <div class="raccolta col">
+          <div class="d-flex home-album flex-row flex-sm-column gap-3 p-2">
+            <img src="https://picsum.photos/140" alt="" class="img-raccolta song-image" />
+            <div class="d-flex flex-column">
+              <p type="button" id="" class="song-album"></p>
+              <p id="" class="song-artist"></p>
+            </div>
+          </div>
+        </div>
+        <div class="raccolta col">
+          <div class="d-flex home-album flex-row flex-sm-column gap-3 p-2">
+            <img src="https://picsum.photos/140" alt="" class="img-raccolta song-image" />
+            <div class="d-flex flex-column">
+              <p type="button" id="" class="song-album"></p>
+              <p id="" class="song-artist"></p>
+            </div>
+          </div>
+        </div>
+        <div class="raccolta col">
+          <div class="d-flex home-album flex-row flex-sm-column gap-3 p-2">
+            <img src="https://picsum.photos/140" alt="" class="img-raccolta song-image" />
+            <div class="d-flex flex-column">
+              <p type="button" id="" class="song-album"></p>
+              <p id="" class="song-artist"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <template id="album-page">
+    <div class="album img-back">
+      <!-- Blocco hero -->
+      <div class="test">
+        <div class="album-info container text-white">
+          <div class="row">
+            <div class="col-12 text-center col-md-3">
+              <img src="./assets/imgs/main/image-1.jpg" class="my-4 img-info" alt="" />
+            </div>
+            <div class="col-12 col-md-9 d-flex flex-column justify-content-end pb-md-2 pt-md-2">
+              <div>
+                <div class="d-none d-md-block">Album</div>
+                <div class="album-album display-6 display-md-2 pb-2 pb-md-4 fw-bold">
+                  Gioventù bruciata
+                </div>
+                <div class="d-flex flex-row mb-2">
+                  <div class="me-2">
+                    <img src="./assets/imgs/main/image-1.jpg" class="rounded-circle avatar" alt="" />
                   </div>
-                  <div class="d-flex flex-row mb-2">
-                    <div class="me-2">
-                      <img
-                        src="./assets/imgs/main/image-1.jpg"
-                        class="rounded-circle avatar"
-                        alt="" />
-                    </div>
-                    <div class="d-flex">
-                      <div class="artist-name-album">Nome artista</div>
-                      <div class="d-none d-md-block">
-                        <i class="bi bi-dot"></i>
-                      </div>
-                      <div class="album-date d-none d-md-block">2017</div>
-                      <div class="d-none d-md-block">
-                        <i class="bi bi-dot"></i>
-                      </div>
-                      <div class="track-number d-none me-2d-md-block">
-                        12 brani,
-                      </div>
-                      <div class="total-time d-none d-md-block gray-color">
-                        12 ore
-                      </div>
-                    </div>
-                  </div>
-                  <div class="d-flex mb-2 d-md-none">
-                    <div>
-                      <span class="gray-color">Album</span>
-                    </div>
-                    <div class="dot">
+                  <div class="d-flex">
+                    <div class="artist-name-album">Nome artista</div>
+                    <div class="d-none d-md-block">
                       <i class="bi bi-dot"></i>
                     </div>
-                    <div class="gray-color">2017</div>
+                    <div class="album-date d-none d-md-block">2017</div>
+                    <div class="d-none d-md-block">
+                      <i class="bi bi-dot"></i>
+                    </div>
+                    <div class="track-number d-none me-2d-md-block">
+                      12 brani,
+                    </div>
+                    <div class="total-time d-none d-md-block gray-color">
+                      12 ore
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="album text-white gradient">
-          <div class="container">
-            <!-- Blocco a scomparsa su d-sm -->
-            <div
-              class="play-icone d-flex py-3 d-none d-md-block align-items-center">
-              <div class="d-flex pt-3">
-                <i
-                  class="bi bi-play-circle-fill player-fill me-4 svg-pointer"></i>
-                <i class="bi bi-heart heart-icon me-3 svg-pointer"></i>
-                <i
-                  class="bi bi-arrow-down-circle download svg-pointer me-3"></i>
-                <i class="bi bi-three-dots vertical-dot svg-pointer"></i>
-              </div>
-            </div>
-            <!-- Blocco a scomparsa su d-md -->
-            <div
-              class="play-icone container d-flex justify-content-between d-md-none p-0 pt-2">
-              <div class="d-flex gap-4">
-                <i class="bi bi-heart heart-icon svg-pointer mt-3"></i>
-                <i
-                  class="bi bi-arrow-down-circle download svg-pointer mt-3"></i>
-                <i
-                  class="bi bi-three-dots-vertical vertical-dot svg-pointer mt-3"></i>
-              </div>
-              <div class="d-flex gap-2">
-                <div class="mt-3">
-                  <i class="bi bi-shuffle shuffle svg-pointer"></i>
-                </div>
-                <div class="mt-1">
-                  <i class="bi bi-play-circle-fill svg-pointer player-fill"></i>
-                </div>
-              </div>
-            </div>
-            <!-- Blocco a scomparsa su d-sm con titoli e ascolti -->
-            <div class="songs d-none d-md-block">
-              <div
-                class="songs-album container d-flex justify-content-between border-bottom border-light pb-1">
-                <div class="d-flex gap-3">
-                  <div class="gray-color">#</div>
-                  <div class="gray-color">TITOLO</div>
-                </div>
-                <div class="gray-color">RIPRODUZIONI</div>
-                <div>
-                  <i class="bi bi-clock gray-color"></i>
-                </div>
-              </div>
-            </div>
-            <div id="album-songs" class="pt-3"></div>
-            <!-- Container che verrà popolato dalle tracce-->
-          </div>
-        </div>
-      </div>
-    </template>
-
-    <template id="search-page">
-      <div class="row text-white container-fluid">
-        <div class="display-5 fw-bold ms-2 d-md-none">Cerca</div>
-        <div>
-          <i class="fas fa-search withe-trasparent"></i>
-          <form id="form-search">
-            <label type="submit"></label>
-            <div class="search-container black-spoty-bg d-flex p-2 gap-2">
-              <i class="bi bi-search" id="cerca-icon"></i>
-              <input
-                type="text"
-                placeholder="Cosa vuoi ascoltare?"
-                class="border border-0 withe-trasparent fw-bold w-100"
-                id="input-search" />
-            </div>
-          </form>
-        </div>
-        <div class="fs-5 text-center fw-bold my-2 text-md-start">
-          Sfoglia tutto
-        </div>
-        <div class="categories">
-          <div class="">
-            <div class="row">
-              <div class="col-6 col-md-3 col-lg-1 search-card rounded">
-                <div class="position-relative">
-                  <h4 class="titolo-raccolta">Titolo</h4>
-                  <img
-                    src="https://picsum.photos/70"
-                    alt=""
-                    class="img-search position-absolute end-0 top-0 rounded" />
-                </div>
-              </div>
-              <div class="col-6 col-md-3 col-lg-1 search-card rounded">
-                <div class="position-relative">
-                  <h4 class="titolo-raccolta">Titolo</h4>
-                  <img
-                    src="https://picsum.photos/70"
-                    alt=""
-                    class="img-search position-absolute end-0 top-0 rounded" />
-                </div>
-              </div>
-              <div class="col-6 col-md-3 col-lg-1 search-card rounded">
-                <div class="position-relative">
-                  <h4 class="titolo-raccolta">Titolo</h4>
-                  <img
-                    src="https://picsum.photos/70"
-                    alt=""
-                    class="img-search position-absolute end-0 top-0 rounded" />
-                </div>
-              </div>
-              <div class="col-6 col-md-3 col-lg-1 search-card rounded">
-                <div class="position-relative">
-                  <h4 class="titolo-raccolta">Titolo</h4>
-                  <img
-                    src="https://picsum.photos/70"
-                    alt=""
-                    class="img-search position-absolute end-0 top-0 rounded" />
-                </div>
-              </div>
-              <div class="col-6 col-md-3 col-lg-1 search-card rounded">
-                <div class="position-relative">
-                  <h4 class="titolo-raccolta">Titolo</h4>
-                  <img
-                    src="https://picsum.photos/70"
-                    alt=""
-                    class="img-search position-absolute end-0 top-0 rounded" />
-                </div>
-              </div>
-              <div class="col-6 col-md-3 col-lg-1 search-card rounded">
-                <div class="position-relative">
-                  <h4 class="titolo-raccolta">Titolo</h4>
-                  <img
-                    src="https://picsum.photos/70"
-                    alt=""
-                    class="img-search position-absolute end-0 top-0 rounded" />
-                </div>
-              </div>
-              <div class="col-6 col-md-3 col-lg-1 search-card rounded">
-                <div class="position-relative">
-                  <h4 class="titolo-raccolta">Titolo</h4>
-                  <img
-                    src="https://picsum.photos/70"
-                    alt=""
-                    class="img-search position-absolute end-0 top-0 rounded" />
-                </div>
-              </div>
-              <div class="col-6 col-md-3 col-lg-1 search-card rounded">
-                <div class="position-relative">
-                  <h4 class="titolo-raccolta">Titolo</h4>
-                  <img
-                    src="https://picsum.photos/70"
-                    alt=""
-                    class="img-search position-absolute end-0 top-0 rounded" />
+                <div class="d-flex mb-2 d-md-none">
+                  <div>
+                    <span class="gray-color">Album</span>
+                  </div>
+                  <div class="dot">
+                    <i class="bi bi-dot"></i>
+                  </div>
+                  <div class="gray-color">2017</div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <template>
-        <div class="col search-card rounded">
-          <div class="position-relative">
-            <h4 class="titolo-raccolta">Titolo</h4>
-            <img
-              src="https://picsum.photos/70"
-              alt=""
-              class="img-search position-absolute end-0 top-0 rounded" />
-          </div>
-        </div>
-      </template>
-    </template>
 
-    <template id="artist-page">
-      <div class="artist text-white">
-        <header
-          class="artist-header d-flex flex-column justify-content-between py-4 px-4">
-          <nav class="d-flex flex-column">
-            <div id="bottoni" class="d-flex flex-row gap-3">
-              <div id="left">
-                <i class="navigation-button bi bi-chevron-left"></i>
-              </div>
-              <div id="right">
-                <i class="navigation-button bi bi-chevron-right"></i>
-              </div>
+      <div class="album text-white gradient">
+        <div class="container">
+          <!-- Blocco a scomparsa su d-sm -->
+          <div class="play-icone d-flex py-3 d-none d-md-block align-items-center">
+            <div class="d-flex pt-3">
+              <i class="bi bi-play-circle-fill player-fill me-4 svg-pointer"></i>
+              <i class="bi bi-heart heart-icon me-3 svg-pointer"></i>
+              <i class="bi bi-arrow-down-circle download svg-pointer me-3"></i>
+              <i class="bi bi-three-dots vertical-dot svg-pointer"></i>
             </div>
-            <div id="drop"></div>
-          </nav>
-
-          <div class="artist-block">
+          </div>
+          <!-- Blocco a scomparsa su d-md -->
+          <div class="play-icone container d-flex justify-content-between d-md-none p-0 pt-2">
+            <div class="d-flex gap-4">
+              <i class="bi bi-heart heart-icon svg-pointer mt-3"></i>
+              <i class="bi bi-arrow-down-circle download svg-pointer mt-3"></i>
+              <i class="bi bi-three-dots-vertical vertical-dot svg-pointer mt-3"></i>
+            </div>
             <div class="d-flex gap-2">
-              <div class="verificato d-none d-md-block">
-                <i class="bi bi-patch-check-fill text-primary me-2"></i>Artista
-                verificato
+              <div class="mt-3">
+                <i class="bi bi-shuffle shuffle svg-pointer"></i>
               </div>
-            </div>
-
-            <h2 class="artist-name">NOME Artista</h2>
-            <div class="listeners mt-5 d-none d-md-block">
-              ascoltatori mensili
+              <div class="mt-1">
+                <i class="bi bi-play-circle-fill svg-pointer player-fill"></i>
+              </div>
             </div>
           </div>
-        </header>
-
-        <main class="py-4 px-4 d-flex flex-column gap-4 gradient">
-          <div class="listeners mt-1 d-md-none">ascoltatori mensili</div>
-
-          <div
-            class="play-icone container d-flex justify-content-between align-items-center d-md-none p-0 pt-2">
-            <div class="d-flex align-items-center">
-              <div class="bg-button">
-                <a class="border border-black follow-mobile me-4">FOLLOWING</a>
+          <!-- Blocco a scomparsa su d-sm con titoli e ascolti -->
+          <div class="songs d-none d-md-block">
+            <div class="songs-album container d-flex justify-content-between border-bottom border-light pb-1">
+              <div class="d-flex gap-3">
+                <div class="gray-color">#</div>
+                <div class="gray-color">TITOLO</div>
               </div>
+              <div class="gray-color">RIPRODUZIONI</div>
               <div>
-                <i class="bi bi-three-dots-vertical fs-1 dots"></i>
-              </div>
-            </div>
-            <div class="d-flex align-items-center">
-              <div class="shuffle">
-                <i class="bi bi-shuffle fs-1 me-4"></i>
-              </div>
-              <div class="icon-play">
-                <i class="bi bi-play-fill text-white"></i>
+                <i class="bi bi-clock gray-color"></i>
               </div>
             </div>
           </div>
-          <div class="d-none d-md-flex flex-row gap-3 align-items-center gap-5">
+          <div id="album-songs" class="pt-3"></div>
+          <!-- Container che verrà popolato dalle tracce-->
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <template id="search-page">
+    <div class="row text-white container-fluid">
+      <div class="display-5 fw-bold ms-2 d-md-none">Cerca</div>
+      <div>
+        <i class="fas fa-search withe-trasparent"></i>
+        <form id="form-search">
+          <label type="submit"></label>
+          <div class="search-container black-spoty-bg d-flex p-2 gap-2">
+            <i class="bi bi-search" id="cerca-icon"></i>
+            <input type="text" placeholder="Cosa vuoi ascoltare?" class="border border-0 withe-trasparent fw-bold w-100"
+              id="input-search" />
+          </div>
+        </form>
+      </div>
+      <div class="fs-5 text-center fw-bold my-2 text-md-start">
+        Sfoglia tutto
+      </div>
+      <div class="categories">
+        <div class="">
+          <div class="row">
+            <div class="col-6 col-md-3 col-lg-1 search-card rounded">
+              <div class="position-relative">
+                <h4 class="titolo-raccolta">Titolo</h4>
+                <img src="https://picsum.photos/70" alt="" class="img-search position-absolute end-0 top-0 rounded" />
+              </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-1 search-card rounded">
+              <div class="position-relative">
+                <h4 class="titolo-raccolta">Titolo</h4>
+                <img src="https://picsum.photos/70" alt="" class="img-search position-absolute end-0 top-0 rounded" />
+              </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-1 search-card rounded">
+              <div class="position-relative">
+                <h4 class="titolo-raccolta">Titolo</h4>
+                <img src="https://picsum.photos/70" alt="" class="img-search position-absolute end-0 top-0 rounded" />
+              </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-1 search-card rounded">
+              <div class="position-relative">
+                <h4 class="titolo-raccolta">Titolo</h4>
+                <img src="https://picsum.photos/70" alt="" class="img-search position-absolute end-0 top-0 rounded" />
+              </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-1 search-card rounded">
+              <div class="position-relative">
+                <h4 class="titolo-raccolta">Titolo</h4>
+                <img src="https://picsum.photos/70" alt="" class="img-search position-absolute end-0 top-0 rounded" />
+              </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-1 search-card rounded">
+              <div class="position-relative">
+                <h4 class="titolo-raccolta">Titolo</h4>
+                <img src="https://picsum.photos/70" alt="" class="img-search position-absolute end-0 top-0 rounded" />
+              </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-1 search-card rounded">
+              <div class="position-relative">
+                <h4 class="titolo-raccolta">Titolo</h4>
+                <img src="https://picsum.photos/70" alt="" class="img-search position-absolute end-0 top-0 rounded" />
+              </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-1 search-card rounded">
+              <div class="position-relative">
+                <h4 class="titolo-raccolta">Titolo</h4>
+                <img src="https://picsum.photos/70" alt="" class="img-search position-absolute end-0 top-0 rounded" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <template>
+      <div class="col search-card rounded">
+        <div class="position-relative">
+          <h4 class="titolo-raccolta">Titolo</h4>
+          <img src="https://picsum.photos/70" alt="" class="img-search position-absolute end-0 top-0 rounded" />
+        </div>
+      </div>
+    </template>
+  </template>
+
+  <template id="artist-page">
+    <div class="artist text-white">
+      <header class="artist-header d-flex flex-column justify-content-between py-4 px-4">
+        <nav class="d-flex flex-column">
+          <div id="bottoni" class="d-flex flex-row gap-3">
+            <div id="left">
+              <i class="navigation-button bi bi-chevron-left"></i>
+            </div>
+            <div id="right">
+              <i class="navigation-button bi bi-chevron-right"></i>
+            </div>
+          </div>
+          <div id="drop"></div>
+        </nav>
+
+        <div class="artist-block">
+          <div class="d-flex gap-2">
+            <div class="verificato d-none d-md-block">
+              <i class="bi bi-patch-check-fill text-primary me-2"></i>Artista
+              verificato
+            </div>
+          </div>
+
+          <h2 class="artist-name">NOME Artista</h2>
+          <div class="listeners mt-5 d-none d-md-block">
+            ascoltatori mensili
+          </div>
+        </div>
+      </header>
+
+      <main class="py-4 px-4 d-flex flex-column gap-4 gradient">
+        <div class="listeners mt-1 d-md-none">ascoltatori mensili</div>
+
+        <div class="play-icone container d-flex justify-content-between align-items-center d-md-none p-0 pt-2">
+          <div class="d-flex align-items-center">
+            <div class="bg-button">
+              <a class="border border-black follow-mobile me-4">FOLLOWING</a>
+            </div>
+            <div>
+              <i class="bi bi-three-dots-vertical fs-1 dots"></i>
+            </div>
+          </div>
+          <div class="d-flex align-items-center">
+            <div class="shuffle">
+              <i class="bi bi-shuffle fs-1 me-4"></i>
+            </div>
             <div class="icon-play">
               <i class="bi bi-play-fill text-white"></i>
             </div>
-            <a class="border border-light following">FOLLOWING</a>
-            <i class="bi bi-three-dots fs-2 dots"></i>
-          </div>
-
-          <div class="d-flex flex-column flex-lg-row">
-            <div class="col-12 col-md-8 order2">
-              <h4 class="fw-bold my-3">Popolari</h4>
-              <!-- template -->
-              <div class="row mx-lg-5 py-3 song-bar rounded">
-                <div
-                  class="d-flex flex-column flex-md-row justify-content-between">
-                  <div class="col-9 d-flex align-items-center">
-                    <div class="d-flex align-items-center">
-                      <div>1</div>
-                      <img
-                        src="https://picsum.photos/50"
-                        alt="logo"
-                        class="mx-2" />
-                    </div>
-                    <div
-                      class="d-flex flex-column flex-md-row justify-content-between col-12">
-                      <div class="fw-bold song-album">TITOLO</div>
-                      <div class="song-view">3435443535442</div>
-                      <div class="d-flex">
-                        <i class="bi bi-heart icons-disappering me-5"></i>
-                        <div
-                          class="d-none d-md-block d-flex text-end song-minutes">
-                          2.30
-                        </div>
-                        <i class="bi bi-three-dots icons-disappering ms-3"></i>
-                      </div>
-                    </div>
-                    <div class="d-md-none">
-                      <i class="bi bi-three-dots-vertical fs-2 dots"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="d-none d-md-block my-5 see-more">
-                VISUALIZZA ALTRO
-              </div>
-            </div>
-            <div class="col-12 col-md-4 order1 mb-5">
-              <h4 class="fw-bold">Brani che ti piacciono</h4>
-              <div
-                class="d-flex flex-row align-items-center gap-3 likes-background rounded py-3">
-                <div class="img">
-                  <div class="m-0 p-0 position-relative rounded-circle">
-                    <img
-                      src="https://picsum.photos/100"
-                      alt=""
-                      class="rounded-circle" />
-                    <span
-                      class="position-absolute top-100 start-100 translate-middle bg-success border border-light rounded-circle container-cuore">
-                      <i class="bi bi-heart-fill cuore p-2"></i>
-                    </span>
-                  </div>
-                </div>
-                <div class="info">
-                  <h6 class="fw-bold lh-1 m-0">Hai messo mi piace</h6>
-                  <p>all'artista</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </main>
-      </div>
-    </template>
-
-    <template id="album-track">
-      <div class="container">
-        <div
-          class="songs-album d-flex justify-content-between pt-2 position-relative">
-          <div class="d-flex flex-grow-1 gap-3">
-            <div class="number-track d-none d-md-block pt-3">1</div>
-            <div class="description">
-              <div class="title-track">Prova titolo</div>
-              <div class="artist-track gray-color">Prova artista</div>
-            </div>
-          </div>
-          <div
-            class="reproductions text-start gray-color d-none d-md-block position-absolute start-50">
-            824075
-          </div>
-          <div class="song-time text-end gray-color d-none d-md-block">
-            1:29
-          </div>
-          <div class="info-song mt-1 d-md-none svg-pointer">
-            <i class="bi bi-three-dots-vertical"></i>
           </div>
         </div>
-      </div>
-    </template>
-    <template id="artist-album">
-      <div class="raccolta col">
-        <div class="d-flex home-album flex-row flex-sm-column gap-3 p-2">
-          <img
-            src="https://picsum.photos/140"
-            alt=""
-            class="img-raccolta song-image" />
-          <div class="d-flex flex-column">
-            <a href="" class="song-album"></a>
-            <p class="song-artist"></p>
+        <div class="d-none d-md-flex flex-row gap-3 align-items-center gap-5">
+          <div class="icon-play">
+            <i class="bi bi-play-fill text-white"></i>
           </div>
-        </div></div
-    ></template>
-    <script type="module" src="./js/pulsanti.js"></script>
-    <script type="module" src="./js/template.js"></script>
-    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script type="module" src="./js/fetch.js"></script>
-  </body>
+          <a class="border border-light following">FOLLOWING</a>
+          <i class="bi bi-three-dots fs-2 dots"></i>
+        </div>
+
+        <div class="d-flex flex-column flex-lg-row">
+          <div class="col-12 col-md-8 order2">
+            <h4 class="fw-bold my-3">Popolari</h4>
+            <!-- template -->
+            <div class="row mx-lg-5 py-3 song-bar rounded">
+              <div class="d-flex flex-column flex-md-row justify-content-between">
+                <div class="col-9 d-flex align-items-center">
+                  <div class="d-flex align-items-center">
+                    <div>1</div>
+                    <img src="https://picsum.photos/50" alt="logo" class="mx-2" />
+                  </div>
+                  <div class="d-flex flex-column flex-md-row justify-content-between col-12">
+                    <div class="fw-bold song-album">TITOLO</div>
+                    <div class="song-view">3435443535442</div>
+                    <div class="d-flex">
+                      <i class="bi bi-heart icons-disappering me-5"></i>
+                      <div class="d-none d-md-block d-flex text-end song-minutes">
+                        2.30
+                      </div>
+                      <i class="bi bi-three-dots icons-disappering ms-3"></i>
+                    </div>
+                  </div>
+                  <div class="d-md-none">
+                    <i class="bi bi-three-dots-vertical fs-2 dots"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="d-none d-md-block my-5 see-more">
+              VISUALIZZA ALTRO
+            </div>
+          </div>
+          <div class="col-12 col-md-4 order1 mb-5">
+            <h4 class="fw-bold">Brani che ti piacciono</h4>
+            <div class="d-flex flex-row align-items-center gap-3 likes-background rounded py-3">
+              <div class="img">
+                <div class="m-0 p-0 position-relative rounded-circle">
+                  <img src="https://picsum.photos/100" alt="" class="rounded-circle" />
+                  <span
+                    class="position-absolute top-100 start-100 translate-middle bg-success border border-light rounded-circle container-cuore">
+                    <i class="bi bi-heart-fill cuore p-2"></i>
+                  </span>
+                </div>
+              </div>
+              <div class="info">
+                <h6 class="fw-bold lh-1 m-0">Hai messo mi piace</h6>
+                <p>all'artista</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </template>
+
+  <template id="album-track">
+    <div class="container">
+      <div class="songs-album d-flex justify-content-between pt-2 position-relative">
+        <div class="d-flex flex-grow-1 gap-3">
+          <div class="number-track d-none d-md-block pt-3">1</div>
+          <div class="description">
+            <div class="title-track">Prova titolo</div>
+            <div class="artist-track gray-color">Prova artista</div>
+          </div>
+        </div>
+        <div class="reproductions text-start gray-color d-none d-md-block position-absolute start-50">
+          824075
+        </div>
+        <div class="song-time text-end gray-color d-none d-md-block">
+          1:29
+        </div>
+        <div class="info-song mt-1 d-md-none svg-pointer">
+          <i class="bi bi-three-dots-vertical"></i>
+        </div>
+      </div>
+    </div>
+  </template>
+  <template id="artist-album">
+    <div class="raccolta col">
+      <div class="d-flex home-album flex-row flex-sm-column gap-3 p-2">
+        <img src="https://picsum.photos/140" alt="" class="img-raccolta song-image" />
+        <div class="d-flex flex-column">
+          <a href="" class="song-album"></a>
+          <p class="song-artist"></p>
+        </div>
+      </div>
+    </div>
+  </template>
+  <script type="module" src="./js/pulsanti.js"></script>
+  <script type="module" src="./js/template.js"></script>
+  <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="./js/fetch.js"></script>
+</body>
+
 </html>

@@ -1,4 +1,5 @@
 import { generaTraccia } from "./template.js";
+import { generaConsigliati } from "./template.js";
 import { centerHome } from "./pulsanti.js";
 
 const apiUrl = "https://striveschool-api.herokuapp.com/api/deezer/album/";
@@ -6,10 +7,12 @@ const apiUrl = "https://striveschool-api.herokuapp.com/api/deezer/album/";
 let albumTest = "album/51001312";
 
 let homepageAlbums = [
-  75623562, 75223442, 75233142, 75233222, 75233272, 542665382, 7824595,
+  51001312,75623562, 75223442, 75233142, 75233222, 75233272, 542665382, 7824595,
   177888572, 12207660, 299814, 61394162, 226069, 434095547, 360638247, 455130,
-  14880659, 51001312,
+  14880659
 ];
+
+
 
 centerHome();
 
@@ -33,10 +36,15 @@ export function fetcher(folder, _artist, _disco, _cover) {
     .then((res) => res.json())
     .then((album) => {
       _artist.innerText = album.artist.name;
+      _artist.id = album.artist.id
       _disco.innerText = album.title;
+      _disco.id = album.id
       _cover.src = album.cover_medium;
+      
+
     });
 }
+
 
 function singleSong(album, index) {
   fetch(apiUrl + album, {
