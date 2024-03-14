@@ -290,10 +290,10 @@ fetch((apiUrl + 177888572),
 
       let song = 0
 
-    
+      
 
      
-
+     
       
 
       imgPlayer.src = album.tracks.data[song].album.cover
@@ -301,16 +301,21 @@ fetch((apiUrl + 177888572),
       artistPlayer.innerText = album.tracks.data[song].artist.name
       audioPlayer.src = album.tracks.data[song].preview;
 
-      let durationSong = ((album.tracks.data[song].duration))
-      totalTime.innerText = Math.floor(durationSong.toFixed(2))
+      
 
 
       let parcialSong = ((album.tracks.data[song].duration))
       parcialTime.innerText = '0:00'
 
-      let  valoreMassimo = durationSong;
+      let  valoreMassimo = 30;
       let tempoTrascorso = 0
 
+
+      let totalMinutes = 30; 
+      
+    
+      
+      
 
       function aggiornaTimer() {
         
@@ -320,13 +325,13 @@ fetch((apiUrl + 177888572),
      const minuti = Math.floor(tempoTrascorso / 60);
      const secondi = tempoTrascorso % 60;
  
-     // Formatta i minuti e i secondi come stringa e aggiungi lo 0 iniziale se necessario
+     
      const tempoFormattato = `${minuti}:${secondi.toString().padStart(2, '0')}`;
  
-     // Aggiorna il testo del timer
+    
      parcialTime.textContent = tempoFormattato;
  
-     // Se il valore massimo è stato raggiunto, ferma il timer
+     
      if (tempoTrascorso >= valoreMassimo) {
          clearInterval(timerInterval);
      }
@@ -335,8 +340,15 @@ fetch((apiUrl + 177888572),
      function fermaTimer() {
       clearInterval(timerInterval);
   }
-     // Incrementa il tempo trascorso
+     
      tempoTrascorso++;
+
+     let  currentMinutes = tempoTrascorso; 
+
+     let sliderPosition = (currentMinutes / totalMinutes) * 6000;
+      
+
+      myinput.value = sliderPosition;
     }
     
     let timerInterval
@@ -349,12 +361,12 @@ fetch((apiUrl + 177888572),
         document.getElementById('playPlayer').classList.add('d-none')
         document.getElementById('pausePlayer').classList.remove('d-none')
 
-        const timerInterval = setInterval(aggiornaTimer, 1000);
+         timerInterval = setInterval(aggiornaTimer, 1000);
     
     
       })
     
-
+    
      
 
 
