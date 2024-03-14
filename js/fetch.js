@@ -177,80 +177,8 @@ function longTime(e) {
 
 
 
-https://api.deezer.com/album/75623562/tracks
-
-/*
-fetch((apiUrl + 75623562 ),
-{
-  method: "GET",
-  headers: {
-    "Content-type": "application/json",
-  },
-})
-.then((res) => res.json())
-.then((album) => {
-
-  console.log(album)
-
-  imgPlayerMini = document.getElementById('imgPlayerMini')
-  titlePlayerMini = document.getElementById('titlePlayerMini')
 
 
-  imgPlayer = document.getElementById('imgPlayer')
-  songTitlePlayer = document.getElementById('songTitlePlayer')
-  artistPlayer = document.getElementById('artistPlayer')
-
-  parcialTime = document.getElementById('parcialTime')
-  totalTime = document.getElementById('totalTime')
-
-
-
-
-});
-
-
-
-
-console.log(singleSong(214959662,0))
-
-*/
-
-//albumSong.tracks.data[index].album.cover_big
-
-// tennessee boy: 75623562
-// reindeers: 75223442
-// ludo harrison: 75923442
-// tizia russa: 75923142
-// norlaks: 75233142
-// iColor: 75233222
-// cosi brutti: 75233272
-// bobbe malle: 542665382
-// led zeppelin 2 7824595
-// black sabbath 177888572
-// pink Floyd: 12207660
-// ramones 299814
-// clash 61394162
-// dire straits 226069
-// eric clapton 434095547
-// eric clapton 2 360638247
-// jimi hendrix: 455130
-// radiohead: 14880659
-// master of puppets: 51001312
-// rick astley: 214959662
-
-
-// id, 
-// title, 
-// cover_medium artist->name 
-// tracks{}->data[]->title
-
-// canzone da riprodurre:
-// tracks{}->data[]->preview
-
- 
-
- 
- 
 
 
 fetch((apiUrl + 177888572),
@@ -264,29 +192,8 @@ fetch((apiUrl + 177888572),
   .then((album) => {
     
     console.log(album)
-/*
-      setTimeout(() => {
-         imgPlayer = document.getElementById('imgPlayer')
-        songTitlePlayer = document.getElementById('songTitlePlayer')
-        artistPlayer = document.getElementById('artistPlayer')
-  
-        parcialTime = document.getElementById('parcialTime')
-        totalTime = document.getElementById('totalTime')
-  
-        audioPlayer = document.getElementById('audioPlayer')
-        
-  
-        
-        btnlastsong = document.getElementById('lastsong')
-        btnnextsong = document.getElementById('nextsong')
-
-        myInput = document.getElementById('myinput')
-        myinputValue = myinput.value
 
 
-
-      }, 2000);
-*/
 
       let song = 0
 
@@ -297,7 +204,7 @@ fetch((apiUrl + 177888572),
       audioPlayer.src = album.tracks.data[song].preview;
 
     
-      let parcialSong = ((album.tracks.data[song].duration))
+
       parcialTime.innerText = '0:00'
     
       let  valoreMassimo = 30;
@@ -325,10 +232,6 @@ fetch((apiUrl + 177888572),
         clearInterval(timerInterval);
       }
 
-
-      function fermaTimer() {
-        clearInterval(timerInterval);
-      }
      
      tempoTrascorso++;
 
@@ -402,48 +305,15 @@ fetch((apiUrl + 177888572),
          myInput.value = 0
          aggiornaTimer();
 
-         // Ritarda la riproduzione di 500 millisecondi
+
          setTimeout(function() {
 
          audioPlayer.play();
-  }, 500);
+  }, 100);
         
       })
 
-      /*
-
-      document.getElementById('nextsong').addEventListener('click',function(){
-        
-        song++
-
-        audioPlayer.src = album.tracks.data[song].preview;
-
-        songTitlePlayer.innerText = album.tracks.data[song].title
-
-
-        document.getElementById('audioPlayer').load()
-
-        tempoTrascorso = 0
-
-        myInput = document.getElementById('myinput').value= 0 
-
       
-      
-
-        audioPlayer.play()
-
-
-        audioPlayer.addEventListener('canplay', function () {
-          tempoTrascorso = 0;
-          myInput = document.getElementById('myinput').value = 0;
-          aggiornaTimer();
-          audioPlayer.play();
-      }, { once: true });
-
-      })
-
-*/
-
 document.getElementById('nextsong').addEventListener('click', function() {
  
   
@@ -459,11 +329,11 @@ document.getElementById('nextsong').addEventListener('click', function() {
   myInput.value = 0
   aggiornaTimer();
 
-  // Ritarda la riproduzione di 500 millisecondi
+
   setTimeout(function() {
    
       audioPlayer.play();
-  }, 500);
+  }, 100);
 });
     
 
