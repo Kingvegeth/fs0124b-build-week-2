@@ -290,8 +290,9 @@ fetch((apiUrl + 177888572),
 
       let song = 0
 
-      console.log(document.getElementById('myinput').value)
+    
 
+     
 
       
 /*
@@ -338,7 +339,12 @@ fetch((apiUrl + 177888572),
       parcialTime.innerText = Math.floor(parcialSong.toFixed(2))
 
      
+      function barmove () {
 
+        durationSong
+
+
+      }
       
     
       document.getElementById('playPlayer').addEventListener('click',function(){
