@@ -160,6 +160,26 @@ export function singleAlbum(album) {
 
 
 
+document.getElementById("myinput").addEventListener('mousedown', function() {
+  var value = (this.value - this.min) / (this.max - this.min) * 100;
+  this.style.background = 'linear-gradient(to right, #31ce65 0%, #31ce65 ' + value + '%, #727171 ' + value + '%, #727171 100%)';
+});
+
+
+document.getElementById("myinput").addEventListener('click', function() {
+var value = (this.value - this.min) / (this.max - this.min) * 100;
+this.style.background = 'linear-gradient(to right, #31ce65 0%, #31ce65 ' + value + '%, #727171 ' + value + '%, #727171 100%)';
+});
+
+document.getElementById("myinput").addEventListener('input', function() {
+var value = (this.value - this.min) / (this.max - this.min) * 100;
+this.style.background = 'linear-gradient(to right, #31ce65 0%, #31ce65 ' + value + '%, #727171 ' + value + '%, #727171 100%)';
+});
+
+document.getElementById("myinput").addEventListener('mouseout', function() {
+var value = (this.value-this.min)/(this.max-this.min)*100
+this.style.background = 'linear-gradient(to right, #fff 0%, #fff ' + value + '%, #727171 ' + value + '%, #727171 100%)'
+});
 
 
 
