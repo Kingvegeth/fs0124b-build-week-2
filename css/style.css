@@ -12285,6 +12285,17 @@ body {
   border-radius: 50%;
 }
 
+.artist-header {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.artist-avatar {
+  height: 100px;
+  width: 100px;
+}
+
 .friend-text p {
   font-size: 0.7em;
   margin-block: 0;
