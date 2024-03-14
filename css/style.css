@@ -12372,6 +12372,7 @@ body {
   cursor: pointer;
 }
 
+/****************** MYINPUT ******************/
 #myinput {
   -webkit-appearance: none;
   border: solid 1px #82CFD0;
@@ -12393,6 +12394,35 @@ body {
 }
 
 #myinput:hover::-webkit-slider-thumb {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background-color: #31ce65;
+  opacity: 1;
+}
+
+/****************** MYINPUTVOL ******************/
+#myinputvol {
+  -webkit-appearance: none;
+  border: solid 1px #82CFD0;
+  border-radius: 8px;
+  height: 5px;
+  width: 356px;
+  outline: none;
+  border: none;
+  background-color: #aaaaaa;
+  width: 100%;
+}
+
+#myinputvol::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+#myinputvol:hover::-webkit-slider-thumb {
   width: 10px;
   height: 10px;
   border-radius: 100%;
