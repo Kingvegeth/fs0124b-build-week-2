@@ -12144,12 +12144,14 @@ body {
   background-color: #272727;
 }
 
-#left, #right {
+#left,
+#right {
   height: 30px;
   width: 30px;
 }
 
-#left i, #right i {
+#left i,
+#right i {
   display: block;
   aspect-ratio: 1;
   line-height: 30px;
@@ -12284,6 +12286,11 @@ body {
 .friend-text p {
   font-size: 0.7em;
   margin-block: 0;
+}
+
+.round-icon {
+  width: 40px;
+  height: 40px;
 }
 
 .close-friends {
