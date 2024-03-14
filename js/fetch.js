@@ -295,37 +295,7 @@ fetch((apiUrl + 177888572),
      
 
       
-/*
-      let x = document.getElementById('myinput')
 
-      x.addEventListener('input', function() {
-
-        let y  = durationSong
-
-        let value = x.value;
-        console.log('Valore del range:', value);
-      });
-*/
-
-
-
-
-
-/*
-      function goodTime(e) {
-        let m = 0;
-        let s = 0;
-        for (let i = 0; i < e; i++) {
-            s++;
-            if (s >= 60) {
-                m++;
-                s = 0;
-            }
-        }
-        return (m < 10 ? "0" + m : m) + ":" + (s < 10 ? "0" + s : s);
-    }
-
-*/
       imgPlayer.src = album.tracks.data[song].album.cover
       songTitlePlayer.innerText = album.tracks.data[song].title
       artistPlayer.innerText = album.tracks.data[song].artist.name
@@ -336,15 +306,40 @@ fetch((apiUrl + 177888572),
 
 
       let parcialSong = ((album.tracks.data[song].duration))
-      parcialTime.innerText = Math.floor(parcialSong.toFixed(2))
+      parcialTime.innerText = '0:00'
 
-     
-      function barmove () {
-
-        durationSong
+      let  valoreMassimo = durationSong;
+      let tempoTrascorso = 0
 
 
-      }
+      function aggiornaTimer() {
+        
+  
+
+     // Calcola i minuti e i secondi
+     const minuti = Math.floor(tempoTrascorso / 60);
+     const secondi = tempoTrascorso % 60;
+ 
+     // Formatta i minuti e i secondi come stringa e aggiungi lo 0 iniziale se necessario
+     const tempoFormattato = `${minuti}:${secondi.toString().padStart(2, '0')}`;
+ 
+     // Aggiorna il testo del timer
+     parcialTime.textContent = tempoFormattato;
+ 
+     // Se il valore massimo è stato raggiunto, ferma il timer
+     if (tempoTrascorso >= valoreMassimo) {
+         clearInterval(timerInterval);
+     }
+
+
+     function fermaTimer() {
+      clearInterval(timerInterval);
+  }
+     // Incrementa il tempo trascorso
+     tempoTrascorso++;
+    }
+    
+    let timerInterval
       
     
       document.getElementById('playPlayer').addEventListener('click',function(){
@@ -353,16 +348,24 @@ fetch((apiUrl + 177888572),
     
         document.getElementById('playPlayer').classList.add('d-none')
         document.getElementById('pausePlayer').classList.remove('d-none')
+
+        const timerInterval = setInterval(aggiornaTimer, 1000);
     
     
       })
     
+
+     
+
+
       document.getElementById('pausePlayer').addEventListener('click',function(){
     
         audioPlayer.pause();
     
         document.getElementById('pausePlayer').classList.add('d-none')
         document.getElementById('playPlayer').classList.remove('d-none')
+
+        clearInterval(timerInterval);
     
       })
 
