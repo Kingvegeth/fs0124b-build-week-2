@@ -177,19 +177,43 @@ function longTime(e) {
 
 
 
+https://api.deezer.com/album/75623562/tracks
+
+/*
+fetch((apiUrl + 75623562 ),
+{
+  method: "GET",
+  headers: {
+    "Content-type": "application/json",
+  },
+})
+.then((res) => res.json())
+.then((album) => {
+
+  console.log(album)
+
+  imgPlayerMini = document.getElementById('imgPlayerMini')
+  titlePlayerMini = document.getElementById('titlePlayerMini')
+
+
+  imgPlayer = document.getElementById('imgPlayer')
+  songTitlePlayer = document.getElementById('songTitlePlayer')
+  artistPlayer = document.getElementById('artistPlayer')
+
+  parcialTime = document.getElementById('parcialTime')
+  totalTime = document.getElementById('totalTime')
 
 
 
 
+});
 
 
 
 
+console.log(singleSong(214959662,0))
 
-
-
-
-
+*/
 
 //albumSong.tracks.data[index].album.cover_big
 
@@ -222,3 +246,71 @@ function longTime(e) {
 
 // canzone da riprodurre:
 // tracks{}->data[]->preview
+
+ 
+
+ 
+ 
+
+
+fetch((apiUrl + 214959662),
+{
+  method: "GET",
+  headers: {
+    "Content-type": "application/json",
+  },
+})
+.then((res) => res.json())
+  .then((album) => {
+    
+    console.log(album)
+
+   
+
+    setTimeout(() => {
+      imgPlayer = document.getElementById('imgPlayer')
+      songTitlePlayer = document.getElementById('songTitlePlayer')
+      artistPlayer = document.getElementById('artistPlayer')
+
+      parcialTime = document.getElementById('parcialTime')
+      totalTime = document.getElementById('totalTime')
+
+      audioPlayer = document.getElementById('audioPlayer')
+      
+
+    }, 2000);
+
+  
+  imgPlayer.src = album.tracks.data[4].album.cover
+  songTitlePlayer.innerText = album.tracks.data[4].title
+  artistPlayer.innerText = album.tracks.data[4].artist.name
+  audioPlayer.src = album.tracks.data[4].preview;
+
+  document.getElementById('playPlayer').addEventListener('click',function(){
+
+    audioPlayer.play()
+
+    document.getElementById('playPlayer').classList.add('d-none')
+    document.getElementById('pausePlayer').classList.remove('d-none')
+
+  
+
+  })
+
+
+  });
+
+
+
+  document.getElementById('pausePlayer').addEventListener('click',function(){
+
+    audioPlayer.pause();
+
+    document.getElementById('pausePlayer').classList.add('d-none')
+    document.getElementById('playPlayer').classList.remove('d-none')
+
+  })
+
+
+
+  //audio.pause();
