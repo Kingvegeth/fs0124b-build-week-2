@@ -59,6 +59,9 @@ function homePage() {
       });
     })
     
+    
+    
+
 
     let homePageBtn1 = document.querySelector("#homepage-bnt-top");
     homePageBtn1.addEventListener("click", function () {
@@ -84,6 +87,14 @@ export async function centerHome() {
     console.error("Errore durante l'aggiunta della homePage:", error);
   }
 }
+
+function pippo (){
+  pageContainer.innerHTML = "";
+  pageContainer.appendChild(templateArtist);
+  singleArtist(el.id);
+  console.log(el)
+}
+
 
 /*function goToAlbum() {
   let goTo = document.querySelector('.song-album')

@@ -149,16 +149,17 @@ export function singleArtist(artist) {
       let artistPicture = document.querySelector('.artist-avatar')
       artistPicture.src = albumSong.data[0].contributors[0].picture_medium
       let bgImage = document.querySelector('.artist-header')
-      bgImage.style.backgroundImage = `url(${albumSong.data[0].contributors[0].picture_xl})`
+      bgImage.style.backgroundImage =  `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url(${albumSong.data[0].contributors[0].picture_xl})`
       
       
       
       //popolazione brani popolari
       
       console.log(albumSong);
-      albumSong.data.forEach(el => {
+      albumSong.data.forEach((el,i) => {
         let templateArtistTracks = generaTracciaArtista();
-        
+        let number = templateArtistTracks.querySelector('.number-artist')
+        number.innerText = i + 1
         console.log(el);
         console.log(templateArtistTracks)
         let img = templateArtistTracks.querySelector('.img-artist')
