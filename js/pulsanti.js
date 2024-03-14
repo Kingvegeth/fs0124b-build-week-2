@@ -23,19 +23,15 @@ function homePage() {
     })
     
 
-    const fac = new FastAverageColor();
-
-      let imageAverage = templateAlbum.querySelector('.img-info');
-      let bgContainer = templateAlbum.querySelector('.test')
-
     
-        window.addEventListener('load', function() {
+        
           const fac = new FastAverageColor();
           const container = templateAlbum.querySelector('.test');
           const color = fac.getColor(container.querySelector('.img-info'));
           container.style.backgroundColor = color.rgba;
           container.style.color = color.isDark ? '#fff' : '#000';
-        });
+          console.log(color);
+        
 
 
 
@@ -113,12 +109,7 @@ export async function centerHome() {
   }
 }
 
-function pippo (){
-  pageContainer.innerHTML = "";
-  pageContainer.appendChild(templateArtist);
-  singleArtist(el.id);
-  console.log(el)
-}
+
 
 
 /*function goToAlbum() {
