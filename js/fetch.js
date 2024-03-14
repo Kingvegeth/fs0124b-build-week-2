@@ -27,11 +27,11 @@ let homepageAlbums = [
 centerHome()
 
 
-  
-  
-  let albumContainer = document.querySelectorAll('.home-album')
-  albumContainer.forEach((el,i) =>{
-  
+
+
+let albumContainer = document.querySelectorAll('.home-album')
+albumContainer.forEach((el, i) => {
+
   let artist = el.querySelector('.song-artist')
   let disco = el.querySelector('.song-album')
   let cover = el.querySelector('.song-image')
@@ -53,16 +53,16 @@ function fetcher(folder, _artist, _disco, _cover) {
         "Content-type": "application/json",
       },
     })
-      .then((res) => res.json())
-      .then((album) => {
-        _artist.innerText = album.artist.name
-        _disco.innerText = album.title
-        _cover.src = album.cover_medium
+    .then((res) => res.json())
+    .then((album) => {
+      _artist.innerText = album.artist.name
+      _disco.innerText = album.title
+      _cover.src = album.cover_medium
 
-      });
+    });
 }
 
-function singleSong (album, index){
+function singleSong(album, index) {
 
   fetch((apiUrl + album),
     {
@@ -72,41 +72,41 @@ function singleSong (album, index){
       },
     })
     .then((res) => res.json())
-      .then((albumSong) => {
-        
-        let advCard = document.querySelector('#adv-card')
+    .then((albumSong) => {
 
-        advCard.querySelector('.big-img').src = albumSong.cover_xl
-        advCard.querySelector('.song-title').innerText = albumSong.tracks.data[index].title
-        advCard.querySelector('.song-artist').innerText = albumSong.tracks.data[index].artist.name
-        advCard.querySelector('.song-artist-adv').innerText += " " + albumSong.tracks.data[index].artist.name
+      let advCard = document.querySelector('#adv-card')
 
-      });
+      advCard.querySelector('.big-img').src = albumSong.cover_xl
+      advCard.querySelector('.song-title').innerText = albumSong.tracks.data[index].title
+      advCard.querySelector('.song-artist').innerText = albumSong.tracks.data[index].artist.name
+      advCard.querySelector('.song-artist-adv').innerText += " " + albumSong.tracks.data[index].artist.name
+
+    });
 
 
 }
-singleSong(214959662,0)
+singleSong(214959662, 0)
 
 
 
 export function singleAlbum(album) {
 
   fetch((apiUrl + album),
-  {
-    method: "GET",
-    headers: {
-      "Content-type": "application/json",
-    },
-  })
-  .then((res) => {
+    {
+      method: "GET",
+      headers: {
+        "Content-type": "application/json",
+      },
+    })
+    .then((res) => {
 
-    console.log(res);
+      console.log(res);
 
-            if (!res.ok) throw new Error("Errore");
-    return res.json();
-  })
+      if (!res.ok) throw new Error("Errore");
+      return res.json();
+    })
     .then((albumSong) => {
-      
+
       //popolazione header
 
 
@@ -119,15 +119,15 @@ export function singleAlbum(album) {
       let artistName = document.querySelector('.artist-name-album');
       artistName.innerText = albumSong.artist.name;
       let albumYear = document.querySelector('.album-date');
-      albumYear.innerText = albumSong.release_date.substring(0,4);
+      albumYear.innerText = albumSong.release_date.substring(0, 4);
       let trackNumber = document.querySelector('.track-number');
       trackNumber.innerText = albumSong.nb_tracks + " brani";
       let totalTime = document.querySelector('.total-time');
       totalTime.innerText = longTime(albumSong.duration);
 
-      
+
       //popolazione tracklist
-      albumSong.tracks.data.forEach((el,i) => {
+      albumSong.tracks.data.forEach((el, i) => {
         let templateTracks = generaTraccia();
 
         let titolo = templateTracks.querySelector('.title-track');
@@ -135,42 +135,42 @@ export function singleAlbum(album) {
         let artista = templateTracks.querySelector('.artist-track');
         artista.innerText = el.artist.name;
         let durata = templateTracks.querySelector('.song-time');
-        durata.innerText = goodTime(el.duration) ;
+        durata.innerText = goodTime(el.duration);
         let reproductions = templateTracks.querySelector('.reproductions');
         reproductions.innerText = el.rank;
         let trackNumber = templateTracks.querySelector('.number-track');
-        trackNumber.innerText = i+1;
+        trackNumber.innerText = i + 1;
 
         document.querySelector('#album-songs').appendChild(templateTracks);
 
 
       });
     }).catch((error) => new Error(error));
-  }
+}
 
 
-  function goodTime(e) {
-    let m = 0;
-    let s = 0;
-    for (let i = 0; i < e; i++) {
-        s++;
-        if (s >= 60) {
-            m++;
-            s = 0;
-        }
+function goodTime(e) {
+  let m = 0;
+  let s = 0;
+  for (let i = 0; i < e; i++) {
+    s++;
+    if (s >= 60) {
+      m++;
+      s = 0;
     }
-    return (m < 10 ? "0" + m : m) + ":" + (s < 10 ? "0" + s : s);
+  }
+  return (m < 10 ? "0" + m : m) + ":" + (s < 10 ? "0" + s : s);
 }
 
 function longTime(e) {
   let m = 0;
   let s = 0;
   for (let i = 0; i < e; i++) {
-      s++;
-      if (s >= 60) {
-          m++;
-          s = 0;
-      }
+    s++;
+    if (s >= 60) {
+      m++;
+      s = 0;
+    }
   }
   return (m < 10 ? "0" + m : m) + " minuti " + (s < 10 ? "0" + s : s) + " secondi";
 }
@@ -182,126 +182,170 @@ function longTime(e) {
 
 
 
-    let volumeControl = document.getElementById("vol");
-    let audioPlayer = document.getElementById("audioPlayer");
+let volumeControl = document.getElementById("vol");
+let audioPlayer = document.getElementById("audioPlayer");
 
-    volumeControl.addEventListener("input", function() {
-        let volumeValue = parseFloat(volumeControl.value) / 100; 
-        setVolume(volumeValue);
-    });
+volumeControl.addEventListener("input", function () {
+  let volumeValue = parseFloat(volumeControl.value) / 100;
+  setVolume(volumeValue);
+});
 
-    function setVolume(volume) {
-        if (audioPlayer.readyState === 4) { 
-            audioPlayer.volume = volume;
-        } else {
-            console.log("Elemento audio non pronto.");
-        }
+function setVolume(volume) {
+  if (audioPlayer.readyState === 4) {
+    audioPlayer.volume = volume;
+  } else {
+    console.log("Elemento audio non pronto.");
+  }
+}
+
+fetch(apiUrl + 177888572, {
+  method: "GET",
+  headers: {
+    "Content-type": "application/json",
+  },
+})
+  .then((res) => res.json())
+  .then((album) => {
+    console.log(album);
+
+    let song = 0;
+
+    imgPlayer.src = album.tracks.data[song].album.cover;
+    songTitlePlayer.innerText = album.tracks.data[song].title;
+    artistPlayer.innerText = album.tracks.data[song].artist.name;
+    audioPlayer.src = album.tracks.data[song].preview;
+
+    parcialTime.innerText = '0:00';
+
+    let valoreMassimo = 30;
+    let tempoTrascorso = 0;
+    let totalMinutes = 30;
+    let timerInterval;
+
+    function aggiornaTimer() {
+      const minuti = Math.floor(tempoTrascorso / 60);
+      const secondi = Math.round(tempoTrascorso % 60);
+
+      const tempoFormattato = `${minuti}:${secondi.toString().padStart(2, '0')}`;
+
+      parcialTime.textContent = tempoFormattato;
+
+      if (tempoTrascorso >= valoreMassimo) {
+        clearInterval(timerInterval);
+      }
+
+      tempoTrascorso++;
+
+      let currentMinutes = tempoTrascorso;
+      let sliderPosition = (currentMinutes / totalMinutes) * 6000;
+
+      myinput.value = sliderPosition;
+
+      if (tempoTrascorso === totalMinutes) {
+        tempoTrascorso = 0;
+        myinput.value = 0;
+        document.getElementById('nextsong').click();
+        audioPlayer.load();
+        audioPlayer.play();
+      }
     }
 
-    fetch(apiUrl + 177888572, {
-        method: "GET",
-        headers: {
-            "Content-type": "application/json",
-        },
-    })
-    .then((res) => res.json())
-    .then((album) => {
-        console.log(album);
+    let play = document.getElementById('playPlayer')
 
-        let song = 0;
+    play.addEventListener('click', function () {
+      audioPlayer.play();
+      document.getElementById('playPlayer').classList.add('d-none');
+      document.getElementById('pausePlayer').classList.remove('d-none');
+      timerInterval = setInterval(aggiornaTimer, 1000);
+    });
 
-        imgPlayer.src = album.tracks.data[song].album.cover;
-        songTitlePlayer.innerText = album.tracks.data[song].title;
-        artistPlayer.innerText = album.tracks.data[song].artist.name;
-        audioPlayer.src = album.tracks.data[song].preview;
+    let pause = document.getElementById('pausePlayer')
 
-        parcialTime.innerText = '0:00';
+    pause.addEventListener('click', function () {
+      audioPlayer.pause();
+      document.getElementById('pausePlayer').classList.add('d-none');
+      document.getElementById('playPlayer').classList.remove('d-none');
+      clearInterval(timerInterval);
+    });
 
-        let valoreMassimo = 30;
-        let tempoTrascorso = 0;
-        let totalMinutes = 30;
-        let timerInterval;
+    document.getElementById('lastsong').addEventListener('click', function () {
+      song--;
+      if (song < 0) song = album.tracks.data.length - 1;
+      loadSong(song);
+    });
 
-        function aggiornaTimer() {
-          const minuti = Math.floor(tempoTrascorso / 60);
-          const secondi = Math.round(tempoTrascorso % 60);
+    document.getElementById('nextsong').addEventListener('click', function () {
+      song++;
+      if (song >= album.tracks.data.length) song = 0;
+      loadSong(song);
+    });
 
-            const tempoFormattato = `${minuti}:${secondi.toString().padStart(2, '0')}`;
 
-            parcialTime.textContent = tempoFormattato;
-
-            if (tempoTrascorso >= valoreMassimo) {
-                clearInterval(timerInterval);
-            }
-
-            tempoTrascorso++;
-
-            let currentMinutes = tempoTrascorso;
-            let sliderPosition = (currentMinutes / totalMinutes) * 6000;
-
-            myinput.value = sliderPosition;
-
-            if (tempoTrascorso === totalMinutes) {
-                tempoTrascorso = 0;
-                myinput.value = 0;
-                document.getElementById('nextsong').click();
-                audioPlayer.load();
-                audioPlayer.play();
-            }
-        }
-
-        document.getElementById('playPlayer').addEventListener('click', function() {
-            audioPlayer.play();
-            document.getElementById('playPlayer').classList.add('d-none');
-            document.getElementById('pausePlayer').classList.remove('d-none');
-            timerInterval = setInterval(aggiornaTimer, 1000);
-        });
-
-        document.getElementById('pausePlayer').addEventListener('click', function() {
-            audioPlayer.pause();
-            document.getElementById('pausePlayer').classList.add('d-none');
-            document.getElementById('playPlayer').classList.remove('d-none');
-            clearInterval(timerInterval);
-        });
-
-        document.getElementById('lastsong').addEventListener('click', function() {
-            song--;
-            if (song < 0) song = album.tracks.data.length - 1;
-            loadSong(song);
-        });
-
-        document.getElementById('nextsong').addEventListener('click', function() {
-            song++;
-            if (song >= album.tracks.data.length) song = 0;
-            loadSong(song);
-        });
-
-        
-    document.getElementById('myinput').addEventListener('change', function() {
+    document.getElementById('myinput').addEventListener('change', function () {
 
       let newTime = Math.round((this.value / 6000) * totalMinutes);
 
-  
+
 
       tempoTrascorso = newTime;
-  
+
 
       audioPlayer.currentTime = newTime;
-  
+
 
       aggiornaTimer();
-  });
-
-        function loadSong(songIndex) {
-            audioPlayer.src = album.tracks.data[songIndex].preview;
-            songTitlePlayer.innerText = album.tracks.data[songIndex].title;
-            artistPlayer.innerText = album.tracks.data[songIndex].artist.name;
-            audioPlayer.load();
-            tempoTrascorso = 0;
-            myinput.value = 0;
-            aggiornaTimer();
-            setTimeout(function() {
-                audioPlayer.play();
-            }, 100);
-        }
     });
+
+    function loadSong(songIndex) {
+      audioPlayer.src = album.tracks.data[songIndex].preview;
+      songTitlePlayer.innerText = album.tracks.data[songIndex].title;
+      artistPlayer.innerText = album.tracks.data[songIndex].artist.name;
+      audioPlayer.load();
+      tempoTrascorso = 0;
+      myinput.value = 0;
+      aggiornaTimer();
+      setTimeout(function () {
+        audioPlayer.play();
+      }, 100);
+    }
+
+    let playPiccolo = document.querySelector('#play-piccolo')
+    let pausePiccolo = document.getElementById('pause-piccolo')
+    playPiccolo.addEventListener('click', function () {
+      audioPlayer.play();
+      playPiccolo.classList.add('d-none');
+      pausePiccolo.classList.remove('d-none');
+      timerInterval = setInterval(aggiornaTimer, 1000);
+    });
+    pausePiccolo.addEventListener('click', function () {
+      audioPlayer.pause();
+      pausePiccolo.classList.add('d-none');
+      playPiccolo.classList.remove('d-none');
+      clearInterval(timerInterval);
+    })
+
+    let titoloPiccolo = templateTracks.querySelector('.title-mini')
+    albumSong.tracks.data.forEach((el, i) => {
+        let templateTracks = generaTraccia();
+        titoloPiccolo.innerText = el.title
+        // let titolo = templateTracks.querySelector('.title-track');
+        // titolo.innerText = el.title;
+        // let artista = templateTracks.querySelector('.artist-track');
+        // artista.innerText = el.artist.name;
+        // let durata = templateTracks.querySelector('.song-time');
+        // durata.innerText = goodTime(el.duration);
+        // let reproductions = templateTracks.querySelector('.reproductions');
+        // reproductions.innerText = el.rank;
+        // let trackNumber = templateTracks.querySelector('.number-track');
+        // trackNumber.innerText = i + 1;
+
+        document.querySelector('#album-songs').appendChild(templateTracks);
+
+
+      });
+    }).catch((error) => new Error(error));
+
+  })
+
+
+
