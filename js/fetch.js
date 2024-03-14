@@ -263,33 +263,157 @@ function longTime(e) {
   );
 }
 
-//albumSong.tracks.data[index].album.cover_big
+let volumeControl = document.getElementById("vol");
+let audioPlayer = document.getElementById("audioPlayer");
 
-// tennessee boy: 75623562
-// reindeers: 75223442
-// ludo harrison: 75923442
-// tizia russa: 75923142
-// norlaks: 75233142
-// iColor: 75233222
-// cosi brutti: 75233272
-// bobbe malle: 542665382
-// led zeppelin 2 7824595
-// black sabbath 177888572
-// pink Floyd: 12207660
-// ramones 299814
-// clash 61394162
-// dire straits 226069
-// eric clapton 434095547
-// eric clapton 2 360638247
-// jimi hendrix: 455130
-// radiohead: 14880659
-// master of puppets: 51001312
-// rick astley: 214959662
+volumeControl.addEventListener("input", function () {
+  let volumeValue = parseFloat(volumeControl.value) / 100;
+  setVolume(volumeValue);
+});
 
-// id,
-// title,
-// cover_medium artist->name
-// tracks{}->data[]->title
+function setVolume(volume) {
+  if (audioPlayer.readyState === 4) {
+    audioPlayer.volume = volume;
+  } else {
+    console.log("Elemento audio non pronto.");
+  }
+}
 
-// canzone da riprodurre:
-// tracks{}->data[]->preview
+fetch(apiUrl + 177888572, {
+  method: "GET",
+  headers: {
+    "Content-type": "application/json",
+  },
+})
+  .then((res) => res.json())
+  .then((album) => {
+    console.log(album);
+
+    let song = 0;
+
+    let imgPlayer = document.querySelector('#imgPlayer');
+    imgPlayer.src = album.tracks.data[song].album.cover;
+    let songTitlePlayer = document.querySelector('#songTitlePlayer');
+    songTitlePlayer.innerText = album.tracks.data[song].title;
+    let artistPlayer = document.querySelector('#artistPlayer');
+    artistPlayer.innerText = album.tracks.data[song].artist.name;
+    let audioPlayer = document.querySelector('#audioPlayer')
+    audioPlayer.src = album.tracks.data[song].preview;
+
+    let titleMini = document.querySelector('#title-mini')
+    titleMini.innerText = album.tracks.data[song].title;
+    
+    let parcialTime = document.querySelector('#parcialTime')
+    parcialTime.innerText = '0:00';
+
+    let valoreMassimo = 30;
+    let tempoTrascorso = 0;
+    let totalMinutes = 30;
+    let timerInterval;
+
+    function aggiornaTimer() {
+      const minuti = Math.floor(tempoTrascorso / 60);
+      const secondi = Math.round(tempoTrascorso % 60);
+
+      const tempoFormattato = `${minuti}:${secondi.toString().padStart(2, '0')}`;
+
+      parcialTime.textContent = tempoFormattato;
+
+      if (tempoTrascorso >= valoreMassimo) {
+        clearInterval(timerInterval);
+      }
+
+      tempoTrascorso++;
+
+      let currentMinutes = tempoTrascorso;
+      let sliderPosition = (currentMinutes / totalMinutes) * 6000;
+
+      myinput.value = sliderPosition;
+
+      if (tempoTrascorso === totalMinutes) {
+        tempoTrascorso = 0;
+        myinput.value = 0;
+        document.getElementById('nextsong').click();
+       // audioPlayer.load();
+       // audioPlayer.play();
+      }
+    }
+
+    let play = document.getElementById('playPlayer')
+
+    play.addEventListener('click', function () {
+      loadSong(song);
+      audioPlayer.play();
+      document.getElementById('playPlayer').classList.add('d-none');
+      document.getElementById('pausePlayer').classList.remove('d-none');
+      timerInterval = setInterval(aggiornaTimer, 1000);
+    });
+
+    let pause = document.getElementById('pausePlayer')
+
+    pause.addEventListener('click', function () {
+      audioPlayer.pause();
+      document.getElementById('pausePlayer').classList.add('d-none');
+      document.getElementById('playPlayer').classList.remove('d-none');
+      clearInterval(timerInterval);
+    });
+
+    //torna alla traccia precedente
+    document.getElementById('lastsong').addEventListener('click', function () {
+      song--;
+      if (song < 0) song = album.tracks.data.length - 1;
+      loadSong(song);
+    });
+
+    //passa alla traccia successiva
+    document.getElementById('nextsong').addEventListener('click', function () {
+      song++;
+      if (song >= album.tracks.data.length) song = 0;
+      loadSong(song);
+    });
+
+    //aggiorna tempo canzone al cambiamento della barra
+    document.getElementById('myinput').addEventListener('change', function () {
+
+      let newTime = Math.round((this.value / 6000) * totalMinutes);
+      tempoTrascorso = newTime;
+      audioPlayer.currentTime = newTime;
+      aggiornaTimer();
+    });
+
+    //carica nuova canzone
+    function loadSong(songIndex) {
+      audioPlayer.src = album.tracks.data[songIndex].preview;
+      songTitlePlayer.innerText = album.tracks.data[songIndex].title;
+      artistPlayer.innerText = album.tracks.data[songIndex].artist.name;
+      let titleMini = document.querySelector('#title-mini')
+titleMini.innerText = album.tracks.data[song].title;
+
+      audioPlayer.load();
+      tempoTrascorso = 0;
+      myinput.value = 0;
+      aggiornaTimer();
+
+
+        setTimeout(function () {
+          audioPlayer.play();
+        }, 100);
+
+    }
+
+    //player mobile
+    let playPiccolo = document.querySelector('#play-piccolo')
+    let pausePiccolo = document.getElementById('pause-piccolo')
+    playPiccolo.addEventListener('click', function () {
+      
+      playPiccolo.classList.add('d-none');
+      pausePiccolo.classList.remove('d-none');
+      timerInterval = setInterval(aggiornaTimer, 1000);
+    });
+    pausePiccolo.addEventListener('click', function () {
+      audioPlayer.pause();
+      pausePiccolo.classList.add('d-none');
+      playPiccolo.classList.remove('d-none');
+      clearInterval(timerInterval);
+    })
+  })
