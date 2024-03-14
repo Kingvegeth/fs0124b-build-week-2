@@ -290,23 +290,16 @@ fetch((apiUrl + 177888572),
 
       let song = 0
 
-      
-
-     
-     
-      
 
       imgPlayer.src = album.tracks.data[song].album.cover
       songTitlePlayer.innerText = album.tracks.data[song].title
       artistPlayer.innerText = album.tracks.data[song].artist.name
       audioPlayer.src = album.tracks.data[song].preview;
 
-      
-
-
+    
       let parcialSong = ((album.tracks.data[song].duration))
       parcialTime.innerText = '0:00'
-
+    
       let  valoreMassimo = 30;
       let tempoTrascorso = 0
 
@@ -314,32 +307,28 @@ fetch((apiUrl + 177888572),
       let totalMinutes = 30; 
       
     
-      
-      
-
-      function aggiornaTimer() {
-        
   
+        function aggiornaTimer() {
 
-     // Calcola i minuti e i secondi
-     const minuti = Math.floor(tempoTrascorso / 60);
-     const secondi = tempoTrascorso % 60;
+        
+      const minuti = Math.floor(tempoTrascorso / 60);
+      const secondi = tempoTrascorso % 60;
  
      
-     const tempoFormattato = `${minuti}:${secondi.toString().padStart(2, '0')}`;
+      const tempoFormattato = `${minuti}:${secondi.toString().padStart(2, '0')}`;
  
     
-     parcialTime.textContent = tempoFormattato;
+      parcialTime.textContent = tempoFormattato;
  
      
-     if (tempoTrascorso >= valoreMassimo) {
-         clearInterval(timerInterval);
-     }
+      if (tempoTrascorso >= valoreMassimo) {
+        clearInterval(timerInterval);
+      }
 
 
-     function fermaTimer() {
-      clearInterval(timerInterval);
-  }
+      function fermaTimer() {
+        clearInterval(timerInterval);
+      }
      
      tempoTrascorso++;
 
@@ -349,6 +338,27 @@ fetch((apiUrl + 177888572),
       
 
       myinput.value = sliderPosition;
+
+      
+
+
+
+
+
+
+      /*
+      if(tempoTrascorso === totalMinutes){
+
+    
+        tempoTrascorso = 0
+
+        myInput = document.getElementById('myinput').value= 0 
+
+        document.getElementById('nextsong').click()
+        audioPlayer.play()
+
+      }
+      */
     }
     
     let timerInterval
@@ -390,18 +400,15 @@ fetch((apiUrl + 177888572),
 
         songTitlePlayer.innerText = album.tracks.data[song].title
 
-        let dutationSong = album.tracks.data[song].duration
-
-        totalTime.innerText = Math.floor(dutationSong.toFixed(2))
-
-
-        let parcialSong = ((album.tracks.data[song].duration))
-        parcialTime.innerText = Math.floor(parcialSong.toFixed(2))
-
-
         document.getElementById('audioPlayer').load()
 
+        tempoTrascorso = 0
+
+        myInput = document.getElementById('myinput').value= 0 
+
         audioPlayer.play()
+
+        aggiornaTimer()
         
       })
 
@@ -413,18 +420,17 @@ fetch((apiUrl + 177888572),
 
         songTitlePlayer.innerText = album.tracks.data[song].title
 
-        let dutationSong = album.tracks.data[song].duration
-
-        totalTime.innerText = Math.floor(dutationSong.toFixed(2))
-
-
-        let parcialSong = ((album.tracks.data[song].duration))
-        parcialTime.innerText = Math.floor(parcialSong.toFixed(2))
-
 
         document.getElementById('audioPlayer').load()
 
+        tempoTrascorso = 0
+
+        myInput = document.getElementById('myinput').value= 0 
+
+      
         audioPlayer.play()
+
+        aggiornaTimer()
 
       })
 
