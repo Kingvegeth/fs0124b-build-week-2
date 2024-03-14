@@ -8,9 +8,10 @@ let albumTest = "album/51001312";
 centerHome();
 
 let homepageAlbums = [
-  51001312,75623562, 75223442, 75233142, 75233222, 75233272, 542665382, 7824595,
+  51001312,311000727, 10975090, 447101, 13475611, 1208939, 542665382, 7824595,
   177888572, 12207660, 299814, 61394162, 226069, 434095547, 360638247, 455130,
-  14880659
+  14880659,9410086, 68614721, 9045853, 1442650, 82107, 81763, 1440802, 344440,
+  7090257, 1421957, 8910319, 40203611, 7075121, 79118, 246245, 6227255
 ];
 
 
@@ -89,6 +90,8 @@ export function singleAlbum(album) {
       let albumTitle = document.querySelector(".album-album");
       albumTitle.innerText = albumSong.title;
       let artistName = document.querySelector(".artist-name-album");
+      artistName.id = albumSong.contributors[0].id
+      console.log(artistName.id)
       artistName.innerText = albumSong.artist.name;
       let albumYear = document.querySelector(".album-date");
       albumYear.innerText = albumSong.release_date.substring(0, 4);
@@ -96,13 +99,16 @@ export function singleAlbum(album) {
       trackNumber.innerText = albumSong.nb_tracks + " brani";
       let totalTime = document.querySelector(".total-time");
       totalTime.innerText = longTime(albumSong.duration);
-
+      
+      document.querySelector('#album-songs').innerHTML = ''
       //popolazione tracklist
       albumSong.tracks.data.forEach((el, i) => {
+
         let templateTracks = generaTraccia();
 
         let titolo = templateTracks.querySelector(".title-track");
         titolo.innerText = el.title;
+
         let artista = templateTracks.querySelector(".artist-track");
         artista.innerText = el.artist.name;
         let durata = templateTracks.querySelector(".song-time");
@@ -150,11 +156,11 @@ export function singleArtist(artist) {
       artistPicture.src = albumSong.data[0].contributors[0].picture_medium
       let bgImage = document.querySelector('.artist-header')
       bgImage.style.backgroundImage =  `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url(${albumSong.data[0].contributors[0].picture_xl})`
+      document.querySelector('#artist-songs').innerHTML = ''
       
       
       
       //popolazione brani popolari
-      
       console.log(albumSong);
       albumSong.data.forEach((el,i) => {
         let templateArtistTracks = generaTracciaArtista();

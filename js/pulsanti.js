@@ -14,7 +14,15 @@ function homePage() {
     let pageContainer = document.querySelector("#center-page");
     pageContainer.appendChild(templateHome);
     
-    
+    let artistLink = templateAlbum.querySelector(".artist-name-album");
+    artistLink.addEventListener('click', () =>{
+      pageContainer.innerHTML = "";
+        pageContainer.appendChild(templateArtist);
+        console.log(artistLink.id.value)
+        singleArtist(artistLink.id);
+        
+      
+    })
     
     let friendsToggle = document.getElementById("friendlist-toggle");
     let sectionRight = document.getElementById("section-right");
