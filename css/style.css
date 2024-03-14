@@ -12420,7 +12420,7 @@ input[type=range]::-moz-range-thumb {
   border-radius: 50%;
   border: 1px solid #fff;
   /*  slider progress trick  */
-  box-shadow: -407px 0 0 400px #fff;
+  box-shadow: 0px 0 0 400px #fff;
   z-index: 99;
 }
 

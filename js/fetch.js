@@ -181,162 +181,127 @@ function longTime(e) {
 
 
 
-fetch((apiUrl + 177888572),
-{
-  method: "GET",
-  headers: {
-    "Content-type": "application/json",
-  },
-})
-.then((res) => res.json())
-  .then((album) => {
-    
-    console.log(album)
 
+    let volumeControl = document.getElementById("vol");
+    let audioPlayer = document.getElementById("audioPlayer");
 
-
-      let song = 0
-
-
-      imgPlayer.src = album.tracks.data[song].album.cover
-      songTitlePlayer.innerText = album.tracks.data[song].title
-      artistPlayer.innerText = album.tracks.data[song].artist.name
-      audioPlayer.src = album.tracks.data[song].preview;
-
-    
-
-      parcialTime.innerText = '0:00'
-    
-      let  valoreMassimo = 30;
-      let tempoTrascorso = 0
-
-
-      let totalMinutes = 30; 
-      
-    
-  
-        function aggiornaTimer() {
-
-        
-      const minuti = Math.floor(tempoTrascorso / 60);
-      const secondi = tempoTrascorso % 60;
- 
-     
-      const tempoFormattato = `${minuti}:${secondi.toString().padStart(2, '0')}`;
- 
-    
-      parcialTime.textContent = tempoFormattato;
- 
-     
-      if (tempoTrascorso >= valoreMassimo) {
-        clearInterval(timerInterval);
-      }
-
-     
-     tempoTrascorso++;
-
-     let  currentMinutes = tempoTrascorso; 
-
-     let sliderPosition = (currentMinutes / totalMinutes) * 6000;
-      
-
-      myinput.value = sliderPosition;
-
-     
-      if(tempoTrascorso === totalMinutes){
-
-    
-        tempoTrascorso = 0
-
-        myInput = document.getElementById('myinput').value= 0 
-
-        document.getElementById('nextsong').click()
-
-        document.getElementById('audioPlayer').load()
-        audioPlayer.play()
-
-      }
-      
-    }
-    
-    let timerInterval
-      
-    
-      document.getElementById('playPlayer').addEventListener('click',function(){
-    
-        audioPlayer.play()
-    
-        document.getElementById('playPlayer').classList.add('d-none')
-        document.getElementById('pausePlayer').classList.remove('d-none')
-
-         timerInterval = setInterval(aggiornaTimer, 1000);
-    
-    
-      })
-    
-    
-     
-
-
-      document.getElementById('pausePlayer').addEventListener('click',function(){
-    
-        audioPlayer.pause();
-    
-        document.getElementById('pausePlayer').classList.add('d-none')
-        document.getElementById('playPlayer').classList.remove('d-none')
-
-        clearInterval(timerInterval);
-    
-      })
-
-
-      document.getElementById('lastsong').addEventListener('click',function(){
-        
-        song --
-
-       
-         audioPlayer.src = album.tracks.data[song].preview;
-         songTitlePlayer.innerText = album.tracks.data[song].title;
-
-         document.getElementById('audioPlayer').load();
-         tempoTrascorso = 0;
-         let  myInput = document.getElementById('myinput');
-
-         myInput.value = 0
-         aggiornaTimer();
-
-
-         setTimeout(function() {
-
-         audioPlayer.play();
-  }, 100);
-        
-      })
-
-      
-document.getElementById('nextsong').addEventListener('click', function() {
- 
-  
-  song++;
-
-  audioPlayer.src = album.tracks.data[song].preview;
-  songTitlePlayer.innerText = album.tracks.data[song].title;
-
-  document.getElementById('audioPlayer').load();
-  tempoTrascorso = 0;
-  let  myInput = document.getElementById('myinput');
-
-  myInput.value = 0
-  aggiornaTimer();
-
-
-  setTimeout(function() {
-   
-      audioPlayer.play();
-  }, 100);
-});
-    
-
+    volumeControl.addEventListener("input", function() {
+        let volumeValue = parseFloat(volumeControl.value) / 100; 
+        setVolume(volumeValue);
     });
 
+    function setVolume(volume) {
+        if (audioPlayer.readyState === 4) { 
+            audioPlayer.volume = volume;
+        } else {
+            console.log("Elemento audio non pronto.");
+        }
+    }
+
+    fetch(apiUrl + 177888572, {
+        method: "GET",
+        headers: {
+            "Content-type": "application/json",
+        },
+    })
+    .then((res) => res.json())
+    .then((album) => {
+        console.log(album);
+
+        let song = 0;
+
+        imgPlayer.src = album.tracks.data[song].album.cover;
+        songTitlePlayer.innerText = album.tracks.data[song].title;
+        artistPlayer.innerText = album.tracks.data[song].artist.name;
+        audioPlayer.src = album.tracks.data[song].preview;
+
+        parcialTime.innerText = '0:00';
+
+        let valoreMassimo = 30;
+        let tempoTrascorso = 0;
+        let totalMinutes = 30;
+        let timerInterval;
+
+        function aggiornaTimer() {
+          const minuti = Math.floor(tempoTrascorso / 60);
+          const secondi = Math.round(tempoTrascorso % 60);
+
+            const tempoFormattato = `${minuti}:${secondi.toString().padStart(2, '0')}`;
+
+            parcialTime.textContent = tempoFormattato;
+
+            if (tempoTrascorso >= valoreMassimo) {
+                clearInterval(timerInterval);
+            }
+
+            tempoTrascorso++;
+
+            let currentMinutes = tempoTrascorso;
+            let sliderPosition = (currentMinutes / totalMinutes) * 6000;
+
+            myinput.value = sliderPosition;
+
+            if (tempoTrascorso === totalMinutes) {
+                tempoTrascorso = 0;
+                myinput.value = 0;
+                document.getElementById('nextsong').click();
+                audioPlayer.load();
+                audioPlayer.play();
+            }
+        }
+
+        document.getElementById('playPlayer').addEventListener('click', function() {
+            audioPlayer.play();
+            document.getElementById('playPlayer').classList.add('d-none');
+            document.getElementById('pausePlayer').classList.remove('d-none');
+            timerInterval = setInterval(aggiornaTimer, 1000);
+        });
+
+        document.getElementById('pausePlayer').addEventListener('click', function() {
+            audioPlayer.pause();
+            document.getElementById('pausePlayer').classList.add('d-none');
+            document.getElementById('playPlayer').classList.remove('d-none');
+            clearInterval(timerInterval);
+        });
+
+        document.getElementById('lastsong').addEventListener('click', function() {
+            song--;
+            if (song < 0) song = album.tracks.data.length - 1;
+            loadSong(song);
+        });
+
+        document.getElementById('nextsong').addEventListener('click', function() {
+            song++;
+            if (song >= album.tracks.data.length) song = 0;
+            loadSong(song);
+        });
+
+        
+    document.getElementById('myinput').addEventListener('change', function() {
+
+      let newTime = Math.round((this.value / 6000) * totalMinutes);
+
   
+
+      tempoTrascorso = newTime;
+  
+
+      audioPlayer.currentTime = newTime;
+  
+
+      aggiornaTimer();
+  });
+
+        function loadSong(songIndex) {
+            audioPlayer.src = album.tracks.data[songIndex].preview;
+            songTitlePlayer.innerText = album.tracks.data[songIndex].title;
+            artistPlayer.innerText = album.tracks.data[songIndex].artist.name;
+            audioPlayer.load();
+            tempoTrascorso = 0;
+            myinput.value = 0;
+            aggiornaTimer();
+            setTimeout(function() {
+                audioPlayer.play();
+            }, 100);
+        }
+    });
