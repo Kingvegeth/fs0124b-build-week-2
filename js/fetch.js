@@ -264,9 +264,9 @@ fetch((apiUrl + 177888572),
   .then((album) => {
     
     console.log(album)
-
+/*
       setTimeout(() => {
-        imgPlayer = document.getElementById('imgPlayer')
+         imgPlayer = document.getElementById('imgPlayer')
         songTitlePlayer = document.getElementById('songTitlePlayer')
         artistPlayer = document.getElementById('artistPlayer')
   
@@ -286,7 +286,7 @@ fetch((apiUrl + 177888572),
 
 
       }, 2000);
-
+*/
 
       let song = 0
 
@@ -339,14 +339,7 @@ fetch((apiUrl + 177888572),
 
       myinput.value = sliderPosition;
 
-      
-
-
-
-
-
-
-      /*
+     
       if(tempoTrascorso === totalMinutes){
 
     
@@ -355,10 +348,12 @@ fetch((apiUrl + 177888572),
         myInput = document.getElementById('myinput').value= 0 
 
         document.getElementById('nextsong').click()
+
+        document.getElementById('audioPlayer').load()
         audioPlayer.play()
 
       }
-      */
+      
     }
     
     let timerInterval
@@ -396,21 +391,26 @@ fetch((apiUrl + 177888572),
         
         song --
 
-        audioPlayer.src = album.tracks.data[song].preview;
+       
+         audioPlayer.src = album.tracks.data[song].preview;
+         songTitlePlayer.innerText = album.tracks.data[song].title;
 
-        songTitlePlayer.innerText = album.tracks.data[song].title
+         document.getElementById('audioPlayer').load();
+         tempoTrascorso = 0;
+         let  myInput = document.getElementById('myinput');
 
-        document.getElementById('audioPlayer').load()
+         myInput.value = 0
+         aggiornaTimer();
 
-        tempoTrascorso = 0
+         // Ritarda la riproduzione di 500 millisecondi
+         setTimeout(function() {
 
-        myInput = document.getElementById('myinput').value= 0 
-
-        audioPlayer.play()
-
-        aggiornaTimer()
+         audioPlayer.play();
+  }, 500);
         
       })
+
+      /*
 
       document.getElementById('nextsong').addEventListener('click',function(){
         
@@ -428,13 +428,43 @@ fetch((apiUrl + 177888572),
         myInput = document.getElementById('myinput').value= 0 
 
       
+      
+
         audioPlayer.play()
 
-        aggiornaTimer()
+
+        audioPlayer.addEventListener('canplay', function () {
+          tempoTrascorso = 0;
+          myInput = document.getElementById('myinput').value = 0;
+          aggiornaTimer();
+          audioPlayer.play();
+      }, { once: true });
 
       })
 
+*/
 
+document.getElementById('nextsong').addEventListener('click', function() {
+ 
+  
+  song++;
+
+  audioPlayer.src = album.tracks.data[song].preview;
+  songTitlePlayer.innerText = album.tracks.data[song].title;
+
+  document.getElementById('audioPlayer').load();
+  tempoTrascorso = 0;
+  let  myInput = document.getElementById('myinput');
+
+  myInput.value = 0
+  aggiornaTimer();
+
+  // Ritarda la riproduzione di 500 millisecondi
+  setTimeout(function() {
+   
+      audioPlayer.play();
+  }, 500);
+});
     
 
     });
