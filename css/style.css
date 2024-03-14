@@ -11991,8 +11991,15 @@ body {
   cursor: pointer;
 }
 
-.search-container, #input-search {
+.search-container {
   background-color: #292929;
+}
+
+.navigation-search input[type=search],
+.navigation-search input[type=search]:active,
+.navigation-search input[type=search]:focus {
+  color: #3f3f3f;
+  background-color: #3f3f3f;
 }
 
 .img-back {

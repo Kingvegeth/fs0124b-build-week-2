@@ -237,6 +237,8 @@ export function singleAlbum(album) {
             console.log(titolo);
             let img = templateSearchTracks.querySelector('.img-search')
             img.src = albumSong.data[i].album.cover_small
+            let duration = templateSearchTracks.querySelector('.duration-search')
+            duration.innerText = goodTime(albumSong.data[i].duration)
 
 
             document.querySelector('#search-container').appendChild(templateSearchTracks)
