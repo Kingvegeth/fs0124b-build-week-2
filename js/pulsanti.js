@@ -1,11 +1,14 @@
 import { generaClone } from "./template.js";
 import { singleAlbum } from "./fetch.js";
+import { singleArtist } from "./fetch.js";
+
 //import { fetcher } from "./fetch.js";
 
 function homePage() {
   return new Promise((resolve) => {
     let templateHome = generaClone("#home-page");
     let templateAlbum = generaClone("#album-page");
+    let templateArtist = generaClone("#artist-page");
     let templateSearch = generaClone("#search-page");
 
     let pageContainer = document.querySelector("#center-page");
@@ -36,12 +39,22 @@ function homePage() {
       pageContainer.appendChild(templateSearch);
     });
 
-    let goTo = document.querySelectorAll('.song-album')
-    goTo.forEach(el => {
+    let goToAlbum = document.querySelectorAll('.song-album')
+    goToAlbum.forEach(el => {
       el.addEventListener("click", function () {
         pageContainer.innerHTML = "";
         pageContainer.appendChild(templateAlbum);
         singleAlbum(el.id);
+        console.log(el)
+      });
+    })
+
+    let goToArtist = document.querySelectorAll('.song-artist')
+    goToArtist.forEach(el => {
+      el.addEventListener("click", function () {
+        pageContainer.innerHTML = "";
+        pageContainer.appendChild(templateArtist);
+        singleArtist(el.id);
         console.log(el)
       });
     })
