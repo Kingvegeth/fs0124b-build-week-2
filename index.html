@@ -183,20 +183,20 @@
                 <div class="controls d-flex align-items-center justify-content-center gap-4">
                     
                     <i class="bi bi-shuffle"></i>
-                    <i class="bi bi-skip-start-fill"></i>
+                    <i id='lastsong' class="bi bi-skip-start-fill"></i>
                     <i id='playPlayer' class="bi bi-play-circle-fill"></i>
                     <i id='pausePlayer' class="bi bi-pause-circle-fill d-none"></i>
-                    <i class="bi bi-skip-end-fill"></i>
+                    <i id='nextsong' class="bi bi-skip-end-fill"></i>
                     <i class="bi bi-repeat"></i>
 
                 </div>
 
-                    <div class="progresso d-flex align-items-center me-5 pe-4">
-                        <p  id='parcialTime' class="my-0 mx-1">2:34</p>
-                        <input id='myinput' class="col-10" type="range" id="vol" name="vol" min="0" max="30" value="0">
-                        <audio id="audioPlayer" controls style="display: none;"></audio>
-                        <p id='totalTime' class="my-0 mx-1">5:00</p>
-                    </div>
+                  <div class="progresso d-flex align-items-center me-5 pe-4">
+                      <p  id='parcialTime' class="my-0 mx-1"></p>
+                      <input id='myinput' class="col-10" type="range" id="vol" name="vol" min="0" max="100" value="50">
+                      <audio id="audioPlayer" controls style="display: none;"></audio>
+                      <p id='totalTime' class="my-0 mx-1"></p>
+                  </div>
 
             </div>
         

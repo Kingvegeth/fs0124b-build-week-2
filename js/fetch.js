@@ -253,7 +253,7 @@ console.log(singleSong(214959662,0))
  
 
 
-fetch((apiUrl + 214959662),
+fetch((apiUrl + 177888572),
 {
   method: "GET",
   headers: {
@@ -265,52 +265,151 @@ fetch((apiUrl + 214959662),
     
     console.log(album)
 
-   
+      setTimeout(() => {
+        imgPlayer = document.getElementById('imgPlayer')
+        songTitlePlayer = document.getElementById('songTitlePlayer')
+        artistPlayer = document.getElementById('artistPlayer')
+  
+        parcialTime = document.getElementById('parcialTime')
+        totalTime = document.getElementById('totalTime')
+  
+        audioPlayer = document.getElementById('audioPlayer')
+        
+  
+        
+        btnlastsong = document.getElementById('lastsong')
+        btnnextsong = document.getElementById('nextsong')
 
-    setTimeout(() => {
-      imgPlayer = document.getElementById('imgPlayer')
-      songTitlePlayer = document.getElementById('songTitlePlayer')
-      artistPlayer = document.getElementById('artistPlayer')
+        myInput = document.getElementById('myinput')
+        myinputValue = myinput.value
 
-      parcialTime = document.getElementById('parcialTime')
-      totalTime = document.getElementById('totalTime')
 
-      audioPlayer = document.getElementById('audioPlayer')
+
+      }, 2000);
+
+
+      let song = 0
+
+      console.log(document.getElementById('myinput').value)
+
+
       
+/*
+      let x = document.getElementById('myinput')
 
-    }, 2000);
+      x.addEventListener('input', function() {
+
+        let y  = durationSong
+
+        let value = x.value;
+        console.log('Valore del range:', value);
+      });
+*/
+
+
+
+
+
+/*
+      function goodTime(e) {
+        let m = 0;
+        let s = 0;
+        for (let i = 0; i < e; i++) {
+            s++;
+            if (s >= 60) {
+                m++;
+                s = 0;
+            }
+        }
+        return (m < 10 ? "0" + m : m) + ":" + (s < 10 ? "0" + s : s);
+    }
+
+*/
+      imgPlayer.src = album.tracks.data[song].album.cover
+      songTitlePlayer.innerText = album.tracks.data[song].title
+      artistPlayer.innerText = album.tracks.data[song].artist.name
+      audioPlayer.src = album.tracks.data[song].preview;
+
+      let durationSong = ((album.tracks.data[song].duration))
+      totalTime.innerText = Math.floor(durationSong.toFixed(2))
+
+
+      let parcialSong = ((album.tracks.data[song].duration))
+      parcialTime.innerText = Math.floor(parcialSong.toFixed(2))
+
+     
+
+      
+    
+      document.getElementById('playPlayer').addEventListener('click',function(){
+    
+        audioPlayer.play()
+    
+        document.getElementById('playPlayer').classList.add('d-none')
+        document.getElementById('pausePlayer').classList.remove('d-none')
+    
+    
+      })
+    
+      document.getElementById('pausePlayer').addEventListener('click',function(){
+    
+        audioPlayer.pause();
+    
+        document.getElementById('pausePlayer').classList.add('d-none')
+        document.getElementById('playPlayer').classList.remove('d-none')
+    
+      })
+
+
+      document.getElementById('lastsong').addEventListener('click',function(){
+        
+        song --
+
+        audioPlayer.src = album.tracks.data[song].preview;
+
+        songTitlePlayer.innerText = album.tracks.data[song].title
+
+        let dutationSong = album.tracks.data[song].duration
+
+        totalTime.innerText = Math.floor(dutationSong.toFixed(2))
+
+
+        let parcialSong = ((album.tracks.data[song].duration))
+        parcialTime.innerText = Math.floor(parcialSong.toFixed(2))
+
+
+        document.getElementById('audioPlayer').load()
+
+        audioPlayer.play()
+        
+      })
+
+      document.getElementById('nextsong').addEventListener('click',function(){
+        
+        song++
+
+        audioPlayer.src = album.tracks.data[song].preview;
+
+        songTitlePlayer.innerText = album.tracks.data[song].title
+
+        let dutationSong = album.tracks.data[song].duration
+
+        totalTime.innerText = Math.floor(dutationSong.toFixed(2))
+
+
+        let parcialSong = ((album.tracks.data[song].duration))
+        parcialTime.innerText = Math.floor(parcialSong.toFixed(2))
+
+
+        document.getElementById('audioPlayer').load()
+
+        audioPlayer.play()
+
+      })
+
+
+    
+
+    });
 
   
-  imgPlayer.src = album.tracks.data[4].album.cover
-  songTitlePlayer.innerText = album.tracks.data[4].title
-  artistPlayer.innerText = album.tracks.data[4].artist.name
-  audioPlayer.src = album.tracks.data[4].preview;
-
-  document.getElementById('playPlayer').addEventListener('click',function(){
-
-    audioPlayer.play()
-
-    document.getElementById('playPlayer').classList.add('d-none')
-    document.getElementById('pausePlayer').classList.remove('d-none')
-
-  
-
-  })
-
-
-  });
-
-
-
-  document.getElementById('pausePlayer').addEventListener('click',function(){
-
-    audioPlayer.pause();
-
-    document.getElementById('pausePlayer').classList.add('d-none')
-    document.getElementById('playPlayer').classList.remove('d-none')
-
-  })
-
-
-
-  //audio.pause();
