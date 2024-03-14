@@ -1,3 +1,13 @@
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+$background: #212121;
+$medium-background: #131313;
+$light-background: #292929;
+
+body {
+  background-color: $background;
+  box-sizing: border-box;
+}
 
 .artist-header {
   height: 400px;
@@ -122,6 +132,11 @@
   }
 }
 
+.song-title {
+  &:hover {
+    text-decoration: underline;
+  }
+}
 .song-view,
 .song-minutes {
   opacity: 0.7;

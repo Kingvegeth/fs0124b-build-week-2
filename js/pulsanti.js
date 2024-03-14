@@ -1,11 +1,13 @@
 import {generaClone} from "./template.js";
 import { singleAlbum } from "./fetch.js";
-
+import { singleArtist } from "./fetch.js";
+import { search } from "./fetch.js";
 
 function homePage(){
   return new Promise ((resolve) => {
     let templateHome = generaClone("#home-page");
     let templateAlbum = generaClone('#album-page');
+    let templateArtist = generaClone('#artist-page')
     let templateSearch = generaClone('#search-page')
     let pageContainer = document.querySelector('#center-page');
     pageContainer.appendChild(templateHome)
@@ -26,12 +28,11 @@ function homePage(){
                     sectionCenter.classList.remove('col-lg-8')
                     sectionCenter.classList.add('col-lg-10')
             })
-
-
                 let searchPage1 = document.querySelector('#search-btn-top')
                 searchPage1.addEventListener('click', function(){
                   pageContainer.innerHTML = ''
                   pageContainer.appendChild(templateSearch)
+                  searchPageBtn()
                 })
 
                 let albumPageBtn = document.querySelector('#album-toggle')
@@ -39,6 +40,13 @@ function homePage(){
                   pageContainer.innerHTML = '';
                   pageContainer.appendChild(templateAlbum)
                   singleAlbum(214959662)
+                })
+
+                let artistPageBtn = document.querySelector('#artist-toggle')
+                artistPageBtn.addEventListener('click', function(){
+                  pageContainer.innerHTML = '';
+                  pageContainer.appendChild(templateArtist)
+                  singleArtist(6160)
                 })
 
                 let homePageBtn1 = document.querySelector('#homepage-bnt-top')
@@ -62,4 +70,18 @@ export async function centerHome(){
   } catch (error){
     console.error("Errore durante l'aggiunta della homePage:", error);
   }
+}
+
+function searchPageBtn() {
+  
+  let searchBtn = document.querySelector('#cerca-icon')
+  
+  console.log(searchBtn);
+  searchBtn.addEventListener('click', function(e){
+    e.preventDefault();
+    alert('ciao')
+    let input = document.querySelector('#input-search')
+    search(input.value)
+    
+  })
 }

@@ -1,7 +1,14 @@
 import { generaTraccia } from "./template.js";
+import { generaTracciaArtista } from "./template.js";
+import { generaTracciaSearch } from "./template.js";
 import { centerHome } from "./pulsanti.js";
 
 const apiUrl = "https://striveschool-api.herokuapp.com/api/deezer/album/";
+const apiUrlArtist = "https://striveschool-api.herokuapp.com/api/deezer/artist/";
+const apiUrlSearch = "https://striveschool-api.herokuapp.com/api/deezer/search?q="
+
+
+let songsNumber = '/top?limit=5'
 
 let albumTest = 'album/51001312'
 
@@ -147,6 +154,98 @@ export function singleAlbum(album) {
       });
     }).catch((error) => new Error(error));
   }
+
+
+  export function singleArtist(artist) {
+
+    fetch((apiUrlArtist + artist + songsNumber),
+    {
+      method: "GET",
+      headers: {
+        "Content-type": "application/json",
+      },
+    })
+    .then((res) => {
+  
+      console.log(res);
+  
+              if (!res.ok) throw new Error("Errore");
+      return res.json();
+    })
+      .then((albumSong) => {
+        
+        //popolazione header
+
+        let artistName = document.querySelector('.artist-name');
+        artistName.innerText = albumSong.data[1].artist.name
+        let ascoltatori = document.querySelector('.listeners');
+        ascoltatori.innerText += " " + albumSong.data[1].rank
+
+        let artistPicture = document.querySelector('.artist-picture')
+        artistPicture.src = albumSong.data[0].contributors[0].picture_small
+        
+        //popolazione brani popolari
+
+        albumSong.data.forEach(el => {
+          let templateArtistTracks = generaTracciaArtista();
+  
+          let titolo = templateArtistTracks.querySelector('.song-title');
+          titolo.innerText = el.title;
+          console.log(el.title);
+          let views = templateArtistTracks.querySelector('.song-view');
+          views.innerText = el.rank
+          let durata = templateArtistTracks.querySelector('.song-minutes')
+          durata.innerText = goodTime(el.duration)
+  
+          document.querySelector('#artist-songs').appendChild(templateArtistTracks);
+        });
+
+
+      }).catch((error) => new Error(error));
+    }
+
+
+    export function search(artist) {
+
+      fetch((apiUrlSearch + artist),
+      {
+        method: "GET",
+        headers: {
+          "Content-type": "application/json",
+        },
+      })
+      .then((res) => {
+    
+        console.log(res);
+    
+                if (!res.ok) throw new Error("Errore");
+        return res.json();
+      })
+        .then((albumSong) => {
+          
+          //popolazione header
+  
+          
+          //popolazione brani popolari
+  
+          for (let i = 0; i < 10; i++) {
+            
+            let templateSearchTracks = generaTracciaSearch();
+
+            let titolo = templateSearchTracks.querySelector('.titolo-raccolta')
+            titolo.innerText = albumSong.data[i].title
+            console.log(titolo);
+            let img = templateSearchTracks.querySelector('.img-search')
+            img.src = albumSong.data[i].album.cover_small
+
+
+            document.querySelector('#search-container').appendChild(templateSearchTracks)
+          }
+  
+  
+        }).catch((error) => new Error(error));
+      }
+
 
 
   function goodTime(e) {
