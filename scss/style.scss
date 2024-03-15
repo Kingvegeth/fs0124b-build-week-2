@@ -321,9 +321,15 @@ body {
 }
 .song-artist {
   min-width: 150px;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 .song-album {
   height: 50px;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 .progresso {
   input {
@@ -401,4 +407,11 @@ input[type="range"]::-moz-range-thumb {
   /*  slider progress trick  */
   box-shadow: -407px 0 0 400px #fff;
   z-index: 99;
+}
+
+.rick {
+  cursor: pointer;
+  &:hover {
+    text-decoration: none;
+  }
 }

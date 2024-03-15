@@ -12398,9 +12398,15 @@ body {
 .song-artist {
   min-width: 150px;
 }
+.song-artist:hover {
+  text-decoration: underline;
+}
 
 .song-album {
   height: 50px;
+}
+.song-album:hover {
+  text-decoration: underline;
 }
 
 .progresso input {
@@ -12473,6 +12479,13 @@ input[type=range]::-moz-range-thumb {
   /*  slider progress trick  */
   box-shadow: -407px 0 0 400px #fff;
   z-index: 99;
+}
+
+.rick {
+  cursor: pointer;
+}
+.rick:hover {
+  text-decoration: none;
 }
 
 /*# sourceMappingURL=style.css.map */
