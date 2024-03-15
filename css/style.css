@@ -11969,11 +11969,17 @@ textarea.form-control-lg {
 }
 
 .see-more {
+  cursor: pointer;
   font-weight: bold;
   opacity: 0.7;
 }
 .see-more:hover {
   opacity: 1;
+  text-decoration: underline;
+}
+
+.song-title:hover {
+  text-decoration: underline;
 }
 
 .search-card {
@@ -12014,6 +12020,10 @@ textarea.form-control-lg {
 .navigation-search input[type=search]:focus {
   color: #3f3f3f;
   background-color: #3f3f3f;
+}
+
+.song-bar:hover .titolo-raccolta {
+  font-weight: bold;
 }
 
 .img-back {
@@ -12101,8 +12111,15 @@ textarea.form-control-lg {
   }
 }
 
-.number-track {
+.number-track,
+.number-artist {
   width: 10px;
+}
+
+.artist-name-album:hover,
+.title-track:hover,
+.artist-track:hover {
+  text-decoration: underline;
 }
 
 body {
@@ -12122,6 +12139,11 @@ body {
   border-radius: 50px;
   padding: 0;
   overflow: hidden;
+}
+
+.playlist-item {
+  font-size: 12px;
+  font-weight: lighter;
 }
 
 .profile-image {
@@ -12158,6 +12180,7 @@ body {
   aspect-ratio: 1;
   line-height: 30px;
   text-align: center;
+  color: white;
 }
 
 #nav-left i {
@@ -12368,12 +12391,22 @@ body {
   width: 40%;
 }
 
+.cursor {
+  cursor: pointer;
+}
+
 .song-artist {
   min-width: 150px;
+}
+.song-artist:hover {
+  text-decoration: underline;
 }
 
 .song-album {
   height: 50px;
+}
+.song-album:hover {
+  text-decoration: underline;
 }
 
 .progresso input {
@@ -12446,6 +12479,13 @@ input[type=range]::-moz-range-thumb {
   /*  slider progress trick  */
   box-shadow: -407px 0 0 400px #fff;
   z-index: 99;
+}
+
+.rick {
+  cursor: pointer;
+}
+.rick:hover {
+  text-decoration: none;
 }
 
 /*# sourceMappingURL=style.css.map */

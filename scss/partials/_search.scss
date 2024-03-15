@@ -1,36 +1,40 @@
-.search-card{
-    
-    overflow: hidden;
-    height: 100px;
-    cursor: pointer;
-    @media screen and (max-width: 575px){
-        margin:5px;
-        flex: 0 0 calc(100% / 2 - 10px);
-    }
-    @media screen and (min-width: 576px){
-        margin:5px;
-        flex: 0 0 calc(100% / 4 - 10px);
-    }
-    @media screen and (min-width: 768px){
-        margin:5px;
-        flex: 0 0 calc(100% / 6 - 10px);
-    }
+.search-card {
+  overflow: hidden;
+  height: 100px;
+  cursor: pointer;
+  @media screen and (max-width: 575px) {
+    margin: 5px;
+    flex: 0 0 calc(100% / 2 - 10px);
+  }
+  @media screen and (min-width: 576px) {
+    margin: 5px;
+    flex: 0 0 calc(100% / 4 - 10px);
+  }
+  @media screen and (min-width: 768px) {
+    margin: 5px;
+    flex: 0 0 calc(100% / 6 - 10px);
+  }
 }
-
 
 #cerca-icon {
-    font-size: 20px;
-    cursor: pointer;
+  font-size: 20px;
+  cursor: pointer;
 }
 
-.search-container{
-    background-color: #292929;
-
+.search-container {
+  background-color: #292929;
 }
 
-.navigation-search input[type="search"], 
+.navigation-search input[type="search"],
 .navigation-search input[type="search"]:active,
 .navigation-search input[type="search"]:focus {
-    color: #3f3f3f;
-    background-color: #3f3f3f ;
+  color: #3f3f3f;
+  background-color: #3f3f3f;
+}
+.song-bar {
+  &:hover {
+    .titolo-raccolta {
+      font-weight: bold;
+    }
+  }
 }
