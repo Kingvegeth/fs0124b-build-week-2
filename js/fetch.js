@@ -366,38 +366,28 @@ fetch(apiUrl + song, {
 
 
 
-
+   // player big
     let containericons = document.getElementById('playerIconsContainer')
 
-    let play = document.getElementById('playPlayer')
-
-    let pause = document.getElementById('pausePlayer')
-
-
-
+    
   containericons.addEventListener('click', function () {
 
-   // loadSong(song);
-   // audioPlayer.play();
-    //timerInterval = setInterval(aggiornaTimer, 1000);
-
-    document.getElementById('playPlayer').classList.toggle('d-none');
-
-    document.getElementById('pausePlayer').classList.toggle('d-none');
-
-    //  audioPlayer.pause();
-      //clearInterval(timerInterval);
+    if (document.getElementById('pausePlayer').classList.contains('d-none')) {
+    
+      loadSong(song);
+      audioPlayer.play();
+      timerInterval = setInterval(aggiornaTimer, 1000);
+    } else {
+      
+      audioPlayer.pause();
+      clearInterval(timerInterval);
+    }
 
   
+    document.getElementById('playPlayer').classList.toggle('d-none');
+    document.getElementById('pausePlayer').classList.toggle('d-none');
     });
 
-
-
-
-
-
-
-    
 /*
     play.addEventListener('click', function () {
       loadSong(song);
@@ -434,6 +424,10 @@ fetch(apiUrl + song, {
       loadSong(song);
     });
 
+
+
+
+
     //aggiorna tempo canzone al cambiamento della barra
     document.getElementById('myinput').addEventListener('change', function () {
 
@@ -449,7 +443,7 @@ fetch(apiUrl + song, {
       songTitlePlayer.innerText = album.tracks.data[songIndex].title;
       artistPlayer.innerText = album.tracks.data[songIndex].artist.name;
       let titleMini = document.querySelector('#title-mini')
-titleMini.innerText = album.tracks.data[song].title;
+      titleMini.innerText = album.tracks.data[song].title;
 
       audioPlayer.load();
       tempoTrascorso = 0;
@@ -463,7 +457,38 @@ titleMini.innerText = album.tracks.data[song].title;
 
     }
 
+
     //player mobile
+    let containerIconsMini = document.getElementById('playerIconsContainerMini')
+
+    containerIconsMini.addEventListener('click', function () {
+
+      if (document.getElementById('pause-piccolo').classList.contains('d-none')) {
+      
+        loadSong(song);
+        audioPlayer.play();
+        timerInterval = setInterval(aggiornaTimer, 1000);
+      } else {
+        
+        audioPlayer.pause();
+        clearInterval(timerInterval);
+      }
+  
+    
+      document.getElementById('play-piccolo').classList.toggle('d-none');
+      document.getElementById('pause-piccolo').classList.toggle('d-none');
+      });
+
+    document.addEventListener('mousemove', function(event) {
+    // Ottieni la coordinata X del cursore rispetto alla finestra del browser
+    const mouseX = event.clientX;
+
+    // Puoi fare qualcosa con la coordinata X, ad esempio stamparla sulla console
+    console.log('Coordinate X:', mouseX);
+    
+});
+      /*
+    
     let playPiccolo = document.querySelector('#play-piccolo')
     let pausePiccolo = document.getElementById('pause-piccolo')
     playPiccolo.addEventListener('click', function () {
@@ -478,6 +503,49 @@ titleMini.innerText = album.tracks.data[song].title;
       playPiccolo.classList.remove('d-none');
       clearInterval(timerInterval);
     })
+
+    */
+
+    let prevX = null;
+
+document.addEventListener('mousemove', function(event) {
+    // Ottieni la coordinata X del puntatore del mouse mentre si muove
+    const mouseX = event.clientX;
+
+    // Se abbiamo già una posizione precedente, calcoliamo la distanza percorsa sull'asse X
+    if (prevX !== null) {
+        const distanceX = mouseX - prevX;
+
+        if(distanceX <= -120){
+          song++;
+          if (song >= album.tracks.data.length) song = 0;
+          loadSong(song);
+        }
+
+
+        if(distanceX >= 120){
+          song--;
+          if (song < 0) song = album.tracks.data.length - 1;
+          loadSong(song);
+        }
+        
+    }
+
+    // Aggiorna la posizione precedente del mouse
+    prevX = mouseX;
+});
+
+
+
+
+
+
+
+
+
   })
 
 }
+
+
+songPlay(40203611)
