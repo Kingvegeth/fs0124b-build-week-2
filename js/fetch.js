@@ -240,9 +240,9 @@ export function singleArtist(artist) {
         console.log(artist);
         let resultsTitle = document.querySelector('.search-result-title')
         console.log(resultsTitle);
-        resultsTitle.innerText = "Risultati per " + artist;
+        resultsTitle.innerText = "Risultati per " + (artist.charAt(0).toUpperCase() + artist.slice(1));
         //popolazione brani popolari
-
+        document.querySelector('#search-container').innerHTML=''
         for (let i = 0; i < 10; i++) {
           
           let templateSearchTracks = generaTracciaSearch();
@@ -262,7 +262,7 @@ export function singleArtist(artist) {
           let duration = templateSearchTracks.querySelector('.duration-search')
           duration.innerText = goodTime(albumSong.data[i].duration)
 
-
+          
           document.querySelector('#search-container').appendChild(templateSearchTracks)
 
         }
@@ -391,12 +391,14 @@ fetch(apiUrlSong + song, {
     }
 
     function firstPlay(){
-      audioPlayer.pause();
-      clearInterval(timerInterval)
-      loadSong(song);
+        
+      clearInterval(timerInterval);
+      audioPlayer.play();
       document.getElementById('playPlayer').classList.add('d-none');
       document.getElementById('pausePlayer').classList.remove('d-none');
       timerInterval = setInterval(aggiornaTimer, 1000);
+      //tempoTrascorso = 0
+      
     }
     firstPlay()
 
@@ -541,11 +543,14 @@ export function albumPlay(disco, song=0){
       }
   
       function firstPlay(){
-
+        
+        clearInterval(timerInterval);
         audioPlayer.play();
         document.getElementById('playPlayer').classList.add('d-none');
         document.getElementById('pausePlayer').classList.remove('d-none');
         timerInterval = setInterval(aggiornaTimer, 1000);
+        //tempoTrascorso = 0
+        
       }
       firstPlay()
 
@@ -554,7 +559,6 @@ export function albumPlay(disco, song=0){
       play.addEventListener('click', function () {
         firstPlay()
       });
-  
       let pause = document.getElementById('pausePlayer')
   
       pause.addEventListener('click', function () {
