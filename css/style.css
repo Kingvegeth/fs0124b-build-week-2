@@ -12107,7 +12107,7 @@ textarea.form-control-lg {
 @media screen and (max-width: 767px) {
   .test {
     background: rgb(18, 18, 18);
-    background: linear-gradient(0deg, rgb(18, 18, 18) 3%, rgb(18, 18, 18) 8%, rgb(2, 2, 2) 11%, rgba(0, 0, 0, 0.5075280112) 49%);
+    background: linear-gradient(0deg, rgb(2, 2, 2) 11%, rgba(0, 0, 0, 0.5075280112) 49%);
   }
 }
 
@@ -12281,7 +12281,7 @@ body {
 #central-container {
   height: 100%;
   overflow-y: scroll;
-  max-height: calc(100vh - 110px);
+  max-height: calc(100vh - 90px);
 }
 
 .img-hello {
@@ -12298,8 +12298,18 @@ body {
   overflow: hidden;
 }
 
+.titolo-raccolta {
+  height: 40px;
+}
+
 .img-raccolta {
   border-radius: 5px;
+}
+@media screen and (max-width: 570px) {
+  .img-raccolta {
+    height: 100px;
+    aspect-ratio: 1;
+  }
 }
 
 .friend-img-container {
@@ -12331,6 +12341,19 @@ body {
 
 .close-friends {
   cursor: pointer;
+}
+
+#friendlist-toggle {
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+}
+#friendlist-toggle i {
+  opacity: 0.5;
+}
+#friendlist-toggle i:hover {
+  opacity: 1;
 }
 
 #nav-mobile {
@@ -12376,6 +12399,7 @@ body {
 #player-block {
   background-color: #121212;
   border-top: 1px solid #292929;
+  height: 90px;
 }
 #player-block .bi-volume-down {
   font-size: 1.6em;
@@ -12383,8 +12407,12 @@ body {
 #player-block .controls i {
   font-size: 1.5em;
 }
-#player-block .controls .bi-play-circle-fill {
+#player-block .controls .bi-play-circle-fill, #player-block .controls .bi-pause-circle-fill {
   font-size: 2em;
+}
+
+#imgPlayer {
+  height: 80px;
 }
 
 .player {

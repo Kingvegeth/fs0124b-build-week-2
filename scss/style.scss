@@ -192,7 +192,7 @@ body {
 #central-container {
   height: 100%;
   overflow-y: scroll;
-  max-height: calc(100vh - 110px);
+  max-height: calc(100vh - 90px);
 }
 
 .img-hello {
@@ -211,8 +211,17 @@ body {
   }
 }
 
+.titolo-raccolta{
+  height: 40px;
+}
+
 .img-raccolta {
   border-radius: 5px;
+  
+  @media screen and (max-width:570px) {
+    height: 100px;
+    aspect-ratio: 1;
+  }
 }
 
 .friend-img-container {
@@ -242,6 +251,20 @@ body {
 }
 .close-friends {
   cursor: pointer;
+}
+
+#friendlist-toggle{
+  border-radius: 50%;
+  
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  i{
+    opacity: 0.5;
+    &:hover{
+      opacity: 1;
+    }
+  }
 }
 
 #nav-mobile {
@@ -298,7 +321,7 @@ body {
 #player-block {
   background-color: $background;
   border-top: 1px solid $light-background;
-
+  height: 90px;
   .bi-volume-down {
     font-size: 1.6em;
   }
@@ -307,10 +330,14 @@ body {
     i {
       font-size: 1.5em;
     }
-    .bi-play-circle-fill {
+    .bi-play-circle-fill,.bi-pause-circle-fill {
       font-size: 2em;
     }
   }
+}
+
+#imgPlayer{
+  height: 80px;
 }
 
 .player {

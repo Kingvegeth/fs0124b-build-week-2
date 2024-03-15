@@ -29,6 +29,20 @@ function homePage() {
     let friendsToggle = document.getElementById("friendlist-toggle");
     let sectionRight = document.getElementById("section-right");
     let sectionCenter = document.getElementById("central-container");
+    let hideAdv = document.querySelector(".hide-adv")
+
+    hideAdv.addEventListener('click', function(){
+      let advMessage = document.querySelector('.hide-adv')
+      let advCard = document.querySelector('.adv-left')
+      if (advCard.classList.contains('d-none')) {
+        advCard.classList.remove('d-none')
+        advMessage.innerText = "NASCONDI ANNUNCI"
+      } 
+      else {
+        advCard.classList.add('d-none')
+        advMessage.innerText = "MOSTRA ANNUNCI"
+      }
+      })
     
     friendsToggle.addEventListener("click", function () {
       sectionRight.classList.remove("d-none");

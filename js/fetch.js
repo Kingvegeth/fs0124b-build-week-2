@@ -59,12 +59,29 @@ function singleSong(album, index) {
     .then((albumSong) => {
       let advCard = document.querySelector("#adv-card");
       let bigImg = advCard.querySelector(".big-img")
+      let playPiccolo = document.querySelector("#play-piccolo");
+      let pausePiccolo = document.querySelector("#pause-piccolo");
       bigImg.src = albumSong.cover_xl;
       bigImg.id = albumSong.id
       bigImg.addEventListener('click',function(){
         albumPlay(bigImg.id)
       })
+      function play(){
+      playPiccolo.addEventListener('click',function(){
+        albumPlay(bigImg.id)
+        playPiccolo.classList.add('d-none');
+        pausePiccolo.classList.remove('d-none');
+        timerInterval = setInterval(aggiornaTimer, 1000);
+      })
+      pausePiccolo.addEventListener('click', function () {
+        audioPlayer.pause();
+        pausePiccolo.classList.add('d-none');
+        playPiccolo.classList.remove('d-none');
+        clearInterval(timerInterval);
+      })
+    }
 
+    play()
       advCard.querySelector(".song-title").innerText =
         albumSong.tracks.data[index].title;
       advCard.querySelector(".song-artist").innerText =
@@ -95,7 +112,8 @@ export function singleAlbum(album) {
     })
     .then((albumSong) => {
       //popolazione header
-
+      let playPiccolo = document.querySelector("#play-piccolo");
+      let pausePiccolo = document.querySelector("#pause-piccolo");
       let bigImage = document.querySelector(".img-info");
       bigImage.src = albumSong.cover_xl;
       
@@ -120,6 +138,21 @@ export function singleAlbum(album) {
         albumPlay(playBtn.id)
       })
       
+      function play(){
+      playPiccolo.addEventListener('click',function(){
+        albumPlay(playBtn.id)
+        playPiccolo.classList.add('d-none');
+        pausePiccolo.classList.remove('d-none');
+        timerInterval = setInterval(aggiornaTimer, 1000);
+      })
+      pausePiccolo.addEventListener('click', function () {
+        audioPlayer.pause();
+        pausePiccolo.classList.add('d-none');
+        playPiccolo.classList.remove('d-none');
+        clearInterval(timerInterval);
+      })
+    }
+      play()
       document.querySelector('#album-songs').innerHTML = ''
       //popolazione tracklist
       albumSong.tracks.data.forEach((el, i) => {
@@ -167,7 +200,8 @@ export function singleArtist(artist) {
   })
     .then((albumSong) => {
       //popolazione header
-      
+      let playPiccolo = document.querySelector("#play-piccolo");
+      let pausePiccolo = document.querySelector("#pause-piccolo");
       let artistName = document.querySelector('.artist-name');
       artistName.innerText = albumSong.data[1].artist.name
       let ascoltatori = document.querySelector('.listeners');
@@ -194,6 +228,22 @@ export function singleArtist(artist) {
         listPlay(artistPlaybtnTop.id)
         autoPlay()
       })
+
+      function play(){
+      playPiccolo.addEventListener('click',function(){
+        listPlay(artistPlaybtnTop.id)
+        playPiccolo.classList.add('d-none');
+        pausePiccolo.classList.remove('d-none');
+        timerInterval = setInterval(aggiornaTimer, 1000);
+      })
+      pausePiccolo.addEventListener('click', function () {
+        audioPlayer.pause();
+        pausePiccolo.classList.add('d-none');
+        playPiccolo.classList.remove('d-none');
+        clearInterval(timerInterval);
+      })
+    }
+      play()
       
       //popolazione brani popolari
       albumSong.data.forEach((el,i) => {
@@ -631,8 +681,6 @@ export function albumPlay(disco, song=0){
 }
 
 export function listPlay(list, song=0){
-
-
   fetch(apiUrlArtist + list + songsNumber, {
     method: "GET",
     headers: {
@@ -641,10 +689,18 @@ export function listPlay(list, song=0){
   })
     .then((res) => res.json())
     .then((album) => {
-      console.log(album);
-  
+
+      /* Dichiarazioni variabili*/
       
-  
+      let valoreMassimo = 30;
+      let tempoTrascorso = 0;
+      let totalMinutes = 30;
+      let timerInterval;
+      let playPiccolo = document.querySelector('#play-piccolo')
+      let pausePiccolo = document.getElementById('pause-piccolo')
+      
+      let play = document.getElementById('playPlayer')
+      let pause = document.getElementById('pausePlayer')
       let imgPlayer = document.querySelector('#imgPlayer');
       imgPlayer.src = album.data[song].album.cover;
       let songTitlePlayer = document.querySelector('#songTitlePlayer');
@@ -653,39 +709,27 @@ export function listPlay(list, song=0){
       artistPlayer.innerText = album.data[song].artist.name;
       let audioPlayer = document.querySelector('#audioPlayer')
       audioPlayer.src = album.data[song].preview;
-  
       let titleMini = document.querySelector('#title-mini')
       titleMini.innerText = album.data[song].title;
-      
       let parcialTime = document.querySelector('#parcialTime')
       parcialTime.innerText = '0:00';
-  
-      let valoreMassimo = 30;
-      let tempoTrascorso = 0;
-      let totalMinutes = 30;
-      let timerInterval;
-  
+
+      /* Fine dichiarazioni variabili*/
+      /* ----------------------------------------------------  */
+      
+      /* Aggiorna Timer */
       function aggiornaTimer() {
         const minuti = Math.floor(tempoTrascorso / 60);
         const secondi = Math.round(tempoTrascorso % 60);
-  
         const tempoFormattato = `${minuti}:${secondi.toString().padStart(2, '0')}`;
-  
         parcialTime.textContent = tempoFormattato;
-  
         if (tempoTrascorso >= valoreMassimo) {
           clearInterval(timerInterval);
         }
-  
         tempoTrascorso++;
-  
         let currentMinutes = tempoTrascorso;
         let sliderPosition = (currentMinutes / totalMinutes) * 6000;
-  
-        
-
         myinput.value = sliderPosition;
-  
         if (tempoTrascorso === totalMinutes) {
           tempoTrascorso = 0;
           myinput.value = 0;
@@ -696,87 +740,32 @@ export function listPlay(list, song=0){
       }
   
       function firstPlay(){
-        
         clearInterval(timerInterval);
         audioPlayer.play();
         document.getElementById('playPlayer').classList.add('d-none');
         document.getElementById('pausePlayer').classList.remove('d-none');
         timerInterval = setInterval(aggiornaTimer, 1000);
         //tempoTrascorso = 0
-        
       }
       firstPlay()
 
-      let play = document.getElementById('playPlayer')
-  
+      
+  /* ----------------------------------------------------  */
       play.addEventListener('click', function () {
         firstPlay()
       });
-  
-      let pause = document.getElementById('pausePlayer')
-  
+//player mobile
+      playPiccolo.addEventListener('click', function () {
+        firstPlay()
+      });
+  /* ----------------------------------------------------  */
       pause.addEventListener('click', function () {
         audioPlayer.pause();
         document.getElementById('pausePlayer').classList.add('d-none');
         document.getElementById('playPlayer').classList.remove('d-none');
         clearInterval(timerInterval);
       });
-  
-      //torna alla traccia precedente
-      document.getElementById('lastsong').addEventListener('click', function () {
-        song--;
-        if (song < 0) song = album.data.length - 1;
-        loadSong(song);
-      });
-  
-      //passa alla traccia successiva
-      document.getElementById('nextsong').addEventListener('click', function () {
-        song++;
-        if (song >= album.data.length) song = 0;
-        loadSong(song);
-      });
-  
-      //aggiorna tempo canzone al cambiamento della barra
-      document.getElementById('myinput').addEventListener('change', function () {
-  
-        let newTime = Math.round((this.value / 6000) * totalMinutes);
-        tempoTrascorso = newTime;
-        audioPlayer.currentTime = newTime;
-        aggiornaTimer();
-      });
-  
-      //carica nuova canzone
-      function loadSong(songIndex) {
-        imgPlayer.src = album.data[song].album.cover;
-        audioPlayer.src = album.data[songIndex].preview;
-        songTitlePlayer.innerText = album.data[songIndex].title;
-        artistPlayer.innerText = album.data[songIndex].artist.name;
-        let titleMini = document.querySelector('#title-mini')
-  titleMini.innerText = album.data[song].title;
-  
-        
-        audioPlayer.load();
-        tempoTrascorso = 0;
-        myinput.value = 0;
-        aggiornaTimer();
-        
-  
-  
-          setTimeout(function () {
-            audioPlayer.play();
-          }, 100);
-  
-      }
-  
-      //player mobile
-      let playPiccolo = document.querySelector('#play-piccolo')
-      let pausePiccolo = document.getElementById('pause-piccolo')
-      playPiccolo.addEventListener('click', function () {
-        
-        playPiccolo.classList.add('d-none');
-        pausePiccolo.classList.remove('d-none');
-        timerInterval = setInterval(aggiornaTimer, 1000);
-      });
+//player mobile
       pausePiccolo.addEventListener('click', function () {
         audioPlayer.pause();
         pausePiccolo.classList.add('d-none');
@@ -784,5 +773,51 @@ export function listPlay(list, song=0){
         clearInterval(timerInterval);
       })
     })
+
+    /* event click */
+  /* ----------------------------------------------------  */
+      //torna alla traccia precedente
+      let lastSongClick = document.getElementById('lastsong')
+      lastSongClick.addEventListener('click', function () {
+        song--;
+        if (song < 0) song = album.data.length - 1;
+        loadSong(song);
+      });
+      //passa alla traccia successiva
+      let nextSongClick = document.getElementById('nextsong')
+      nextSongClick.addEventListener('click', function () {
+        song++;
+        if (song >= album.data.length) song = 0;
+        loadSong(song);
+      });
+      //aggiorna tempo canzone al cambiamento della barra
+      let myInputClick = document.getElementById('myinput')
+      myInputClick.addEventListener('change', function () {
+        let newTime = Math.round((this.value / 6000) * totalMinutes);
+        tempoTrascorso = newTime;
+        audioPlayer.currentTime = newTime;
+        aggiornaTimer();
+      });
+      //carica nuova canzone
+      function loadSong(songIndex) {
+        imgPlayer.src = album.data[song].album.cover;
+        audioPlayer.src = album.data[songIndex].preview;
+        songTitlePlayer.innerText = album.data[songIndex].title;
+        artistPlayer.innerText = album.data[songIndex].artist.name;
+        let titleMini = document.querySelector('#title-mini')
+        titleMini.innerText = album.data[song].title;
+        audioPlayer.load();
+        tempoTrascorso = 0;
+        myinput.value = 0;
+        aggiornaTimer();
+          setTimeout(function () {
+            audioPlayer.play();
+          }, 100);
+  
+      }
+  
+      
+      
+      
   
 }
