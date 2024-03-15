@@ -96,3 +96,10 @@
 .number-artist {
   width: 10px;
 }
+.artist-name-album,
+.title-track,
+.artist-track {
+  &:hover {
+    text-decoration: underline;
+  }
+}

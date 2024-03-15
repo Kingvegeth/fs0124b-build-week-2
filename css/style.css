@@ -11969,11 +11969,17 @@ textarea.form-control-lg {
 }
 
 .see-more {
+  cursor: pointer;
   font-weight: bold;
   opacity: 0.7;
 }
 .see-more:hover {
   opacity: 1;
+  text-decoration: underline;
+}
+
+.song-title:hover {
+  text-decoration: underline;
 }
 
 .search-card {
@@ -12014,6 +12020,10 @@ textarea.form-control-lg {
 .navigation-search input[type=search]:focus {
   color: #3f3f3f;
   background-color: #3f3f3f;
+}
+
+.song-bar:hover .titolo-raccolta {
+  font-weight: bold;
 }
 
 .img-back {
@@ -12101,8 +12111,15 @@ textarea.form-control-lg {
   }
 }
 
-.number-track {
+.number-track,
+.number-artist {
   width: 10px;
+}
+
+.artist-name-album:hover,
+.title-track:hover,
+.artist-track:hover {
+  text-decoration: underline;
 }
 
 body {
