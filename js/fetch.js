@@ -5,6 +5,7 @@ import { centerHome } from "./pulsanti.js";
 const apiUrl = "https://striveschool-api.herokuapp.com/api/deezer/album/";
 const apiUrlArtist = "https://striveschool-api.herokuapp.com/api/deezer/artist/";
 const apiUrlSearch = "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
+const apiUrlSong = "https://striveschool-api.herokuapp.com/api/deezer/track/"
 
 
 centerHome();
@@ -57,14 +58,24 @@ function singleSong(album, index) {
     .then((res) => res.json())
     .then((albumSong) => {
       let advCard = document.querySelector("#adv-card");
+      let bigImg = advCard.querySelector(".big-img")
+      bigImg.src = albumSong.cover_xl;
+      bigImg.id = albumSong.id
+      bigImg.addEventListener('click',function(){
+        albumPlay(bigImg.id)
+      })
 
-      advCard.querySelector(".big-img").src = albumSong.cover_xl;
       advCard.querySelector(".song-title").innerText =
         albumSong.tracks.data[index].title;
       advCard.querySelector(".song-artist").innerText =
         albumSong.tracks.data[index].artist.name;
       advCard.querySelector(".song-artist-adv").innerText +=
         " " + albumSong.tracks.data[index].artist.name;
+      let playRick = document.querySelector('.adv-play')
+      playRick.id = albumSong.tracks.data[index].id
+      playRick.addEventListener('click', function(){
+        songPlay(playRick.id)
+      })
     });
 }
 singleSong(214959662, 0);
@@ -240,18 +251,7 @@ export function singleArtist(artist) {
 
 
       })
-      //.then((res) => {
-  //
-      //  let searchLink = templateSearch.querySelectorAll('.track-search')
-      //  console.log(searchLink);
-      //  searchLink.forEach(el =>{
-      //    el.addEventListener('click', function(){
-      //      el.preventDefault()
-      //      alert('ciao')
-      //      songPlay(searchLink.id)
-      //    })
-      //  })
-      //})
+
       .catch((error) => new Error(error));
     }
 
@@ -304,29 +304,29 @@ function setVolume(volume) {
 export function songPlay(song){
 
 
-fetch(apiUrl + song, {
+fetch(apiUrlSong + song, {
   method: "GET",
   headers: {
     "Content-type": "application/json",
   },
 })
   .then((res) => res.json())
-  .then((album) => {
-    console.log(album);
+  .then((traccia) => {
+    
 
     let song = 0;
 
     let imgPlayer = document.querySelector('#imgPlayer');
-    imgPlayer.src = album.tracks.data[song].album.cover;
+    imgPlayer.src = traccia.album.cover;
     let songTitlePlayer = document.querySelector('#songTitlePlayer');
-    songTitlePlayer.innerText = album.tracks.data[song].title;
+    songTitlePlayer.innerText = traccia.title;
     let artistPlayer = document.querySelector('#artistPlayer');
-    artistPlayer.innerText = album.tracks.data[song].artist.name;
+    artistPlayer.innerText = traccia.artist.name;
     let audioPlayer = document.querySelector('#audioPlayer')
-    audioPlayer.src = album.tracks.data[song].preview;
+    audioPlayer.src = traccia.preview;
 
     let titleMini = document.querySelector('#title-mini')
-    titleMini.innerText = album.tracks.data[song].title;
+    titleMini.innerText = traccia.title;
     
     let parcialTime = document.querySelector('#parcialTime')
     parcialTime.innerText = '0:00';
@@ -408,11 +408,11 @@ fetch(apiUrl + song, {
 
     //carica nuova canzone
     function loadSong(songIndex) {
-      audioPlayer.src = album.tracks.data[songIndex].preview;
-      songTitlePlayer.innerText = album.tracks.data[songIndex].title;
-      artistPlayer.innerText = album.tracks.data[songIndex].artist.name;
+      audioPlayer.src = traccia.preview;
+      songTitlePlayer.innerText = traccia.title;
+      artistPlayer.innerText = traccia.artist.name;
       let titleMini = document.querySelector('#title-mini')
-titleMini.innerText = album.tracks.data[song].title;
+titleMini.innerText = traccia.title;
 
       audioPlayer.load();
       tempoTrascorso = 0;
@@ -443,4 +443,148 @@ titleMini.innerText = album.tracks.data[song].title;
     })
   })
 
+}
+
+export function albumPlay(song){
+
+
+  fetch(apiUrl + song, {
+    method: "GET",
+    headers: {
+      "Content-type": "application/json",
+    },
+  })
+    .then((res) => res.json())
+    .then((album) => {
+      console.log(album);
+  
+      let song = 0;
+  
+      let imgPlayer = document.querySelector('#imgPlayer');
+      imgPlayer.src = album.tracks.data[song].album.cover;
+      let songTitlePlayer = document.querySelector('#songTitlePlayer');
+      songTitlePlayer.innerText = album.tracks.data[song].title;
+      let artistPlayer = document.querySelector('#artistPlayer');
+      artistPlayer.innerText = album.tracks.data[song].artist.name;
+      let audioPlayer = document.querySelector('#audioPlayer')
+      audioPlayer.src = album.tracks.data[song].preview;
+  
+      let titleMini = document.querySelector('#title-mini')
+      titleMini.innerText = album.tracks.data[song].title;
+      
+      let parcialTime = document.querySelector('#parcialTime')
+      parcialTime.innerText = '0:00';
+  
+      let valoreMassimo = 30;
+      let tempoTrascorso = 0;
+      let totalMinutes = 30;
+      let timerInterval;
+  
+      function aggiornaTimer() {
+        const minuti = Math.floor(tempoTrascorso / 60);
+        const secondi = Math.round(tempoTrascorso % 60);
+  
+        const tempoFormattato = `${minuti}:${secondi.toString().padStart(2, '0')}`;
+  
+        parcialTime.textContent = tempoFormattato;
+  
+        if (tempoTrascorso >= valoreMassimo) {
+          clearInterval(timerInterval);
+        }
+  
+        tempoTrascorso++;
+  
+        let currentMinutes = tempoTrascorso;
+        let sliderPosition = (currentMinutes / totalMinutes) * 6000;
+  
+        myinput.value = sliderPosition;
+  
+        if (tempoTrascorso === totalMinutes) {
+          tempoTrascorso = 0;
+          myinput.value = 0;
+          document.getElementById('nextsong').click();
+         // audioPlayer.load();
+         // audioPlayer.play();
+        }
+      }
+  
+      let play = document.getElementById('playPlayer')
+  
+      play.addEventListener('click', function () {
+        loadSong(song);
+        audioPlayer.play();
+        document.getElementById('playPlayer').classList.add('d-none');
+        document.getElementById('pausePlayer').classList.remove('d-none');
+        timerInterval = setInterval(aggiornaTimer, 1000);
+      });
+  
+      let pause = document.getElementById('pausePlayer')
+  
+      pause.addEventListener('click', function () {
+        audioPlayer.pause();
+        document.getElementById('pausePlayer').classList.add('d-none');
+        document.getElementById('playPlayer').classList.remove('d-none');
+        clearInterval(timerInterval);
+      });
+  
+      //torna alla traccia precedente
+      document.getElementById('lastsong').addEventListener('click', function () {
+        song--;
+        if (song < 0) song = album.tracks.data.length - 1;
+        loadSong(song);
+      });
+  
+      //passa alla traccia successiva
+      document.getElementById('nextsong').addEventListener('click', function () {
+        song++;
+        if (song >= album.tracks.data.length) song = 0;
+        loadSong(song);
+      });
+  
+      //aggiorna tempo canzone al cambiamento della barra
+      document.getElementById('myinput').addEventListener('change', function () {
+  
+        let newTime = Math.round((this.value / 6000) * totalMinutes);
+        tempoTrascorso = newTime;
+        audioPlayer.currentTime = newTime;
+        aggiornaTimer();
+      });
+  
+      //carica nuova canzone
+      function loadSong(songIndex) {
+        audioPlayer.src = album.tracks.data[songIndex].preview;
+        songTitlePlayer.innerText = album.tracks.data[songIndex].title;
+        artistPlayer.innerText = album.tracks.data[songIndex].artist.name;
+        let titleMini = document.querySelector('#title-mini')
+  titleMini.innerText = album.tracks.data[song].title;
+  
+        audioPlayer.load();
+        tempoTrascorso = 0;
+        myinput.value = 0;
+        aggiornaTimer();
+  
+  
+          setTimeout(function () {
+            audioPlayer.play();
+          }, 100);
+  
+      }
+  
+      //player mobile
+      let playPiccolo = document.querySelector('#play-piccolo')
+      let pausePiccolo = document.getElementById('pause-piccolo')
+      playPiccolo.addEventListener('click', function () {
+        
+        playPiccolo.classList.add('d-none');
+        pausePiccolo.classList.remove('d-none');
+        timerInterval = setInterval(aggiornaTimer, 1000);
+      });
+      pausePiccolo.addEventListener('click', function () {
+        audioPlayer.pause();
+        pausePiccolo.classList.add('d-none');
+        playPiccolo.classList.remove('d-none');
+        clearInterval(timerInterval);
+      })
+    })
+  
 }
