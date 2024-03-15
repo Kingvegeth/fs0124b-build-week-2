@@ -312,7 +312,9 @@ body {
 .player {
   width: 40%;
 }
-
+.cursor {
+  cursor: pointer;
+}
 .song-artist {
   min-width: 150px;
 }
