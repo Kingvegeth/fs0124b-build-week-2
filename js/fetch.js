@@ -390,14 +390,19 @@ fetch(apiUrlSong + song, {
       }
     }
 
-    let play = document.getElementById('playPlayer')
-
-    play.addEventListener('click', function () {
-      loadSong(song);
+    function firstPlay(){
+      
       audioPlayer.play();
       document.getElementById('playPlayer').classList.add('d-none');
       document.getElementById('pausePlayer').classList.remove('d-none');
       timerInterval = setInterval(aggiornaTimer, 1000);
+    }
+    firstPlay()
+
+    let play = document.getElementById('playPlayer')
+
+    play.addEventListener('click', function () {
+      firstPlay()
     });
 
     let pause = document.getElementById('pausePlayer')
@@ -534,14 +539,19 @@ export function albumPlay(disco, song=0){
         }
       }
   
-      let play = document.getElementById('playPlayer')
-  
-      play.addEventListener('click', function () {
-        loadSong(song);
+      function firstPlay(){
+
         audioPlayer.play();
         document.getElementById('playPlayer').classList.add('d-none');
         document.getElementById('pausePlayer').classList.remove('d-none');
         timerInterval = setInterval(aggiornaTimer, 1000);
+      }
+      firstPlay()
+
+      let play = document.getElementById('playPlayer')
+  
+      play.addEventListener('click', function () {
+        firstPlay()
       });
   
       let pause = document.getElementById('pausePlayer')
@@ -667,6 +677,8 @@ export function listPlay(list, song=0){
         let currentMinutes = tempoTrascorso;
         let sliderPosition = (currentMinutes / totalMinutes) * 6000;
   
+        
+
         myinput.value = sliderPosition;
   
         if (tempoTrascorso === totalMinutes) {
@@ -678,14 +690,22 @@ export function listPlay(list, song=0){
         }
       }
   
-      let play = document.getElementById('playPlayer')
-  
-      play.addEventListener('click', function () {
-        loadSong(song);
+      function firstPlay(){
+        
+        clearInterval(timerInterval);
         audioPlayer.play();
         document.getElementById('playPlayer').classList.add('d-none');
         document.getElementById('pausePlayer').classList.remove('d-none');
         timerInterval = setInterval(aggiornaTimer, 1000);
+        tempoTrascorso = 0
+        
+      }
+      firstPlay()
+
+      let play = document.getElementById('playPlayer')
+  
+      play.addEventListener('click', function () {
+        firstPlay()
       });
   
       let pause = document.getElementById('pausePlayer')
@@ -729,6 +749,7 @@ export function listPlay(list, song=0){
         let titleMini = document.querySelector('#title-mini')
   titleMini.innerText = album.data[song].title;
   
+        
         audioPlayer.load();
         tempoTrascorso = 0;
         myinput.value = 0;
