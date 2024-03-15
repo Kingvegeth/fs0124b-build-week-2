@@ -113,6 +113,12 @@ export function singleAlbum(album) {
       trackNumber.innerText = albumSong.nb_tracks + " brani";
       let totalTime = document.querySelector(".total-time");
       totalTime.innerText = longTime(albumSong.duration);
+
+      let playBtn = document.querySelector('.bi-play-fill')
+      playBtn.id = albumSong.id
+      playBtn.addEventListener('click', function(){
+        albumPlay(playBtn.id)
+      })
       
       document.querySelector('#album-songs').innerHTML = ''
       //popolazione tracklist
@@ -125,12 +131,14 @@ export function singleAlbum(album) {
 
         let artista = templateTracks.querySelector(".artist-track");
         artista.innerText = el.artist.name;
+        artista.id = el.artist.id
         let durata = templateTracks.querySelector(".song-time");
         durata.innerText = goodTime(el.duration);
         let reproductions = templateTracks.querySelector(".reproductions");
         reproductions.innerText = el.rank;
         let trackNumber = templateTracks.querySelector(".number-track");
         trackNumber.innerText = i + 1;
+
 
         document.querySelector("#album-songs").appendChild(templateTracks);
       });
@@ -445,10 +453,10 @@ titleMini.innerText = traccia.title;
 
 }
 
-export function albumPlay(song){
+export function albumPlay(pippo, song=0){
 
 
-  fetch(apiUrl + song, {
+  fetch(apiUrl + pippo, {
     method: "GET",
     headers: {
       "Content-type": "application/json",
@@ -458,7 +466,7 @@ export function albumPlay(song){
     .then((album) => {
       console.log(album);
   
-      let song = 0;
+      
   
       let imgPlayer = document.querySelector('#imgPlayer');
       imgPlayer.src = album.tracks.data[song].album.cover;

@@ -22,8 +22,8 @@ function homePage() {
       pageContainer.appendChild(templateArtist);
       singleArtist(artistLink.id);
     })
-   
-
+    
+    
 
 
     let friendsToggle = document.getElementById("friendlist-toggle");
