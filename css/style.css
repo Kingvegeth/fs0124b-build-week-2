@@ -12023,7 +12023,7 @@ textarea.form-control-lg {
 }
 
 .song-bar:hover .titolo-raccolta {
-  font-weight: bold;
+  text-decoration: underline;
 }
 
 .img-back {

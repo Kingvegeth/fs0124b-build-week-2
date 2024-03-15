@@ -34,7 +34,8 @@
 .song-bar {
   &:hover {
     .titolo-raccolta {
-      font-weight: bold;
+      text-decoration: underline;
     }
   }
 }
+

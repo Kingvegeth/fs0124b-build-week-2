@@ -57,12 +57,17 @@ function homePage() {
       sectionCenter.classList.add("col-lg-10");
     });
     let searchPage1 = document.querySelector('#search-btn-top')
+    let searchPage2 = document.querySelector('#search-btn-bottom')
     searchPage1.addEventListener('click', function(){
       pageContainer.innerHTML = ''
       pageContainer.appendChild(templateSearch)
       searchPageBtn()
     })
-                
+    searchPage2.addEventListener('click', function(){
+      pageContainer.innerHTML = ''
+      pageContainer.appendChild(templateSearch)
+      searchPageBtn()
+    })      
                 
 
 
