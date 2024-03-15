@@ -391,8 +391,9 @@ fetch(apiUrlSong + song, {
     }
 
     function firstPlay(){
-      
-      audioPlayer.play();
+      audioPlayer.pause();
+      clearInterval(timerInterval)
+      loadSong(song);
       document.getElementById('playPlayer').classList.add('d-none');
       document.getElementById('pausePlayer').classList.remove('d-none');
       timerInterval = setInterval(aggiornaTimer, 1000);
@@ -697,7 +698,7 @@ export function listPlay(list, song=0){
         document.getElementById('playPlayer').classList.add('d-none');
         document.getElementById('pausePlayer').classList.remove('d-none');
         timerInterval = setInterval(aggiornaTimer, 1000);
-        tempoTrascorso = 0
+        //tempoTrascorso = 0
         
       }
       firstPlay()
