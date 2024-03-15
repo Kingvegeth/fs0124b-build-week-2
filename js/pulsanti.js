@@ -108,15 +108,7 @@ function searchPageBtn() {
   let input = document.querySelector('#input-search');
 
 
-  let searchLink = templateSearch.querySelectorAll('.track-search')
-  console.log(searchLink);
-  searchLink.forEach(el =>{
-    el.addEventListener('click', function(){
-      el.preventDefault()
-      alert('ciao')
-      songPlay(searchLink.id)
-    })
-  })
+
 
 
 searchBtn.addEventListener('click', function(e) {

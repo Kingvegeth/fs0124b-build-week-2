@@ -230,11 +230,24 @@ export function singleArtist(artist) {
 
 
           document.querySelector('#search-container').appendChild(templateSearchTracks)
-          
+
         }
 
 
-      }).catch((error) => new Error(error));
+      })
+      .then((res) => {
+  
+        let searchLink = templateSearch.querySelectorAll('.track-search')
+        console.log(searchLink);
+        searchLink.forEach(el =>{
+          el.addEventListener('click', function(){
+            el.preventDefault()
+            alert('ciao')
+            songPlay(searchLink.id)
+          })
+        })
+      })
+      .catch((error) => new Error(error));
     }
 
 
