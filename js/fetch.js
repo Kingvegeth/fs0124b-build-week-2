@@ -211,7 +211,7 @@ export function singleArtist(artist) {
         console.log(artist);
         let resultsTitle = document.querySelector('.search-result-title')
         console.log(resultsTitle);
-        resultsTitle.innerText += " " + artist;
+        resultsTitle.innerText = "Risultati per " + artist;
         //popolazione brani popolari
 
         for (let i = 0; i < 10; i++) {
@@ -220,6 +220,11 @@ export function singleArtist(artist) {
 
           let canzone = templateSearchTracks.querySelector('.track-search')
           canzone.id = albumSong.data[i].id
+          canzone.addEventListener('click', function(e){
+            e.preventDefault()
+            console.log(canzone.id);
+            songPlay(canzone.id)
+          })
           let titolo = templateSearchTracks.querySelector('.titolo-raccolta')
           titolo.innerText = albumSong.data[i].title
           console.log(titolo);
@@ -235,18 +240,18 @@ export function singleArtist(artist) {
 
 
       })
-      .then((res) => {
-  
-        let searchLink = templateSearch.querySelectorAll('.track-search')
-        console.log(searchLink);
-        searchLink.forEach(el =>{
-          el.addEventListener('click', function(){
-            el.preventDefault()
-            alert('ciao')
-            songPlay(searchLink.id)
-          })
-        })
-      })
+      //.then((res) => {
+  //
+      //  let searchLink = templateSearch.querySelectorAll('.track-search')
+      //  console.log(searchLink);
+      //  searchLink.forEach(el =>{
+      //    el.addEventListener('click', function(){
+      //      el.preventDefault()
+      //      alert('ciao')
+      //      songPlay(searchLink.id)
+      //    })
+      //  })
+      //})
       .catch((error) => new Error(error));
     }
 
