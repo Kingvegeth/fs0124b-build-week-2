@@ -364,8 +364,41 @@ fetch(apiUrl + song, {
       }
     }
 
+
+
+
+    let containericons = document.getElementById('playerIconsContainer')
+
     let play = document.getElementById('playPlayer')
 
+    let pause = document.getElementById('pausePlayer')
+
+
+
+  containericons.addEventListener('click', function () {
+
+   // loadSong(song);
+   // audioPlayer.play();
+    //timerInterval = setInterval(aggiornaTimer, 1000);
+
+    document.getElementById('playPlayer').classList.toggle('d-none');
+
+    document.getElementById('pausePlayer').classList.toggle('d-none');
+
+    //  audioPlayer.pause();
+      //clearInterval(timerInterval);
+
+  
+    });
+
+
+
+
+
+
+
+    
+/*
     play.addEventListener('click', function () {
       loadSong(song);
       audioPlayer.play();
@@ -374,7 +407,7 @@ fetch(apiUrl + song, {
       timerInterval = setInterval(aggiornaTimer, 1000);
     });
 
-    let pause = document.getElementById('pausePlayer')
+    
 
     pause.addEventListener('click', function () {
       audioPlayer.pause();
@@ -383,12 +416,16 @@ fetch(apiUrl + song, {
       clearInterval(timerInterval);
     });
 
+*/
+
+
     //torna alla traccia precedente
     document.getElementById('lastsong').addEventListener('click', function () {
       song--;
       if (song < 0) song = album.tracks.data.length - 1;
       loadSong(song);
     });
+
 
     //passa alla traccia successiva
     document.getElementById('nextsong').addEventListener('click', function () {
